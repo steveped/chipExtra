@@ -4,13 +4,14 @@
 #'
 #' @details
 #' Starting with a SummarizedExperiment object this function fits either a
-#' \link[edgeR]{glmQLFit} model to count data, or the
+#' \link[edgeR]{glmQLFit} model to count data, performs the
+#' \link[DESeq2]{nbinomWaldTest} on count data, or applies the
 #' \link[limma:eBayes]{limma-trend} model to logCPM data.
 #'
 #' If fitting Generalised Linear Models via glmQLFit, options for normalisation
 #' are "none", which normalises to library size. Existing library sizes are
 #' commonly found in the "totals" column of the colData element and this is
-#' attempted by default. All methods provided in \link[edgeR]{calcNormFactors}
+#' attempted by default. All methods provided in \link[edgeR]{normLibSizes}
 #' are also implemented, with the added possibility of normalising within groups
 #' instead of across the entire dataset. To enable this, the column with the
 #' grouping factor is expected to be in the colData element and is simply
@@ -18,23 +19,35 @@
 #' No normalisation is applied when using the limma-trend model, as this allows
 #' for previous normalisation strategies to be performed on the data.
 #'
-#' Normalising to ChIP Input samples, or using offsets is not yet implemented.
+#' When applying the \link[DESeq2]{nbinomWaldTest}, without groups and using
+#' colSums for library sizes (instead of total alignments), the standard
+#' normalisation factors from \link[DESeq2]{estimateSizeFactorsForMatrix} will
+#' be used. In all other scenarios, normalisation factors as returned by
+#' \link[edgeR]{normLibSizes} will be used.
+#' The fitType is set to 'local' when estimating dispersions, and this can be
+#' easily modified by passing fitType via the dot arguments.
 #'
-#' Either range-based hypothesis testing is implemented using
+#' Normalising to ChIP Input samples is not yet implemented.
+#' Similarly, the use of offsets when applying the Wald test is not yet
+#' implemented.
+#'
+#' Range-based hypothesis testing is implemented using
 #' \link[edgeR]{glmTreat} or \link[limma]{treat}. Setting fc to 1 (or lfc to 0)
 #' will default to a point-based null hypothesis, equivalent to either
 #' \link[edgeR]{glmQLFTest} (method = "qlf") or
 #' \link[limma]{eBayes} (method = "lt").
+#' When applying \link[DESeq2]{nbinomWaldTest}, \link[DESeq2]{lfcShrink} will
+#' be applied.
 #'
 #' It should also be noted that this is primarily a convenience function and
-#' if requiring intermediate output from any setps, then these can be run
+#' if requiring intermediate output from any steps, then these can be run
 #' individually as conventionally specified.
 #'
 #' @return
 #' A SummarizedExperiment object with results set as the `rowData` element.
 #' Any existing columns not contained in the differential ChIP results will be
 #' retained.
-#' Results from testing will contain logCPM, logFC, PValue and the t/F
+#' Results from testing will contain logCPM, logFC, PValue and any t/F
 #' statistic as appropriate, along with an FDR-adjusted p-value.
 #'
 #' If specifying a range-based H0 by setting lfc != 0, an additional column
@@ -54,28 +67,30 @@
 #' @param method the analytic method to be used. Can be 'qlf' which will fit
 #' counts using the \link[edgeR]{glmQLFit} strategy , or 'lt' which fits the
 #' \link[limma:eBayes]{limma-trend} model on logCPM, or pre-processed logCPM
-#' values
+#' values. Setting method = 'wald' will call \link[DESeq2]{nbinomWaldTest}
 #' @param norm The normalisation strategy to use when running the
-#' glmQLF models. The value 'none' relies solely on library-size normalisation,
-#' and is the default. All methods available in \link[edgeR]{calcNormFactors}
-#' are implemented. Ignored when using method = "lt"
+#' glmQLF model or the Wald test. The value 'none' relies solely on
+#' library-size normalisation, and is the default. All methods available in
+#' \link[edgeR]{normLibSizes} are implemented. Ignored when using method = "lt"
 #' @param groups character(1) If a column name is supplied here, group-based
 #' normalisation will be applied to GLM models treating data in this column
 #' as a grouping factor. Ignored when using method = "lt"
-#' @param fc,lfc Thresholds passed to \link[limma]{treat} or
-#' \link[edgeR]{glmTreat}
+#' @param fc,lfc Thresholds passed to \link[limma]{treat},
+#' \link[edgeR]{glmTreat} or \link[DESeq2]{lfcShrink}
 #' @param asRanges logical(1). By default, the returned object will be a
 #' `SummarizedExperiment` object with the results added to the `rowData`
 #' element. Setting `asRanges = TRUE` will only return the GRanges object from
 #' this element
-#' @param offset If provided will be used as the offset when the DGEList object
-#' is created during model fitting
+#' @param offset If provided will be used as the offset when a DGEList object
+#' is created during model fitting for method = 'qlf'
+#' @param weighted logical(1) Passed to  \link[edgeR]{normLibSizes}. Only used
+#' when applying a TMM-type normalisation strategy
+#' @param ... Passed to \link[edgeR]{normLibSizes} and
 #' @param null Passed to \link[edgeR]{glmTreat}
-#' @param weighted logical(1) Passed to  \link[edgeR]{calcNormFactors}
-#' @param ... Passed to \link[edgeR]{calcNormFactors} and
 #' \link[edgeR]{glmQLFit} when method = "qlf".
 #' If method = "lt", instead passed to \link[limma]{lmFit}
 #' @param robust Passed to \link[limma]{treat} and \link[limma]{eBayes}
+#' @param type Passed to \link[DESeq2]{lfcShrink}
 #'
 #' @examples
 #' nrows <- 200; ncols <- 6
@@ -98,7 +113,6 @@
 setGeneric("fitAssayDiff", function(x, ...) standardGeneric("fitAssayDiff"))
 #' @import SummarizedExperiment
 #' @importFrom edgeR glmTreat topTags glmQLFTest
-#' @importFrom limma eBayes treat topTable topTreat
 #' @importFrom stats model.matrix
 #' @rdname fitAssayDiff-methods
 #' @export
@@ -107,11 +121,11 @@ setMethod(
     signature = signature(x = "SummarizedExperiment"),
     function(
         x, assay = "counts", design = NULL, coef = NULL,
-        lib.size = "totals", method = c("qlf", "lt"),
+        lib.size = "totals", method = c("qlf", "lt", "wald"),
         norm = c("none", "TMM", "RLE", "TMMwsp", "upperquartile"),
         groups = NULL, fc = 1, lfc = log2(fc), asRanges = FALSE,
-        offset = NULL, null = c("interval", "worst.case"),
-        weighted = FALSE, ..., robust = FALSE
+        offset = NULL, weighted = FALSE, ...,
+        null = c("interval", "worst.case"), robust = FALSE, type = "apeglm"
     ) {
         method <- match.arg(method)
         norm <- match.arg(norm)
@@ -122,11 +136,11 @@ setMethod(
         if (is.null(coef)) coef <- colnames(design)[ncol(design)]
         if (is.numeric(coef)) stopifnot(coef <= ncol(design))
         if (is.character(coef)) stopifnot(coef %in% colnames(design))
+        if (!is.null(groups)) groups <- match.arg(groups, args)
+        if (!is.null(lib.size)) lib.size <- match.arg(lib.size, args)
 
         if (method == "qlf") {
             ## Only required for GLM fits
-            if (!is.null(groups)) groups <- match.arg(groups, args)
-            if (!is.null(lib.size)) lib.size <- match.arg(lib.size, args)
             fit <- .se2DGEGLM(
                 x, assay, design, lib.size, norm, groups, offset, weighted, ...
             )
@@ -146,17 +160,21 @@ setMethod(
             }
         }
         if (method == "lt") {
+            if (!requireNamespace('limma', quietly = TRUE))
+                stop("Please install 'limma' to use this function.")
             fit <- .se2LT(x, assay, design, ...)
-            fit0 <- eBayes(fit, trend = TRUE, robust = robust)
-            res0 <- topTable(
+            fit0 <- limma::eBayes(fit, trend = TRUE, robust = robust)
+            res0 <- limma::topTable(
                 fit0, coef = coef, number = n, sort.by = "none",
                 adjust.method = "none"
             )
             res <- res0
             p_mu0 <- res0$P.Value
             if (lfc != 0) {
-                fit <- treat(fit, lfc = lfc, trend = TRUE, robust = robust)
-                res <- topTreat(
+                fit <- limma::treat(
+                    fit, lfc = lfc, trend = TRUE, robust = robust
+                )
+                res <- limma::topTreat(
                     fit, coef = coef, number = n, sort.by = "none",
                     adjust.method = "none"
                 )
@@ -164,6 +182,30 @@ setMethod(
             res <- res[!colnames(res) %in% c("adj.P.Val", "B")]
             colnames(res) <- gsub("AveExpr", "logCPM", colnames(res))
             colnames(res) <- gsub("P.Value", "PValue", colnames(res))
+        }
+        if (method == "wald") {
+            if (!requireNamespace('DESeq2', quietly = TRUE))
+                stop("Please install 'DESeq2' to use this function.")
+            dds <- .se2Wald(
+                x, assay, design, lib.size, norm, groups, offset, weighted, ...
+            )
+            res <- DESeq2::results(dds)
+            p_mu0 <- res$pvalue
+            pval <- p_mu0
+            ## Apply lfcShrink as default
+            if (lfc != 0) {
+                res <- DESeq2::lfcShrink(
+                    dds, coef = colnames(design)[ncol(design)], res = res,
+                    type = type, lfcThreshold = abs(lfc), svalue = TRUE
+                )
+                pval <- res$svalue
+            }
+            ## Reformat for standard edgeR column layout
+            res <- data.frame(
+                logFC = res$log2FoldChange, logCPM = log2(res$baseMean),
+                PValue = pval
+            )
+
         }
         res[["FDR"]] <- p.adjust(res[["PValue"]], "fdr")
         ## Add the p-value for H0: fc = 0
@@ -201,18 +243,17 @@ setMethod(
 )
 
 #' @import SummarizedExperiment
-#' @importFrom limma lmFit
 .se2LT <- function(x, assay, design, ...){
     ## 1. Create an MArrayM/Elist object
     ## 2. Don't normalise
     mat <- assay(x, assay)
     diff <- mat - as.integer(mat)
     if (all(diff == 0)) stop("Expected non-integer values")
-    lmFit(mat, design = design, ...)
+    limma::lmFit(mat, design = design, ...)
 }
 
 #' @import SummarizedExperiment
-#' @importFrom edgeR DGEList calcNormFactors estimateDisp glmQLFit
+#' @importFrom edgeR DGEList normLibSizes estimateDisp glmQLFit
 .se2DGEGLM <- function(
         x, assay, design, lib.size, norm, groups, offset, weighted, ...
 ) {
@@ -223,7 +264,6 @@ setMethod(
     mat <- assay(x, assay)
     if (any(mat < 0)) stop("Counts cannot contain negative values")
     if (anyNA(mat)) stop("Missing values detected")
-
 
     col_df <- as_tibble(colData(x), rownames = "colnames")
     ls <- colSums(mat)
@@ -239,7 +279,7 @@ setMethod(
         message("Calculating group-wise normalisation factors...")
         nf <- lapply(
             list_cols,
-            function(i) calcNormFactors(dge$counts[,i], method = norm, ...)
+            function(i) normLibSizes(dge$counts[,i], method = norm, ...)
         )
         names(nf) <- NULL
         nf <- unlist(nf)
@@ -247,7 +287,7 @@ setMethod(
     } else {
         message("Calculating experiment-wide normalisation factors...")
         ## Both DiffBind and csaw set doWeighting = FALSE. They're smart people
-        dge <- calcNormFactors(dge, method = norm, doWeighting = weighted, ...)
+        dge <- normLibSizes(dge, method = norm, doWeighting = weighted, ...)
     }
     message("Estimating dispersions...")
     # dge <- estimateDisp(dge, design = design, ...)
@@ -259,3 +299,65 @@ setMethod(
 
 }
 
+#' @import SummarizedExperiment
+.se2Wald <- function(
+        x, assay, design, lib.size, norm, groups, offset, weighted, ...
+) {
+
+    mat <- assay(x, assay)
+    if (any(mat < 0)) stop("Counts cannot contain negative values")
+    if (anyNA(mat)) stop("Missing values detected")
+
+    col_df <- as_tibble(colData(x), rownames = "colnames")
+    ls <- colSums(mat)
+    if (!is.null(lib.size)) ls <- col_df[[lib.size]]
+
+    dotArgs <- list(...)
+
+    message("Creating DESeqDataSet...")
+    dds <- DESeq2::DESeqDataSetFromMatrix(mat, colData = col_df, design = design)
+    ## According to DiffBind, now we:
+    ## 1. Tidy up the offsets for DESeq2
+    if (!is.null(offset))
+        warning("The use of offsets with DESeq2 is not currently implemented")
+
+    ## 2. set Normalisaztion
+    ## The only time to use DESeq2 is when lib.size is NULL as this method only
+    ## allows for colSums as library sizes
+    nf <- rep_len(NA, ncol(mat)) # Should error out if something fails below
+    if (is.null(lib.size) & norm == "RLE" & is.null(groups)) {
+        message("Calculating default DESeq2 normalisation factors...")
+        nf <- DESeq2::estimateSizeFactorsForMatrix(mat)
+    } else {
+        if (is.null(groups)) {
+            message("Calculating ", norm, " normalisation factors...")
+            nf <- edgeR::normLibSizes(
+                mat, method = norm, lib.size = ls, doWeighting = weighted
+            )
+        } else {
+            message("Calculating ", norm, " normalisation factors by group...")
+            grp_fac <- as.factor(col_df[[groups]])
+            grp_lev <- levels(grp_fac)
+            for (i in grp_lev) {
+                idx <- grp_fac == i
+                nf[idx] <- edgeR::normLibSizes(
+                    mat[,idx], method = norm, lib.size = ls[idx],
+                    doWeighting = weighted
+                )
+            }
+        }
+    }
+    DESeq2::sizeFactors(dds) <- nf
+
+    ## 3. Estimate dispersions
+    ft <- "local"
+    if ("fitType" %in% names(dotArgs)) ft <- dotArgs$fitType
+    message("Estimating dispersions using fitType = ", ft, "...")
+    dds <- DESeq2::estimateDispersions(dds, fitType = ft)
+
+    ## 4. Fit (using nbinomWaldTest as default)
+    dds <- DESeq2::nbinomWaldTest(dds, modelMatrix = design)
+
+    ## Apply the fc threshold in the parent function
+    dds
+}

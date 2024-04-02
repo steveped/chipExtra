@@ -224,11 +224,11 @@ static double previous_oneminusalpha=-999.;
 static double previous_twominusalpha=-999.;
 
 static double sa2,nu,Calpha_M,midpoint,xi,ximid,xlowlimit;
-static double Clogd,alphastar,ratio,angle,C1,C2,C3,C4,eta;
+static double Clogd,alphastar,eta;
 static double ffound,dfound,logapprox,logscalef;
 
 /* Boolean variables stored as integers. */
-static int distributiontabulated, alphalarge;
+static int distributiontabulated;
 
 /* Interpolation table i gives values for density as di and for distribution */
 /* function (or its complement) as fi for nxi values of x and nyi values of y*/
@@ -4832,7 +4832,7 @@ static double tabled7 [ 2400 ]= {
 static void setalpha(double alpha, double oneminusalpha, double twominusalpha)
 {
     /* functions setalpha might be made faster by initializing arrays */
-    double sinangle, sinhalfangle;
+    double sinangle;
     int i;
 
     // /* If alpha is not in permissible range then print message but do nothing */
@@ -4890,8 +4890,7 @@ static void setalpha(double alpha, double oneminusalpha, double twominusalpha)
 
     sa2=twominusalpha/(2*alpha);
     Clogd=log(nu/sqrt(2*pi*alpha));
-    if(alpha < 1)sinangle=sin(hpi*alpha); else
-        sinangle=sin(hpi*twominusalpha);
+    sinangle=sin(hpi*twominusalpha);
     Calpha_M=exp(LogGamma(alpha))*sinangle/pi;
 
     interpolate_over_alpha(nx1,ny1,Vy1,alphastar,tablef1,tabled1,f1,d1,ydenom1);
@@ -4921,7 +4920,7 @@ void tailsMSS(int n,double x[],double d[],double logd[],double F[],
     // static const double roothalf=.7071067811865475244;
     // static const double log_density_mode2=-1.2655121234846454;
     // double z,y,dy,difference,logz,t,temp,temp2,approx,scale;
-    double z,y,dy,t,temp,scale;
+    double z,y,dy,t,scale;
     int i;
 
     /* If appropriate, set up for new alpha */
