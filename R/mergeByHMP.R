@@ -256,12 +256,12 @@ setMethod(
 )
 
 
-#' This is a modified version of harmonicmeanp::p.hmp developed by Prof Daniel
-#' Wilson, and hardwired to simply return a combined asymptotically exact HMP.
-#' Hardwiring like this gives a 10-fold speed-up. Further modifications may be
-#' possible, but this seems enough for now
-#' @param p vector of p-values
-#' @param w vector of weights
+# This is a modified version of harmonicmeanp::p.hmp developed by Prof Daniel
+# Wilson, and hardwired to simply return a combined asymptotically exact HMP.
+# Hardwiring like this gives a 10-fold speed-up. Further modifications may be
+# possible, but this seems enough for now
+# @param p vector of p-values
+# @param w vector of weights
 #' @useDynLib extraChIPs, .registration = TRUE
 #' @keywords internal
 .ec_HMP <- function(p, w) {
@@ -284,11 +284,11 @@ setMethod(
     Rcout$cF
 }
 
-#' Similar to the above, this produces the FWER-controlled version in a
-#' streamlined way
-#' @param p vector of p-values
-#' @param w vector of weights
-#' @param L Number of global tests
+# Similar to the above, this produces the FWER-controlled version in a
+# streamlined way
+# @param p vector of p-values
+# @param w vector of weights
+# @param L Number of global tests
 #' @useDynLib extraChIPs, .registration = TRUE
 #' @keywords internal
 .ec_HMP_adj <- function(p, w, L) {

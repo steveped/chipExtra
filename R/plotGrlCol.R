@@ -22,6 +22,8 @@
 #' able to be placed across the median values, or at the top and bottom
 #' extremes of the plot.
 #'
+#' @return A ggplot object
+#'
 #' @param x A GRangesList
 #' @param var The variable to plot. Either a column in the mcols element or
 #' width. Can be quoted or unquoted
