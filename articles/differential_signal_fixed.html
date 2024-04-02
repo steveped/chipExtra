@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>extraChIPs: Differential Signal Using Fixed-Width Windows • extraChIPs</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/simplex/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/simplex/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">extraChIPs</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.7.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.7.6</span>
       </span>
     </div>
 
@@ -266,32 +266,6 @@ lower, even in the sample with the strongest signal.</p>
 <span>  <span class="va">peaks</span>, min_size <span class="op">=</span> <span class="fl">10</span>, .sort_sets <span class="op">=</span> <span class="cn">FALSE</span>, var <span class="op">=</span> <span class="st">"score"</span>, f <span class="op">=</span> <span class="st">"max"</span>,</span>
 <span>   set_col <span class="op">=</span> <span class="va">treat_colours</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">as.character</a></span><span class="op">(</span><span class="va">samples</span><span class="op">$</span><span class="va">treatment</span><span class="op">)</span><span class="op">]</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## Warning in as.data.frame.logical(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.logical()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span>
-<span></span>
-<span><span class="co">## Warning in as.data.frame.logical(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.logical()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span>
-<span></span>
-<span><span class="co">## Warning in as.data.frame.logical(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.logical()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span>
-<span></span>
-<span><span class="co">## Warning in as.data.frame.logical(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.logical()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span>
-<span></span>
-<span><span class="co">## Warning in as.data.frame.logical(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.logical()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span>
-<span></span>
-<span><span class="co">## Warning in as.data.frame.logical(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.logical()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span></code></pre>
-<pre><code><span><span class="co">## Warning in as.data.frame.numeric(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.numeric()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span></code></pre>
 <div class="figure">
 <img src="differential_signal_fixed_files/figure-html/plot-overlaps-score-1.png" alt="*UpSet plot showing overlapping peaks across all replicates, with the maximum score across all replicates shown in the upper panel.*" width="700"><p class="caption">
 <em>UpSet plot showing overlapping peaks across all replicates, with the
@@ -307,7 +281,7 @@ peak was found.</p>
 <p>If we wish to retain any of the original columns, such as the
 <code>macs2 callpeak</code> score, we can simply pass the column names
 to <code><a href="../reference/makeConsensus.html">makeConsensus()</a></code></p>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">consensus_e2</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/makeConsensus.html">makeConsensus</a></span><span class="op">(</span><span class="va">peaks</span><span class="op">[</span><span class="va">accessions</span><span class="op">$</span><span class="va">E2</span><span class="op">]</span>, p <span class="op">=</span> <span class="fl">2</span><span class="op">/</span><span class="fl">3</span>, var <span class="op">=</span> <span class="st">"score"</span><span class="op">)</span></span>
 <span><span class="va">consensus_e2dht</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/makeConsensus.html">makeConsensus</a></span><span class="op">(</span><span class="va">peaks</span><span class="op">[</span><span class="va">accessions</span><span class="op">$</span><span class="va">E2DHT</span><span class="op">]</span>, p <span class="op">=</span> <span class="fl">2</span><span class="op">/</span><span class="fl">3</span>, var <span class="op">=</span> <span class="st">"score"</span><span class="op">)</span></span></code></pre></div>
 <p>Alternatively, we could find the centre of the peaks as part of this
@@ -321,7 +295,7 @@ this column when calling <code><a href="../reference/makeConsensus.html">makeCon
 each of the individual centre-position estimates as a list for each
 merged range, and using <code><a href="https://rdrr.io/r/base/lapply.html" class="external-link">vapply()</a></code> we then take the mean
 position as our estimate for the combined peak centre.</p>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">consensus_e2</span> <span class="op">&lt;-</span> <span class="va">peaks</span><span class="op">[</span><span class="va">accessions</span><span class="op">$</span><span class="va">E2</span><span class="op">]</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
 <span>  <span class="fu">endoapply</span><span class="op">(</span><span class="va">mutate</span>, centre <span class="op">=</span> <span class="va">start</span> <span class="op">+</span> <span class="va">peak</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="../reference/makeConsensus.html">makeConsensus</a></span><span class="op">(</span>p <span class="op">=</span> <span class="fl">2</span><span class="op">/</span><span class="fl">3</span>, var <span class="op">=</span> <span class="st">"centre"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
@@ -356,7 +330,7 @@ position as our estimate for the combined peak centre.</p>
 <span><span class="co">##   [164]       TRUE         2</span></span>
 <span><span class="co">##   -------</span></span>
 <span><span class="co">##   seqinfo: 25 sequences from GRCh37 genome</span></span></code></pre>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">consensus_e2dht</span> <span class="op">&lt;-</span> <span class="va">peaks</span><span class="op">[</span><span class="va">accessions</span><span class="op">$</span><span class="va">E2DHT</span><span class="op">]</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
 <span>  <span class="fu">endoapply</span><span class="op">(</span><span class="va">mutate</span>, centre <span class="op">=</span> <span class="va">start</span> <span class="op">+</span> <span class="va">peak</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="../reference/makeConsensus.html">makeConsensus</a></span><span class="op">(</span>p <span class="op">=</span> <span class="fl">2</span><span class="op">/</span><span class="fl">3</span>, var <span class="op">=</span> <span class="st">"centre"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
@@ -365,7 +339,7 @@ position as our estimate for the combined peak centre.</p>
 we use a <code>GRangesList</code> for the input. Now that we only have
 two elements (one for each treatment) a VennDiagram will be generated
 instead of an UpSet plot.</p>
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/GenomicRanges/man/GRangesList-class.html" class="external-link">GRangesList</a></span><span class="op">(</span>E2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/GenomicRanges/man/genomic-range-squeezers.html" class="external-link">granges</a></span><span class="op">(</span><span class="va">consensus_e2</span><span class="op">)</span>, E2DHT <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/GenomicRanges/man/genomic-range-squeezers.html" class="external-link">granges</a></span><span class="op">(</span><span class="va">consensus_e2dht</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="../reference/plotOverlaps-methods.html">plotOverlaps</a></span><span class="op">(</span>set_col <span class="op">=</span> <span class="va">treat_colours</span><span class="op">[</span><span class="va">treat_levels</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
 <div class="figure">
@@ -377,7 +351,7 @@ manner</em>
 <p>We can now go one step further and define the set of peaks found in
 either treatment. Given we’re being inclusive here, we can leave p = 0
 so any peak found in <em>either treatment</em> is included.</p>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">union_peaks</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/GenomicRanges/man/GRangesList-class.html" class="external-link">GRangesList</a></span><span class="op">(</span></span>
 <span>  E2 <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">consensus_e2</span>, <span class="va">centre</span><span class="op">)</span>, </span>
 <span>  E2DHT <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">consensus_e2dht</span>, <span class="va">centre</span><span class="op">)</span></span>
@@ -408,7 +382,7 @@ place them as the core set of GRanges for this object.</li>
 </ol>
 <p>This gives a GRanges object with all original information, but with
 centred peaks of a fixed width.</p>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">w</span> <span class="op">&lt;-</span> <span class="fl">500</span></span>
 <span><span class="va">centred_peaks</span> <span class="op">&lt;-</span> <span class="va">union_peaks</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span></span>
@@ -426,9 +400,9 @@ centred peaks of a fixed width.</p>
 <code><a href="https://rdrr.io/pkg/csaw/man/regionCounts.html" class="external-link">csaw::regionCounts()</a></code> (Lun and Smyth 2016). We know our
 fragment length is about 200bp, so we can pass this to the function for
 a slightly more sophisticated approach to counting.</p>
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">se</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/csaw/man/regionCounts.html" class="external-link">regionCounts</a></span><span class="op">(</span><span class="va">bfl</span>, <span class="va">centred_peaks</span>, ext <span class="op">=</span> <span class="fl">200</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">se</span></span></code></pre></div>
 <pre><code><span><span class="co">## class: RangedSummarizedExperiment </span></span>
 <span><span class="co">## dim: 188 6 </span></span>
@@ -446,26 +420,14 @@ to a <code>tibble</code>, 2) <code><a href="https://dplyr.tidyverse.org/referenc
 <code>samples</code> object, 3) add the accession as the sample column,
 4) set the accession back as the rownames, then 5) coerce back to the
 required <code>DataFrame()</code> structure.</p>
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html" class="external-link">colData</a></span><span class="op">(</span><span class="va">se</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html" class="external-link">colData</a></span><span class="op">(</span><span class="va">se</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="../reference/as_tibble.html">as_tibble</a></span><span class="op">(</span>rownames <span class="op">=</span> <span class="st">"accession"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">left_join</a></span><span class="op">(</span><span class="va">samples</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>sample <span class="op">=</span> <span class="va">accession</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/BiocGenerics/man/as.data.frame.html" class="external-link">as.data.frame</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
-<span>  <span class="fu">DataFrame</span><span class="op">(</span>row.names <span class="op">=</span> <span class="va">.</span><span class="op">$</span><span class="va">accession</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## Warning in as.data.frame.integer(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.integer()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span>
-<span></span>
-<span><span class="co">## Warning in as.data.frame.integer(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.integer()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span>
-<span></span>
-<span><span class="co">## Warning in as.data.frame.integer(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.integer()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span></code></pre>
-<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html" class="external-link">colData</a></span><span class="op">(</span><span class="va">se</span><span class="op">)</span></span></code></pre></div>
+<span>  <span class="fu">DataFrame</span><span class="op">(</span>row.names <span class="op">=</span> <span class="va">.</span><span class="op">$</span><span class="va">accession</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html" class="external-link">colData</a></span><span class="op">(</span><span class="va">se</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## DataFrame with 6 rows and 8 columns</span></span>
 <span><span class="co">##              accession              bam.files    totals       ext      rlen</span></span>
 <span><span class="co">##            &lt;character&gt;            &lt;character&gt; &lt;integer&gt; &lt;integer&gt; &lt;integer&gt;</span></span>
@@ -485,26 +447,12 @@ required <code>DataFrame()</code> structure.</p>
 <span><span class="co">## SRR8315185          ER     E2DHT  SRR8315185</span></span></code></pre>
 <p>For QC and visualisation, we can add an additional
 <code>logCPM</code> assay to our object as well.</p>
-<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html" class="external-link">assay</a></span><span class="op">(</span><span class="va">se</span>, <span class="st">"logCPM"</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/edgeR/man/cpm.html" class="external-link">cpm</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html" class="external-link">assay</a></span><span class="op">(</span><span class="va">se</span>, <span class="st">"counts"</span><span class="op">)</span>, lib.size <span class="op">=</span> <span class="va">se</span><span class="op">$</span><span class="va">totals</span>, log <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <p>First we might like to check our distribution of counts</p>
-<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/plotAssayDensities-methods.html">plotAssayDensities</a></span><span class="op">(</span><span class="va">se</span>, assay <span class="op">=</span> <span class="st">"counts"</span>, colour <span class="op">=</span> <span class="st">"treat"</span>, trans <span class="op">=</span> <span class="st">"log1p"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html" class="external-link">scale_colour_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="va">treat_colours</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## Warning in as.data.frame.integer(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.integer()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span>
-<span></span>
-<span><span class="co">## Warning in as.data.frame.integer(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.integer()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span>
-<span></span>
-<span><span class="co">## Warning in as.data.frame.integer(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.integer()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span></code></pre>
-<pre><code><span><span class="co">## Warning in as.data.frame.factor(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.factor()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span></code></pre>
 <div class="figure">
 <img src="differential_signal_fixed_files/figure-html/plot-assay-densities-1.png" alt="*Count densities for all samples, using the log+1 transformation*" width="700"><p class="caption">
 <em>Count densities for all samples, using the log+1 transformation</em>
@@ -512,23 +460,9 @@ required <code>DataFrame()</code> structure.</p>
 </div>
 <p>A PCA plot can also provide insight as to where the variability in
 the data lies.</p>
-<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/plotAssayPCA-methods.html">plotAssayPCA</a></span><span class="op">(</span><span class="va">se</span>, assay <span class="op">=</span> <span class="st">"logCPM"</span>, colour <span class="op">=</span> <span class="st">"treat"</span>, label <span class="op">=</span> <span class="st">"sample"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html" class="external-link">scale_colour_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="va">treat_colours</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## Warning in as.data.frame.integer(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.integer()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span>
-<span></span>
-<span><span class="co">## Warning in as.data.frame.integer(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.integer()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span>
-<span></span>
-<span><span class="co">## Warning in as.data.frame.integer(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.integer()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span></code></pre>
-<pre><code><span><span class="co">## Warning in as.data.frame.factor(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.factor()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span></code></pre>
 <div class="figure">
 <img src="differential_signal_fixed_files/figure-html/plot-pca-1.png" alt="*PCA plot using logCPM values and showing that replicate variability is larger than variability between treatment groups.*" width="700"><p class="caption">
 <em>PCA plot using logCPM values and showing that replicate variability
@@ -550,63 +484,10 @@ normalisation will be <em>library-size</em> normalisation, as is a
 common default strategy for ChIP-Seq data. In contrast to sliding window
 approaches, these results represent our final results and there is no
 need for merging windows.</p>
-<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">X</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/model.matrix.html" class="external-link">model.matrix</a></span><span class="op">(</span><span class="op">~</span><span class="va">treatment</span>, data <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html" class="external-link">colData</a></span><span class="op">(</span><span class="va">se</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## Warning in as.data.frame.integer(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.integer()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span>
-<span></span>
-<span><span class="co">## Warning in as.data.frame.integer(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.integer()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span>
-<span></span>
-<span><span class="co">## Warning in as.data.frame.integer(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.integer()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span></code></pre>
-<pre><code><span><span class="co">## Warning in as.data.frame.factor(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.factor()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span></code></pre>
-<pre><code><span><span class="co">## Warning in as.data.frame.integer(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.integer()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span>
-<span></span>
-<span><span class="co">## Warning in as.data.frame.integer(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.integer()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span>
-<span></span>
-<span><span class="co">## Warning in as.data.frame.integer(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.integer()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span></code></pre>
-<pre><code><span><span class="co">## Warning in as.data.frame.factor(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.factor()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span></code></pre>
-<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">ls_res</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fitAssayDiff-methods.html">fitAssayDiff</a></span><span class="op">(</span><span class="va">se</span>, design <span class="op">=</span> <span class="va">X</span>, asRanges <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## Warning in as.data.frame.integer(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.integer()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span></code></pre>
-<pre><code><span><span class="co">## Warning in as.data.frame.integer(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.integer()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span>
-<span></span>
-<span><span class="co">## Warning in as.data.frame.integer(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.integer()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span></code></pre>
-<pre><code><span><span class="co">## Warning in as.data.frame.factor(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.factor()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span></code></pre>
-<pre><code><span><span class="co">## Warning in as.data.frame.logical(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.logical()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span>
-<span></span>
-<span><span class="co">## Warning in as.data.frame.logical(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.logical()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span></code></pre>
-<pre><code><span><span class="co">## Warning in as.data.frame.numeric(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.numeric()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span></code></pre>
-<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">ls_res</span><span class="op">$</span><span class="va">FDR</span> <span class="op">&lt;</span> <span class="fl">0.05</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">X</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/model.matrix.html" class="external-link">model.matrix</a></span><span class="op">(</span><span class="op">~</span><span class="va">treatment</span>, data <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html" class="external-link">colData</a></span><span class="op">(</span><span class="va">se</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">ls_res</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fitAssayDiff-methods.html">fitAssayDiff</a></span><span class="op">(</span><span class="va">se</span>, design <span class="op">=</span> <span class="va">X</span>, asRanges <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">ls_res</span><span class="op">$</span><span class="va">FDR</span> <span class="op">&lt;</span> <span class="fl">0.05</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] 3</span></span></code></pre>
 <p>TMM normalisation (Robinson and Oshlack 2010) is another common
 strategy, which relies on the data from all treatment groups being drawn
@@ -615,7 +496,7 @@ from the same distributions. We can formally test this using the package
 for 1) H<sub>0</sub>: Group medians are drawn from the same
 distribution, and 2) H<sub>0</sub>: Group-specific distributions are the
 same.</p>
-<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span></span>
 <span><span class="va">qtest</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html" class="external-link">assay</a></span><span class="op">(</span><span class="va">se</span>, <span class="st">"counts"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/quantro/man/quantro.html" class="external-link">quantro</a></span><span class="op">(</span>groupFactor <span class="op">=</span> <span class="va">se</span><span class="op">$</span><span class="va">treatment</span>, B <span class="op">=</span> <span class="fl">1e3</span><span class="op">)</span></span>
@@ -635,41 +516,16 @@ specified a fold-change threshold <code>(fc = 1.2)</code>, below which,
 changes in signal are considered to not be of interest (McCarthy and
 Smyth 2009). This threshold is incorporated into the testing so there is
 no requirement for <em>post-hoc</em> filtering based on a threshold.</p>
-<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">tmm_res</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fitAssayDiff-methods.html">fitAssayDiff</a></span><span class="op">(</span><span class="va">se</span>, design <span class="op">=</span> <span class="va">X</span>, norm <span class="op">=</span> <span class="st">"TMM"</span>, asRanges <span class="op">=</span> <span class="cn">TRUE</span>, fc <span class="op">=</span> <span class="fl">1.2</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## Warning in as.data.frame.integer(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.integer()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span>
-<span></span>
-<span><span class="co">## Warning in as.data.frame.integer(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.integer()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span>
-<span></span>
-<span><span class="co">## Warning in as.data.frame.integer(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.integer()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span></code></pre>
-<pre><code><span><span class="co">## Warning in as.data.frame.factor(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.factor()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span></code></pre>
-<pre><code><span><span class="co">## Warning in as.data.frame.logical(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.logical()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span>
-<span></span>
-<span><span class="co">## Warning in as.data.frame.logical(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.logical()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span></code></pre>
-<pre><code><span><span class="co">## Warning in as.data.frame.numeric(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.numeric()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span></code></pre>
-<div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">tmm_res</span><span class="op">$</span><span class="va">FDR</span> <span class="op">&lt;</span> <span class="fl">0.05</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">tmm_res</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fitAssayDiff-methods.html">fitAssayDiff</a></span><span class="op">(</span><span class="va">se</span>, design <span class="op">=</span> <span class="va">X</span>, norm <span class="op">=</span> <span class="st">"TMM"</span>, asRanges <span class="op">=</span> <span class="cn">TRUE</span>, fc <span class="op">=</span> <span class="fl">1.2</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">tmm_res</span><span class="op">$</span><span class="va">FDR</span> <span class="op">&lt;</span> <span class="fl">0.05</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] 7</span></span></code></pre>
 <p>An MA-plot is a common way of inspecting results and in the following
 we use the original ‘union_peak’ in our labelling of points. This serves
 as a reminder that the fixed-width windows are in fact <em>a proxy</em>
 for the entire region for which we have confidently detected ChIP
 signal, and that these windows are truly the regions of interest.</p>
-<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">tmm_res</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="../reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>`FDR &lt; 0.05` <span class="op">=</span> <span class="va">FDR</span> <span class="op">&lt;</span> <span class="fl">0.05</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
@@ -681,36 +537,6 @@ signal, and that these windows are truly the regions of interest.</p>
 <span>    data <span class="op">=</span> <span class="va">.</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">FDR</span> <span class="op">&lt;</span> <span class="fl">0.05</span><span class="op">)</span></span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html" class="external-link">scale_colour_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"black"</span>, <span class="st">"red"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## Warning in as.data.frame.logical(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.logical()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span>
-<span></span>
-<span><span class="co">## Warning in as.data.frame.logical(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.logical()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span></code></pre>
-<pre><code><span><span class="co">## Warning in as.data.frame.numeric(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.numeric()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span>
-<span></span>
-<span><span class="co">## Warning in as.data.frame.numeric(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.numeric()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span>
-<span></span>
-<span><span class="co">## Warning in as.data.frame.numeric(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.numeric()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span>
-<span></span>
-<span><span class="co">## Warning in as.data.frame.numeric(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.numeric()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span>
-<span></span>
-<span><span class="co">## Warning in as.data.frame.numeric(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.numeric()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span>
-<span></span>
-<span><span class="co">## Warning in as.data.frame.numeric(col, optional = optional): Direct call of</span></span>
-<span><span class="co">## 'as.data.frame.numeric()' is deprecated.  Use 'as.data.frame.vector()' or</span></span>
-<span><span class="co">## 'as.data.frame()' instead</span></span></code></pre>
 <div class="figure">
 <img src="differential_signal_fixed_files/figure-html/plot-ma-1.png" alt="*MA-plot after fitting using TMM normalisation and applying a fold-change threshold during testing. Points are labelled using the original windows obtained when merging replicates and treatment groups.*" width="700"><p class="caption">
 <em>MA-plot after fitting using TMM normalisation and applying a
@@ -729,7 +555,7 @@ regulatory consequences, such as the target gene. Before we can map
 peaks to genes, we’ll need to define our genes. In the following, we’ll
 use the provided Gencode gene mappings at the gene, transcript and exon
 level.</p>
-<div class="sourceCode" id="cb63"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">gencode</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://here.r-lib.org//reference/here.html" class="external-link">here</a></span><span class="op">(</span><span class="st">"data/gencode.v43lift37.chr10.annotation.gtf.gz"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/rtracklayer/man/GFFFile-class.html" class="external-link">import.gff</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/plyranges/man/ranges-filter-overlaps.html" class="external-link">filter_by_overlaps</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/GenomicRanges/man/GRanges-class.html" class="external-link">GRanges</a></span><span class="op">(</span><span class="st">"chr10:42354900-100000000"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
@@ -742,7 +568,7 @@ long-range interaction. Here we’ll just use promoters, so let’s create a
 set of promoters from our transcript-level information, ensuring we
 incorporate all possible promoters within a gene, and merging any
 overlapping ranges using <code><a href="../reference/reduceMC.html">reduceMC()</a></code></p>
-<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">promoters</span> <span class="op">&lt;-</span> <span class="va">gencode</span><span class="op">$</span><span class="va">transcript</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
 <span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">gene_id</span>, <span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html" class="external-link">ends_with</a></span><span class="op">(</span><span class="st">"name"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
 <span>    <span class="fu"><a href="https://rdrr.io/pkg/IRanges/man/intra-range-methods.html" class="external-link">promoters</a></span><span class="op">(</span>upstream <span class="op">=</span> <span class="fl">2500</span>, downstream <span class="op">=</span> <span class="fl">500</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
@@ -807,7 +633,7 @@ overlapping ranges using <code><a href="../reference/reduceMC.html">reduceMC()</
 place the original ‘union_peak’ back as the core of the GRanges object.
 This will retain all the results from testing, but ensures the correct
 region is mapped to genes.</p>
-<div class="sourceCode" id="cb66"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">tmm_mapped_res</span> <span class="op">&lt;-</span> <span class="va">tmm_res</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="../reference/colToRanges-methods.html">colToRanges</a></span><span class="op">(</span><span class="st">"union_peak"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="../reference/mapByFeature.html">mapByFeature</a></span><span class="op">(</span>genes <span class="op">=</span> <span class="va">gencode</span><span class="op">$</span><span class="va">gene</span>, prom <span class="op">=</span> <span class="va">promoters</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
@@ -893,7 +719,7 @@ we can use fold-enrichment over the input sample(s), as is also produced
 by <code>macs2 bdgcmp</code>. This data isn’t generally visualised using
 log-transformation so we’ll set <code>log = FALSE</code> in our call to
 <code><a href="../reference/getProfileData-methods.html">getProfileData()</a></code></p>
-<div class="sourceCode" id="cb68"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">fe_bw</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://here.r-lib.org//reference/here.html" class="external-link">here</a></span><span class="op">(</span><span class="st">"data"</span>, <span class="st">"ER"</span>, <span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{treat_levels}_FE_chr10.bw"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/rtracklayer/man/BigWigFile.html" class="external-link">BigWigFileList</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/stats/setNames.html" class="external-link">setNames</a></span><span class="op">(</span><span class="va">treat_levels</span><span class="op">)</span></span>
@@ -907,9 +733,9 @@ log-transformation so we’ll set <code>log = FALSE</code> in our call to
 <div class="section level3">
 <h3 id="session-info">Session Info<a class="anchor" aria-label="anchor" href="#session-info"></a>
 </h3>
-<div class="sourceCode" id="cb69"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## R Under development (unstable) (2024-03-06 r86056)</span></span>
+<pre><code><span><span class="co">## R Under development (unstable) (2024-03-28 r86224)</span></span>
 <span><span class="co">## Platform: x86_64-pc-linux-gnu</span></span>
 <span><span class="co">## Running under: Ubuntu 22.04.4 LTS</span></span>
 <span><span class="co">## </span></span>
@@ -936,16 +762,16 @@ log-transformation so we’ll set <code>log = FALSE</code> in our call to
 <span><span class="co">##  [1] quantro_1.37.0              here_1.0.1                 </span></span>
 <span><span class="co">##  [3] ggrepel_0.9.5               glue_1.7.0                 </span></span>
 <span><span class="co">##  [5] scales_1.3.0                plyranges_1.23.0           </span></span>
-<span><span class="co">##  [7] extraChIPs_1.7.5            ggside_0.3.1               </span></span>
-<span><span class="co">##  [9] patchwork_1.2.0             edgeR_4.1.18               </span></span>
-<span><span class="co">## [11] limma_3.59.5                rtracklayer_1.63.0         </span></span>
+<span><span class="co">##  [7] extraChIPs_1.7.6            ggside_0.3.1               </span></span>
+<span><span class="co">##  [9] patchwork_1.2.0             edgeR_4.1.19               </span></span>
+<span><span class="co">## [11] limma_3.59.6                rtracklayer_1.63.1         </span></span>
 <span><span class="co">## [13] BiocParallel_1.37.1         csaw_1.37.1                </span></span>
-<span><span class="co">## [15] SummarizedExperiment_1.33.3 Biobase_2.63.0             </span></span>
+<span><span class="co">## [15] SummarizedExperiment_1.33.3 Biobase_2.63.1             </span></span>
 <span><span class="co">## [17] MatrixGenerics_1.15.0       matrixStats_1.2.0          </span></span>
-<span><span class="co">## [19] Rsamtools_2.19.3            Biostrings_2.71.2          </span></span>
-<span><span class="co">## [21] XVector_0.43.1              GenomicRanges_1.55.3       </span></span>
-<span><span class="co">## [23] GenomeInfoDb_1.39.8         IRanges_2.37.1             </span></span>
-<span><span class="co">## [25] S4Vectors_0.41.4            BiocGenerics_0.49.1        </span></span>
+<span><span class="co">## [19] Rsamtools_2.19.4            Biostrings_2.71.5          </span></span>
+<span><span class="co">## [21] XVector_0.43.1              GenomicRanges_1.55.4       </span></span>
+<span><span class="co">## [23] GenomeInfoDb_1.39.9         IRanges_2.37.1             </span></span>
+<span><span class="co">## [25] S4Vectors_0.41.5            BiocGenerics_0.49.1        </span></span>
 <span><span class="co">## [27] lubridate_1.9.3             forcats_1.0.0              </span></span>
 <span><span class="co">## [29] stringr_1.5.1               dplyr_1.1.4                </span></span>
 <span><span class="co">## [31] purrr_1.0.2                 readr_2.1.5                </span></span>
@@ -954,77 +780,77 @@ log-transformation so we’ll set <code>log = FALSE</code> in our call to
 <span><span class="co">## [37] BiocStyle_2.31.0           </span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## loaded via a namespace (and not attached):</span></span>
-<span><span class="co">##   [1] fs_1.6.3                   ProtGenerics_1.35.3       </span></span>
+<span><span class="co">##   [1] fs_1.6.3                   ProtGenerics_1.35.4       </span></span>
 <span><span class="co">##   [3] bitops_1.0-7               httr_1.4.7                </span></span>
 <span><span class="co">##   [5] RColorBrewer_1.1-3         doParallel_1.0.17         </span></span>
-<span><span class="co">##   [7] InteractionSet_1.31.0      tools_4.4.0               </span></span>
+<span><span class="co">##   [7] InteractionSet_1.31.0      tools_4.5.0               </span></span>
 <span><span class="co">##   [9] doRNG_1.8.6                backports_1.4.1           </span></span>
 <span><span class="co">##  [11] utf8_1.2.4                 R6_2.5.1                  </span></span>
 <span><span class="co">##  [13] HDF5Array_1.31.6           mgcv_1.9-1                </span></span>
 <span><span class="co">##  [15] lazyeval_0.2.2             Gviz_1.47.1               </span></span>
-<span><span class="co">##  [17] rhdf5filters_1.15.2        withr_3.0.0               </span></span>
+<span><span class="co">##  [17] rhdf5filters_1.15.4        withr_3.0.0               </span></span>
 <span><span class="co">##  [19] prettyunits_1.2.0          gridExtra_2.3             </span></span>
 <span><span class="co">##  [21] base64_2.0.1               VennDiagram_1.7.3         </span></span>
 <span><span class="co">##  [23] preprocessCore_1.65.0      cli_3.6.2                 </span></span>
 <span><span class="co">##  [25] textshaping_0.3.7          formatR_1.14              </span></span>
-<span><span class="co">##  [27] labeling_0.4.3             sass_0.4.8                </span></span>
+<span><span class="co">##  [27] labeling_0.4.3             sass_0.4.9                </span></span>
 <span><span class="co">##  [29] genefilter_1.85.1          askpass_1.2.0             </span></span>
 <span><span class="co">##  [31] pkgdown_2.0.7.9000         systemfonts_1.0.6         </span></span>
 <span><span class="co">##  [33] foreign_0.8-86             siggenes_1.77.0           </span></span>
 <span><span class="co">##  [35] illuminaio_0.45.0          dichromat_2.0-0.1         </span></span>
-<span><span class="co">##  [37] scrime_1.3.5               BSgenome_1.71.2           </span></span>
-<span><span class="co">##  [39] rstudioapi_0.15.0          RSQLite_2.3.5             </span></span>
+<span><span class="co">##  [37] scrime_1.3.5               BSgenome_1.71.4           </span></span>
+<span><span class="co">##  [39] rstudioapi_0.16.0          RSQLite_2.3.6             </span></span>
 <span><span class="co">##  [41] generics_0.1.3             BiocIO_1.13.0             </span></span>
-<span><span class="co">##  [43] Matrix_1.6-5               interp_1.1-6              </span></span>
+<span><span class="co">##  [43] Matrix_1.7-0               interp_1.1-6              </span></span>
 <span><span class="co">##  [45] futile.logger_1.4.3        fansi_1.0.6               </span></span>
 <span><span class="co">##  [47] abind_1.4-5                lifecycle_1.0.4           </span></span>
-<span><span class="co">##  [49] yaml_2.3.8                 rhdf5_2.47.5              </span></span>
-<span><span class="co">##  [51] SparseArray_1.3.4          BiocFileCache_2.11.1      </span></span>
-<span><span class="co">##  [53] grid_4.4.0                 blob_1.2.4                </span></span>
-<span><span class="co">##  [55] crayon_1.5.2               lattice_0.22-5            </span></span>
-<span><span class="co">##  [57] ComplexUpset_1.3.3         GenomicFeatures_1.55.3    </span></span>
+<span><span class="co">##  [49] yaml_2.3.8                 rhdf5_2.47.6              </span></span>
+<span><span class="co">##  [51] SparseArray_1.3.4          BiocFileCache_2.11.2      </span></span>
+<span><span class="co">##  [53] grid_4.5.0                 blob_1.2.4                </span></span>
+<span><span class="co">##  [55] crayon_1.5.2               lattice_0.22-6            </span></span>
+<span><span class="co">##  [57] ComplexUpset_1.3.3         GenomicFeatures_1.55.4    </span></span>
 <span><span class="co">##  [59] annotate_1.81.2            KEGGREST_1.43.0           </span></span>
 <span><span class="co">##  [61] pillar_1.9.0               knitr_1.45                </span></span>
 <span><span class="co">##  [63] beanplot_1.3.1             metapod_1.11.1            </span></span>
-<span><span class="co">##  [65] rjson_0.2.21               codetools_0.2-19          </span></span>
-<span><span class="co">##  [67] data.table_1.15.2          vctrs_0.6.5               </span></span>
+<span><span class="co">##  [65] rjson_0.2.21               codetools_0.2-20          </span></span>
+<span><span class="co">##  [67] data.table_1.15.4          vctrs_0.6.5               </span></span>
 <span><span class="co">##  [69] png_0.1-8                  gtable_0.3.4              </span></span>
-<span><span class="co">##  [71] cachem_1.0.8               xfun_0.42                 </span></span>
+<span><span class="co">##  [71] cachem_1.0.8               xfun_0.43                 </span></span>
 <span><span class="co">##  [73] S4Arrays_1.3.6             survival_3.5-8            </span></span>
 <span><span class="co">##  [75] iterators_1.0.14           statmod_1.5.0             </span></span>
 <span><span class="co">##  [77] GenomicInteractions_1.37.0 nlme_3.1-164              </span></span>
 <span><span class="co">##  [79] bit64_4.0.5                progress_1.2.3            </span></span>
 <span><span class="co">##  [81] filelock_1.0.3             rprojroot_2.0.4           </span></span>
-<span><span class="co">##  [83] bslib_0.6.1                nor1mix_1.3-2             </span></span>
+<span><span class="co">##  [83] bslib_0.7.0                nor1mix_1.3-2             </span></span>
 <span><span class="co">##  [85] rpart_4.1.23               colorspace_2.1-0          </span></span>
-<span><span class="co">##  [87] DBI_1.2.2                  Hmisc_5.1-1               </span></span>
-<span><span class="co">##  [89] nnet_7.3-19                tidyselect_1.2.0          </span></span>
-<span><span class="co">##  [91] bit_4.0.5                  compiler_4.4.0            </span></span>
-<span><span class="co">##  [93] curl_5.2.1                 httr2_1.0.0               </span></span>
+<span><span class="co">##  [87] DBI_1.2.2                  Hmisc_5.1-2               </span></span>
+<span><span class="co">##  [89] nnet_7.3-19                tidyselect_1.2.1          </span></span>
+<span><span class="co">##  [91] bit_4.0.5                  compiler_4.5.0            </span></span>
+<span><span class="co">##  [93] curl_5.2.1                 httr2_1.0.1               </span></span>
 <span><span class="co">##  [95] htmlTable_2.4.2            xml2_1.3.6                </span></span>
 <span><span class="co">##  [97] desc_1.4.3                 DelayedArray_0.29.9       </span></span>
 <span><span class="co">##  [99] bookdown_0.38              checkmate_2.3.1           </span></span>
 <span><span class="co">## [101] quadprog_1.5-8             rappdirs_0.3.3            </span></span>
-<span><span class="co">## [103] digest_0.6.34              rmarkdown_2.26            </span></span>
-<span><span class="co">## [105] GEOquery_2.71.0            htmltools_0.5.7           </span></span>
+<span><span class="co">## [103] digest_0.6.35              rmarkdown_2.26            </span></span>
+<span><span class="co">## [105] GEOquery_2.71.0            htmltools_0.5.8           </span></span>
 <span><span class="co">## [107] pkgconfig_2.0.3            jpeg_0.1-10               </span></span>
 <span><span class="co">## [109] base64enc_0.1-3            sparseMatrixStats_1.15.0  </span></span>
-<span><span class="co">## [111] highr_0.10                 dbplyr_2.4.0              </span></span>
+<span><span class="co">## [111] highr_0.10                 dbplyr_2.5.0              </span></span>
 <span><span class="co">## [113] fastmap_1.1.1              ensembldb_2.27.1          </span></span>
 <span><span class="co">## [115] rlang_1.1.3                htmlwidgets_1.6.4         </span></span>
 <span><span class="co">## [117] DelayedMatrixStats_1.25.1  farver_2.1.1              </span></span>
 <span><span class="co">## [119] jquerylib_0.1.4            jsonlite_1.8.8            </span></span>
-<span><span class="co">## [121] mclust_6.1                 VariantAnnotation_1.49.6  </span></span>
+<span><span class="co">## [121] mclust_6.1                 VariantAnnotation_1.49.7  </span></span>
 <span><span class="co">## [123] RCurl_1.98-1.14            magrittr_2.0.3            </span></span>
-<span><span class="co">## [125] Formula_1.2-5              GenomeInfoDbData_1.2.11   </span></span>
-<span><span class="co">## [127] Rhdf5lib_1.25.1            munsell_0.5.0             </span></span>
+<span><span class="co">## [125] Formula_1.2-5              GenomeInfoDbData_1.2.12   </span></span>
+<span><span class="co">## [127] Rhdf5lib_1.25.1            munsell_0.5.1             </span></span>
 <span><span class="co">## [129] Rcpp_1.0.12                stringi_1.8.3             </span></span>
-<span><span class="co">## [131] zlibbioc_1.49.0            MASS_7.3-60.2             </span></span>
-<span><span class="co">## [133] plyr_1.8.9                 bumphunter_1.45.0         </span></span>
-<span><span class="co">## [135] minfi_1.49.1               parallel_4.4.0            </span></span>
-<span><span class="co">## [137] deldir_2.0-4               splines_4.4.0             </span></span>
+<span><span class="co">## [131] zlibbioc_1.49.3            MASS_7.3-60.2             </span></span>
+<span><span class="co">## [133] plyr_1.8.9                 bumphunter_1.45.1         </span></span>
+<span><span class="co">## [135] minfi_1.49.1               parallel_4.5.0            </span></span>
+<span><span class="co">## [137] deldir_2.0-4               splines_4.5.0             </span></span>
 <span><span class="co">## [139] multtest_2.59.0            hms_1.1.3                 </span></span>
-<span><span class="co">## [141] locfit_1.5-9.9             igraph_2.0.2              </span></span>
+<span><span class="co">## [141] locfit_1.5-9.9             igraph_2.0.3              </span></span>
 <span><span class="co">## [143] rngtools_1.5.2             biomaRt_2.59.1            </span></span>
 <span><span class="co">## [145] futile.options_1.0.1       XML_3.99-0.16.1           </span></span>
 <span><span class="co">## [147] evaluate_0.23              latticeExtra_0.6-30       </span></span>
@@ -1035,8 +861,8 @@ log-transformation so we’ll set <code>log = FALSE</code> in our call to
 <span><span class="co">## [157] reshape_0.8.9              ggforce_0.4.2             </span></span>
 <span><span class="co">## [159] broom_1.0.5                xtable_1.8-4              </span></span>
 <span><span class="co">## [161] restfulr_0.0.15            AnnotationFilter_1.27.0   </span></span>
-<span><span class="co">## [163] ragg_1.2.7                 memoise_2.0.1             </span></span>
-<span><span class="co">## [165] AnnotationDbi_1.65.2       GenomicAlignments_1.39.4  </span></span>
+<span><span class="co">## [163] ragg_1.3.0                 memoise_2.0.1             </span></span>
+<span><span class="co">## [165] AnnotationDbi_1.65.2       GenomicAlignments_1.39.5  </span></span>
 <span><span class="co">## [167] cluster_2.1.6              timechange_0.3.0</span></span></code></pre>
 </div>
 <div class="section level3">
