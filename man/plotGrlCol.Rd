@@ -70,6 +70,9 @@ otherwise}
 
 \item{digits}{Number of decimal places for the horizontal line label}
 }
+\value{
+A ggplot object
+}
 \description{
 Draw a plot from a GRangesList column using ggplot2
 }
