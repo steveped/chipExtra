@@ -4,23 +4,22 @@
 #'
 #' @details
 #' This function takes CPM or logCPM values and estimates the precision weights
-#' as would be done by providing counts directly to the \code{\link{voom}}
-#' function.
+#' as would be done by providing counts directly to \link[limma]{voom}.
 #' Using this function enables the use of logCPM values which have been
 #' normalised using other methods such as Conditional-Quantile or
 #' Smooth-Quantile Normalisation.
 #'
 #' The precision weights are returned as part of the \code{EList} output, and
-#' these are automatically passed to the function \code{\link{lmFit}} during
-#' model fitting.
+#' these are automatically passed to the function \link[limma]{lmFit}
+#' during model fitting.
 #' This will ensure that the mean-variance relationship is appropriate for
 #' the linear modelling steps as performed by limma.
 #'
 #' Initial sample weights can be passed to the function, and should be
-#' calculated using \code{\link{arrayWeights}} called on the normalised logCPM
+#' calculated using \link[limma]{arrayWeights} called on the normalised logCPM
 #' values.
 #' The returned sample weights will be different to these, given that the
-#' function \code{\link{voomWithQualityWeights}} performs two rounds of
+#' function \link[limma]{voomWithQualityWeights} performs two rounds of
 #' estimation.
 #' The first is on the initial data, with the inappropriate mean-variance
 #' relationship, whilst the second round is after incorporation of the precision
@@ -29,7 +28,7 @@
 #' @param cpm Matrix of CPM or logCPM values
 #' @param design The design matrix for the experiment
 #' @param w0 Initial vector of sample weights. Should be calculated using
-#' \code{\link{arrayWeights}}
+#' \link[limma]{arrayWeights}
 #' @param lib.size Initial library sizes. Must be provided as these are no
 #' estimable from CPM values
 #' @param isLogCPM logical(1). Indicates whether the data is log2 transformed
@@ -51,7 +50,7 @@
 #' As such, the fitted \code{Amean} is also returned in this list element.
 #'
 #' If initial sample weights were provided, modified weights will also be
-#' returned, as the initial function \code{\link{voomWithQualityWeights}}
+#' returned, as the initial function \link[limma]{voomWithQualityWeights}
 #' performs two rounds of estimation of sample weights.
 #' Here we would simply provide the initial weights a priori, with the
 #' second round performed within the function.
@@ -65,16 +64,15 @@
 #' cpm <- edgeR::cpm(wc, log = TRUE)
 #' el <- voomWeightsFromCPM(cpm, lib.size = wc$totals)
 #'
-#' @importFrom limma lmFit arrayWeights
-#' @importFrom stats approxfun lowess
 #' @importFrom methods new
-#' @importClassesFrom limma EList
-#'
 #' @export
 voomWeightsFromCPM <- function(
         cpm, design = NULL, w0 = NULL, lib.size = NULL, isLogCPM = TRUE,
         span = 0.5, ...
 ){
+
+    if (!requireNamespace('limma', quietly = TRUE))
+        stop("Please install 'limma' to use this function.")
 
     ## Most checks taken from voom internals
     stopifnot(.voomChecks(cpm, w0, lib.size, isLogCPM))
@@ -107,9 +105,11 @@ voomWeightsFromCPM <- function(
 
 }
 
+#' @importFrom stats approxfun lowess
+#' @keywords internal
 .calculateVoomWeights <- function(cpm, design, w0, lib.size, span, ...) {
     ## Taken from the main body of voom
-    fit <- lmFit(cpm, design, weights = w0, ...)
+    fit <- limma::lmFit(cpm, design, weights = w0, ...)
     if (is.null(fit$Amean)) fit$Amean <- rowMeans(cpm, na.rm = TRUE)
     sx <- fit$Amean + mean(log2(lib.size + 1)) - log2(1e+06)
     sy <- sqrt(fit$sigma)
@@ -133,9 +133,9 @@ voomWeightsFromCPM <- function(
     ## a second round of estimation, and scaled by these weights. Again, taken
     ## from limma::voomWithArrayWeights()
     aw <- c()
-    if (!is.null(w0)){
+    if (!is.null(w0)) {
         ## Use all defaults from this function, providing the precision weights
-        aw <- arrayWeights(
+        aw <- limma::arrayWeights(
             object = cpm, design = design, weights = w, var.design = NULL,
             var.group = NULL, prior.n = 10, method = "auto", maxiter = 50,
             tol = 1e-5, trace = FALSE
@@ -159,7 +159,7 @@ voomWeightsFromCPM <- function(
     ## Check the initial weights
     if (!is.null(w0)) {
         stopifnot(is.numeric(w0))
-        if(length(w0) != i) stop("Supplied weights do not match the data")
+        if (length(w0) != i) stop("Supplied weights do not match the data")
     }
     ## Library sizes must be supplied & valid
     if (is.null(lib.size))

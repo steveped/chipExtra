@@ -13,25 +13,24 @@ fitAssayDiff(x, ...)
   design = NULL,
   coef = NULL,
   lib.size = "totals",
-  method = c("qlf", "lt"),
+  method = c("qlf", "lt", "wald"),
   norm = c("none", "TMM", "RLE", "TMMwsp", "upperquartile"),
   groups = NULL,
   fc = 1,
   lfc = log2(fc),
   asRanges = FALSE,
   offset = NULL,
-  null = c("interval", "worst.case"),
   weighted = FALSE,
   ...,
-  robust = FALSE
+  null = c("interval", "worst.case"),
+  robust = FALSE,
+  type = "apeglm"
 )
 }
 \arguments{
 \item{x}{a SummarizedExperiment object}
 
-\item{...}{Passed to \link[edgeR]{calcNormFactors} and
-\link[edgeR]{glmQLFit} when method = "qlf".
-If method = "lt", instead passed to \link[limma]{lmFit}}
+\item{...}{Passed to \link[edgeR]{normLibSizes} and}
 
 \item{assay}{The assay to use for analysis}
 
@@ -45,39 +44,44 @@ library size information. If set to NULL, column summaries will be used.}
 \item{method}{the analytic method to be used. Can be 'qlf' which will fit
 counts using the \link[edgeR]{glmQLFit} strategy , or 'lt' which fits the
 \link[limma:eBayes]{limma-trend} model on logCPM, or pre-processed logCPM
-values}
+values. Setting method = 'wald' will call \link[DESeq2]{nbinomWaldTest}}
 
 \item{norm}{The normalisation strategy to use when running the
-glmQLF models. The value 'none' relies solely on library-size normalisation,
-and is the default. All methods available in \link[edgeR]{calcNormFactors}
-are implemented. Ignored when using method = "lt"}
+glmQLF model or the Wald test. The value 'none' relies solely on
+library-size normalisation, and is the default. All methods available in
+\link[edgeR]{normLibSizes} are implemented. Ignored when using method = "lt"}
 
 \item{groups}{character(1) If a column name is supplied here, group-based
 normalisation will be applied to GLM models treating data in this column
 as a grouping factor. Ignored when using method = "lt"}
 
-\item{fc, lfc}{Thresholds passed to \link[limma]{treat} or
-\link[edgeR]{glmTreat}}
+\item{fc, lfc}{Thresholds passed to \link[limma]{treat},
+\link[edgeR]{glmTreat} or \link[DESeq2]{lfcShrink}}
 
 \item{asRanges}{logical(1). By default, the returned object will be a
 \code{SummarizedExperiment} object with the results added to the \code{rowData}
 element. Setting \code{asRanges = TRUE} will only return the GRanges object from
 this element}
 
-\item{offset}{If provided will be used as the offset when the DGEList object
-is created during model fitting}
+\item{offset}{If provided will be used as the offset when a DGEList object
+is created during model fitting for method = 'qlf'}
 
-\item{null}{Passed to \link[edgeR]{glmTreat}}
+\item{weighted}{logical(1) Passed to  \link[edgeR]{normLibSizes}. Only used
+when applying a TMM-type normalisation strategy}
 
-\item{weighted}{logical(1) Passed to  \link[edgeR]{calcNormFactors}}
+\item{null}{Passed to \link[edgeR]{glmTreat}
+\link[edgeR]{glmQLFit} when method = "qlf".
+If method = "lt", instead passed to \link[limma]{lmFit}}
 
 \item{robust}{Passed to \link[limma]{treat} and \link[limma]{eBayes}}
+
+\item{type}{Passed to \link[DESeq2]{lfcShrink}}
 }
 \value{
 A SummarizedExperiment object with results set as the \code{rowData} element.
 Any existing columns not contained in the differential ChIP results will be
 retained.
-Results from testing will contain logCPM, logFC, PValue and the t/F
+Results from testing will contain logCPM, logFC, PValue and any t/F
 statistic as appropriate, along with an FDR-adjusted p-value.
 
 If specifying a range-based H0 by setting lfc != 0, an additional column
@@ -93,13 +97,14 @@ Detect differential ChIP signal using one of many approaches
 }
 \details{
 Starting with a SummarizedExperiment object this function fits either a
-\link[edgeR]{glmQLFit} model to count data, or the
+\link[edgeR]{glmQLFit} model to count data, performs the
+\link[DESeq2]{nbinomWaldTest} on count data, or applies the
 \link[limma:eBayes]{limma-trend} model to logCPM data.
 
 If fitting Generalised Linear Models via glmQLFit, options for normalisation
 are "none", which normalises to library size. Existing library sizes are
 commonly found in the "totals" column of the colData element and this is
-attempted by default. All methods provided in \link[edgeR]{calcNormFactors}
+attempted by default. All methods provided in \link[edgeR]{normLibSizes}
 are also implemented, with the added possibility of normalising within groups
 instead of across the entire dataset. To enable this, the column with the
 grouping factor is expected to be in the colData element and is simply
@@ -107,16 +112,28 @@ called by column name.
 No normalisation is applied when using the limma-trend model, as this allows
 for previous normalisation strategies to be performed on the data.
 
-Normalising to ChIP Input samples, or using offsets is not yet implemented.
+When applying the \link[DESeq2]{nbinomWaldTest}, without groups and using
+colSums for library sizes (instead of total alignments), the standard
+normalisation factors from \link[DESeq2]{estimateSizeFactorsForMatrix} will
+be used. In all other scenarios, normalisation factors as returned by
+\link[edgeR]{normLibSizes} will be used.
+The fitType is set to 'local' when estimating dispersions, and this can be
+easily modified by passing fitType via the dot arguments.
 
-Either range-based hypothesis testing is implemented using
+Normalising to ChIP Input samples is not yet implemented.
+Similarly, the use of offsets when applying the Wald test is not yet
+implemented.
+
+Range-based hypothesis testing is implemented using
 \link[edgeR]{glmTreat} or \link[limma]{treat}. Setting fc to 1 (or lfc to 0)
 will default to a point-based null hypothesis, equivalent to either
 \link[edgeR]{glmQLFTest} (method = "qlf") or
 \link[limma]{eBayes} (method = "lt").
+When applying \link[DESeq2]{nbinomWaldTest}, \link[DESeq2]{lfcShrink} will
+be applied.
 
 It should also be noted that this is primarily a convenience function and
-if requiring intermediate output from any setps, then these can be run
+if requiring intermediate output from any steps, then these can be run
 individually as conventionally specified.
 }
 \examples{

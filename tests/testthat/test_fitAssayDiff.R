@@ -9,7 +9,7 @@ se <- SummarizedExperiment(
     assays = SimpleList(counts = counts), colData = df
 )
 X <- model.matrix(~treat, colData(se))
-assay(se, "logCPM") <- edgeR::cpm(counts, log = TRUE, prior.count = 0)
+assay(se, "logCPM") <- edgeR::cpm(counts, log = TRUE, prior.count = 0.1)
 ## Test the handling of GRanges columns during parsing
 gr <- paste0("chr1:", seq(1, nrow(se)))
 sq <- Seqinfo(seqnames = "chr1", seqlengths = nrow(se), genome = "test")
@@ -24,7 +24,7 @@ test_that("Incorrect assay types error correctly", {
 
 })
 
-test_that("Results appear correct", {
+test_that("Results appear structurally correct", {
 
     ## glmFits
     new_se <- suppressMessages(
@@ -44,6 +44,11 @@ test_that("Results appear correct", {
     new_se <- fitAssayDiff(se, assay = "logCPM", method = "lt", design = X)
     row_data <- rowData(new_se)
     cols <- c("range", "logFC", "logCPM", "t", "PValue", "FDR")
+    expect_equal(colnames(row_data), cols)
+
+    new_se <- fitAssayDiff(se, method = "wald", design = X)
+    row_data <- rowData(new_se)
+    cols <- c("range", "logFC", "logCPM", "PValue", "FDR")
     expect_equal(colnames(row_data), cols)
 
 })

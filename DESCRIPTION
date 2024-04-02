@@ -1,5 +1,5 @@
 Package: extraChIPs
-Version: 1.7.5
+Version: 1.7.6
 Title: Additional functions for working with ChIP-Seq data
 Authors@R: person("Stevie", "Pederson", 
   email = "stephen.pederson.au@gmail.com", 
@@ -12,7 +12,7 @@ Description: This package builds on existing tools and adds some simple but
    One set of functions focusses on set-operations retaining mcols for GRanges
    objects, whilst another group of functions are to aid visualisation of 
    results.
-   Coercion to tibble objects is also included.
+   Coercion to tibble objects is also implemented.
 License: GPL-3
 Encoding: UTF-8
 URL: https://github.com/smped/extraChIPs
@@ -31,7 +31,7 @@ Imports:
   ComplexUpset,
   csaw,
   dplyr (>= 1.1.1),
-  edgeR,
+  edgeR (>= 4.0),
   forcats,
   GenomeInfoDb,
   GenomicInteractions,
@@ -42,7 +42,6 @@ Imports:
   grid,
   InteractionSet,
   IRanges,
-  limma,
   matrixStats,
   methods,
   patchwork,
@@ -63,11 +62,13 @@ Suggests:
   BiocStyle,
   covr,
   cqn,
+  DESeq2,
   EnrichedHeatmap,
   Gviz,
   harmonicmeanp,
   here,
   knitr,
+  limma,
   magrittr,
   plyranges,
   quantro,

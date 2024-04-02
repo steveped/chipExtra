@@ -98,3 +98,6 @@
 - Added p_mu0 to output of `fitAssayDiff()`
 - Added `respectLevels` and filtering to `plotProfileHeatmap()`
 
+# Changes in 1.7.6
+
+- Added the DESeq2 Wald statistic to options for fitAssayDiff

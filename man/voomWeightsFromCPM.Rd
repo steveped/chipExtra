@@ -20,7 +20,7 @@ voomWeightsFromCPM(
 \item{design}{The design matrix for the experiment}
 
 \item{w0}{Initial vector of sample weights. Should be calculated using
-\code{\link{arrayWeights}}}
+\link[limma]{arrayWeights}}
 
 \item{lib.size}{Initial library sizes. Must be provided as these are no
 estimable from CPM values}
@@ -46,7 +46,7 @@ been offset by the library sizes and will be simple logCPM values.
 As such, the fitted \code{Amean} is also returned in this list element.
 
 If initial sample weights were provided, modified weights will also be
-returned, as the initial function \code{\link{voomWithQualityWeights}}
+returned, as the initial function \link[limma]{voomWithQualityWeights}
 performs two rounds of estimation of sample weights.
 Here we would simply provide the initial weights a priori, with the
 second round performed within the function.
@@ -59,23 +59,22 @@ Estimate voom precision weights directly From CPM values
 }
 \details{
 This function takes CPM or logCPM values and estimates the precision weights
-as would be done by providing counts directly to the \code{\link{voom}}
-function.
+as would be done by providing counts directly to \link[limma]{voom}.
 Using this function enables the use of logCPM values which have been
 normalised using other methods such as Conditional-Quantile or
 Smooth-Quantile Normalisation.
 
 The precision weights are returned as part of the \code{EList} output, and
-these are automatically passed to the function \code{\link{lmFit}} during
-model fitting.
+these are automatically passed to the function \link[limma]{lmFit}
+during model fitting.
 This will ensure that the mean-variance relationship is appropriate for
 the linear modelling steps as performed by limma.
 
 Initial sample weights can be passed to the function, and should be
-calculated using \code{\link{arrayWeights}} called on the normalised logCPM
+calculated using \link[limma]{arrayWeights} called on the normalised logCPM
 values.
 The returned sample weights will be different to these, given that the
-function \code{\link{voomWithQualityWeights}} performs two rounds of
+function \link[limma]{voomWithQualityWeights} performs two rounds of
 estimation.
 The first is on the initial data, with the inappropriate mean-variance
 relationship, whilst the second round is after incorporation of the precision
