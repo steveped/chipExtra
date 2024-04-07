@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">extraChIPs</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.7.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.7.7</span>
       </span>
     </div>
 
@@ -77,6 +77,7 @@
 <span>  ignore.strand <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  simplify <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>  min_width <span class="op">=</span> <span class="fl">0</span>,</span>
+<span>  merge_within <span class="op">=</span> <span class="fl">1L</span>,</span>
 <span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
@@ -112,6 +113,10 @@ results</p></dd>
 <dt>min_width</dt>
 <dd><p>Discard any regions below this width</p></dd>
 
+
+<dt>merge_within</dt>
+<dd><p>Passed to <a href="https://rdrr.io/pkg/IRanges/man/inter-range-methods.html" class="external-link">reduce</a> as <code>min.gapwidth</code></p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
@@ -135,10 +140,10 @@ When using method = "coverage", only the regions within each overlapping
 range which are 'covered' by the minimum proportion of replicates specified
 are returned. This will return narrower peaks in general, although some
 artefactual very small ranges may be included (e.g. 10bp). Careful setting
-of the min_width parameter may be very helpful for these instances. It is
-also expected that setting method = "coverage" should return the region
-within each range which is more likely to contain the true binding site for
-the relevant ChIP targets</p>
+of the min_width and merge_within parameters may be very helpful for these
+instances. It is also expected that setting method = "coverage" should return
+the region within each range which is more likely to contain the true binding
+site for the relevant ChIP targets</p>
     </div>
     <div id="see-also">
     <h2>See also</h2>

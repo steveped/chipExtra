@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">extraChIPs</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.7.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.7.7</span>
       </span>
     </div>
 
@@ -83,7 +83,7 @@
 <span>  hj_sets <span class="op">=</span> <span class="fl">1.15</span>,</span>
 <span>  sz_sets <span class="op">=</span> <span class="fl">3.5</span>,</span>
 <span>  exp_sets <span class="op">=</span> <span class="fl">0.25</span>,</span>
-<span>  min.gapwidth <span class="op">=</span> <span class="fl">1L</span>,</span>
+<span>  merge_within <span class="op">=</span> <span class="fl">1L</span>,</span>
 <span>  ignore.strand <span class="op">=</span> <span class="cn">TRUE</span></span>
 <span><span class="op">)</span></span>
 <span></span>
@@ -147,7 +147,11 @@ numeric vector</p></dd>
 <dd><p>X-axis expansion for set size panel</p></dd>
 
 
-<dt>min.gapwidth, ignore.strand</dt>
+<dt>merge_within</dt>
+<dd><p>Passed to <a href="makeConsensus.html">makeConsensus</a></p></dd>
+
+
+<dt>ignore.strand</dt>
 <dd><p>Passed to <a href="https://rdrr.io/pkg/IRanges/man/inter-range-methods.html" class="external-link">reduce</a></p></dd>
 
 </dl></div>
