@@ -131,7 +131,7 @@ setMethod(
     col_names <- colnames(DF)
     if (n > 0) {
         DF2 <- list()
-        for (i in seq_along(col_names)){
+        for (i in seq_along(col_names)) {
             vec <- DF[[i]]
             nm <- col_names[[i]]
             type <- is(vec)[[1]]

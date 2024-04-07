@@ -12,6 +12,7 @@ makeConsensus(
   ignore.strand = TRUE,
   simplify = FALSE,
   min_width = 0,
+  merge_within = 1L,
   ...
 )
 }
@@ -33,6 +34,8 @@ results}
 \link{intersectMC} internally}
 
 \item{min_width}{Discard any regions below this width}
+
+\item{merge_within}{Passed to \link[GenomicRanges]{reduce} as \code{min.gapwidth}}
 }
 \value{
 \code{GRanges} object with mcols containing a logical vector for every element of
@@ -55,10 +58,10 @@ When using method = "coverage", only the regions within each overlapping
 range which are 'covered' by the minimum proportion of replicates specified
 are returned. This will return narrower peaks in general, although some
 artefactual very small ranges may be included (e.g. 10bp). Careful setting
-of the min_width parameter may be very helpful for these instances. It is
-also expected that setting method = "coverage" should return the region
-within each range which is more likely to contain the true binding site for
-the relevant ChIP targets
+of the min_width and merge_within parameters may be very helpful for these
+instances. It is also expected that setting method = "coverage" should return
+the region within each range which is more likely to contain the true binding
+site for the relevant ChIP targets
 }
 \examples{
 data("peaks")
