@@ -100,4 +100,8 @@
 
 # Changes in 1.7.6
 
-- Added the DESeq2 Wald statistic to options for fitAssayDiff
+- Added the DESeq2 Wald statistic to options for `fitAssayDiff()`
+
+# Changes in 1.7.7
+
+- Added `merge_within` to `makeConsensus()` for better handling when `method = "coverage"`

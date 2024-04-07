@@ -30,7 +30,8 @@
 #' `draw.single/triple.venn`) for Venn Diagrams, and to
 #' \link[ComplexUpset]{upset} for UpSet plots
 #' @param .sort_sets passed to `sort_sets` in \link[ComplexUpset]{upset}
-#' @param min.gapwidth,ignore.strand Passed to \link[GenomicRanges]{reduce}
+#' @param ignore.strand Passed to \link[GenomicRanges]{reduce}
+#' @param merge_within Passed to \link{makeConsensus}
 #' @param sz_sets Text size for set size labels. Passed internally to
 #' `geom_text(size = sz_sets)`
 #' @param hj_sets Horizontal adjustment of set size labels
@@ -72,7 +73,7 @@ setMethod(
     x, type = c("auto", "venn", "upset"), var = NULL,
     f = c("mean", "median", "max", "min", "sd"),
     set_col = NULL, ..., .sort_sets = "ascending", hj_sets = 1.15,
-    sz_sets = 3.5, exp_sets = 0.25, min.gapwidth = 1L, ignore.strand = TRUE
+    sz_sets = 3.5, exp_sets = 0.25, merge_within = 1L, ignore.strand = TRUE
   ) {
 
     stopifnot(is(x, "GRangesList"))
@@ -87,8 +88,7 @@ setMethod(
 
     # Collapse as required
     gr <- makeConsensus(
-      x, var = var,
-      min.gapwidth = min.gapwidth, ignore.strand = ignore.strand
+      x, var = var, merge_within = merge_within, ignore.strand = ignore.strand
     )
 
     if (is.null(var) | type == "venn") {

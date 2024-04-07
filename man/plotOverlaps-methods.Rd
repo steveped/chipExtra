@@ -19,7 +19,7 @@ plotOverlaps(x, ...)
   hj_sets = 1.15,
   sz_sets = 3.5,
   exp_sets = 0.25,
-  min.gapwidth = 1L,
+  merge_within = 1L,
   ignore.strand = TRUE
 )
 
@@ -60,7 +60,9 @@ numeric vector}
 
 \item{exp_sets}{X-axis expansion for set size panel}
 
-\item{min.gapwidth, ignore.strand}{Passed to \link[GenomicRanges]{reduce}}
+\item{merge_within}{Passed to \link{makeConsensus}}
+
+\item{ignore.strand}{Passed to \link[GenomicRanges]{reduce}}
 }
 \value{
 Either a VennDiagram (i.e. grid) object, or a ComplexUpset plot
