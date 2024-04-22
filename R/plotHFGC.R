@@ -365,13 +365,17 @@ plotHFGC <- function(
             )
         }
         if (is(features, "list")) {
+            ## Only update using featnames if names are provided for every element
+            if (length(featname) != length(features))
+                featname <- names(features)
             feature_track <- lapply(
-                names(features),
-                function(x) {
+                seq_along(features),
+                function(i) {
+                    x <- names(features)[[i]]
                     .makeFeatureTrack(
                         features[[x]], plot_range, fontsize, featcol[[x]],
-                        featsize, cex.title, rotation.title, x, featstack,
-                        col.title, background.title
+                        featsize, cex.title, rotation.title, featname[[i]],
+                        featstack, col.title, background.title
                     )
                 }
             )
