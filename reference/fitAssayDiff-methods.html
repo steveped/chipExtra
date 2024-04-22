@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">extraChIPs</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.7.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.7.8</span>
       </span>
     </div>
 
@@ -71,7 +71,7 @@
     <div id="ref-usage">
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">fitAssayDiff</span><span class="op">(</span><span class="va">x</span>, <span class="va">...</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># S4 method for SummarizedExperiment</span></span>
+<span><span class="co"># S4 method for class 'SummarizedExperiment'</span></span>
 <span><span class="fu">fitAssayDiff</span><span class="op">(</span></span>
 <span>  <span class="va">x</span>,</span>
 <span>  assay <span class="op">=</span> <span class="st">"counts"</span>,</span>
@@ -251,19 +251,19 @@ individually as conventionally specified.</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Running glmQLFit...</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html" class="external-link">rowData</a></span><span class="op">(</span><span class="va">se</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> DataFrame with 200 rows and 5 columns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>          logFC    logCPM           F    PValue       FDR</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      &lt;numeric&gt; &lt;numeric&gt;   &lt;numeric&gt; &lt;numeric&gt; &lt;numeric&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1    4.3153486   11.7021 10.65347428 0.0026329  0.526581</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2    0.0831925   12.2407  0.00677086 0.9349364  0.996084</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3    1.6782756   11.6748  2.03129398 0.1638456  0.996084</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4   -1.1910052   12.0524  1.30498326 0.2618458  0.996084</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5    0.5187087   12.0442  0.24058531 0.6271561  0.996084</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ...        ...       ...         ...       ...       ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 196  0.0905270   12.7687  0.02735413  0.869685  0.996084</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 197  1.0961249   12.3006  1.21231087  0.279152  0.996084</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 198 -1.1429849   12.6072  2.80990092  0.103504  0.996084</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 199  0.1463082   12.3253  0.02479806  0.875868  0.996084</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 200  0.0456213   11.8591  0.00127455  0.971744  0.996084</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          logFC    logCPM           F     PValue       FDR</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      &lt;numeric&gt; &lt;numeric&gt;   &lt;numeric&gt;  &lt;numeric&gt; &lt;numeric&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1    4.3118042   11.7021 10.79729617 0.00272349  0.544698</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2    0.0832925   12.2407  0.00682725 0.93473200  0.996024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3    1.6788140   11.6748  2.04323371 0.16387523  0.996024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4   -1.1910443   12.0524  1.32867823 0.25872306  0.996024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5    0.5183814   12.0442  0.24296590 0.62589044  0.996024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ...        ...       ...         ...        ...       ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 196  0.0906305   12.7687  0.02760966   0.869216  0.996024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 197  1.0957446   12.3006  1.21717268   0.279247  0.996024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 198 -1.1430050   12.6072  2.87907802   0.100755  0.996024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 199  0.1462205   12.3253  0.02519284   0.875019  0.996024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 200  0.0459551   11.8591  0.00124162   0.972139  0.996024</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
@@ -280,7 +280,7 @@ individually as conventionally specified.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.9000.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.9000.</p>
 </div>
 
       </footer></div>
