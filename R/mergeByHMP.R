@@ -163,22 +163,27 @@ setMethod(
         ## If keyval = "merged" (as opposed to "min")
         if (keyval == "merged") { ## Reform the keyvalue range by merging
             df$range <- as.character(x)
+            ## If a blank prefix has been passed ref_p & ref_hmp will be the same &
+            ## the subsequent left_join will add suffixes causing a failure
             df <- left_join(
-                df, ret_df[c("subjectHits", new_cols)], by = "subjectHits"
+                df, ret_df[c("subjectHits", new_cols)], by = "subjectHits",
+                suffix = c("_raw", "_hmp")
             )
+            if (ref_p == ref_hmp) {
+                ref_p <- paste0(ref_p, "_raw")
+                ref_hmp <- paste0(ref_hmp, "_hmp")
+            }
             df <- dplyr::filter(
                 df,
-                (
-                    !!sym(ref_p) <= !!sym(ref_hmp) |
-                     !!sym(ref_p) == min(!!sym(ref_p))
-                ),
+                (!!sym(ref_p) <= !!sym(ref_hmp) | !!sym(ref_p) == min(!!sym(ref_p))),
                 .by = !!sym("subjectHits")
             )
-            kv_gr <- colToRanges(df, "range")
-            kv_grl <- splitAsList(kv_gr, kv_gr$subjectHits)
+            kv_gr <- granges(colToRanges(df, "range"))
+            kv_grl <- splitAsList(kv_gr, df$subjectHits)
             kv_grl <- range(kv_grl)
             kv_gr <- unlist(kv_grl)
             mcols(kv_gr)[["subjectHits"]] <- as.integer(names(kv_gr))
+            names(kv_gr) <- NULL
             kv_df <- as_tibble(kv_gr, name = "keyval_range")
             inc_df <- inc_df[names(inc_df) != "keyval_range"]
             inc_df <- left_join(
