@@ -339,6 +339,8 @@ plotHFGC <- function(
     ## If interactions were found, reset the plot range. This should be the
     ## maximum of all interactions < max or the initial range
     plot_range <- range(gr)
+    if (width(plot_range) > max)
+        warning("Provided range is wider than the max permitted. Highlights may be unpredictable")
     if (length(hic_track)) {
         hic <- slot(hic_track, "giobject")
         anchors <- anchors(hic[calculateDistances(hic) < max])
@@ -401,11 +403,17 @@ plotHFGC <- function(
     ## Add the highlight track if wanted. Include features, genes & coverage
     hl_track <- c(hic_track, feature_track, gene_tracks, cov_tracks)
     hl_track <- hl_track[!vapply(hl_track, is.null, logical(1))]
-    if (!is.null(highlight))
-        hl_track <- Gviz::HighlightTrack(
-            trackList = hl_track, range = gr, col = highlight,
-            fill = "#FFFFFF00", inBackground = FALSE
-        )
+    if (!is.null(highlight)) {
+        gr <- subsetByOverlaps(gr, plot_range)
+        if (length(gr)) {
+            hl_track <- Gviz::HighlightTrack(
+                trackList = hl_track, range = gr, col = highlight,
+                fill = "#FFFFFF00", inBackground = FALSE
+            )
+        } else {
+            message("No ranges able to be highlighted")
+        }
+    }
 
     plot_list <- list()
     if (!is.null(ideo_track)) plot_list <- list(ideo_track)

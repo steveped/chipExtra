@@ -563,3 +563,10 @@ test_that("linecol is parsed correctly",{
 test_that(".addAnnotations behaves as expected", {
     expect_null(.addAnnotations(.gr = gr1, .cov_tracks = NULL))
 })
+
+test_that("Poor choices for max are caught", {
+    expect_warning(
+        plotHFGC(gr1, cytobands = cyto_df, max = 5),
+        "Provided range is wider.+"
+    )
+})
