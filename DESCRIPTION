@@ -1,5 +1,5 @@
 Package: extraChIPs
-Version: 1.7.10
+Version: 1.8.0
 Title: Additional functions for working with ChIP-Seq data
 Authors@R: person("Stevie", "Pederson", 
   email = "stephen.pederson.au@gmail.com", 
