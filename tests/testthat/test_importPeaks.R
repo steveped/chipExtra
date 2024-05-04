@@ -80,9 +80,7 @@ test_that("seqinfo objects behave correctly for narrowPeak files", {
     )
   )
   ## Error
-  expect_error(
-    importPeaks(fl, "narrow", seqinfo = NULL)
-  )
+  expect_error(importPeaks(fl, "narrow", seqinfo = NULL))
   ## Error
   expect_error(
     importPeaks(fl, "narrow", glueNames = "{1:5}"), "length.+is not TRUE"
@@ -105,8 +103,8 @@ test_that("blacklists behave correctly",{
 
 
 test_that("Empty files parse empty GRanges", {
-  fl <- file.path(tempdir(), "empty.txt")
-  file.create(fl)
+  ## This now catches empty files that are compressed too!
+  fl <- system.file("extdata/empty.bed.gz", package = "extraChIPs")
   np1 <- importPeaks(fl, type = "narrow", setNames = FALSE)
   bp1 <- importPeaks(fl, type = "broad", setNames = FALSE)
   expect_true(is(c(np1, bp1), "GRangesList"))
