@@ -37,7 +37,7 @@ env:
   has_testthat: 'true'
   run_covr: 'true'
   run_pkgdown: 'true'
-  cache-version: 'cache-v3'
+  cache-version: 'cache-v1'
   run_docker: 'false'
 
 jobs:
@@ -51,9 +51,9 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - { os: ubuntu-latest, r: '4.4', bioc: 'devel', cont: "bioconductor/bioconductor_docker:devel", rspm: "https://packagemanager.rstudio.com/cran/__linux__/jammy/latest" }
-          - { os: macOS-latest, r: '4.3', bioc: '3.18'}
-          - { os: windows-latest, r: '4.3', bioc: '3.18'}
+          - { os: ubuntu-latest, r: '4.4', bioc: '3.19', cont: "bioconductor/bioconductor_docker:RELEASE_3_19", rspm: "https://packagemanager.posit.co/cran/__linux__/jammy/latest" }
+          - { os: macOS-latest, r: '4.4', bioc: '3.19'}
+          - { os: windows-latest, r: '4.4', bioc: '3.19'}
     env:
       R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
       RSPM: ${{ matrix.config.rspm }}
@@ -101,16 +101,16 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ${{ env.R_LIBS_USER }}
-          key: ${{ env.cache-version }}-${{ runner.os }}-biocversion-devel-r-next-${{ hashFiles('.github/depends.Rds') }}
-          restore-keys: ${{ env.cache-version }}-${{ runner.os }}-biocversion-devel-r-next-
+          key: ${{ env.cache-version }}-${{ runner.os }}-biocversion-3.19-r-4.4-${{ hashFiles('.github/depends.Rds') }}
+          restore-keys: ${{ env.cache-version }}-${{ runner.os }}-biocversion-3.19-r-4.4-
 
       - name: Cache R packages on Linux
         if: "!contains(github.event.head_commit.message, '/nocache') && runner.os == 'Linux' "
         uses: actions/cache@v3
         with:
           path: /home/runner/work/_temp/Library
-          key: ${{ env.cache-version }}-${{ runner.os }}-biocversion-devel-r-next-${{ hashFiles('.github/depends.Rds') }}
-          restore-keys: ${{ env.cache-version }}-${{ runner.os }}-biocversion-devel-r-next-
+          key: ${{ env.cache-version }}-${{ runner.os }}-biocversion-3.19-r-4.4-${{ hashFiles('.github/depends.Rds') }}
+          restore-keys: ${{ env.cache-version }}-${{ runner.os }}-biocversion-3.19-r-4.4-
 
 
       - name: Install macOS system dependencies
@@ -267,7 +267,7 @@ jobs:
         if: failure()
         uses: actions/upload-artifact@master
         with:
-          name: ${{ runner.os }}-biocversion-devel-r-next-results
+          name: ${{ runner.os }}-biocversion-3.19-r-4.4-results
           path: check
 
       - uses: docker/build-push-action@v1
