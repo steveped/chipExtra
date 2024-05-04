@@ -95,7 +95,7 @@ importPeaks <- function(
     }
 
     ## Handle empty files separately first
-    if (file.size(x) == 0) return(GRanges(NULL, seqinfo = seqinfo))
+    if (.isEmpty(x)) return(GRanges(NULL, seqinfo = seqinfo))
 
     ## Define the parameters for the two types
     colNames <- c(
@@ -158,9 +158,10 @@ importPeaks <- function(
     }
 
     ## Handle empty files separately first
-    if (file.size(x) == 0) return(GRanges(NULL, seqinfo = seqinfo))
+    if (.isEmpty(x)) return(GRanges(NULL, seqinfo = seqinfo))
 
     ## Define the colnames
+    stopifnot(.isValidBed(x))
     nCol <- min(ncol(read.table(x, sep = "\t", nrows = 1)), 6)
     colNames <- c("seqnames", "start", "end", "name", "score", "strand")
     classes <- c(
@@ -244,4 +245,10 @@ importPeaks <- function(
         strandOK <- r1[[6]] %in% c("+", "-", ".")
     }
     all(allNumerics, strandOK)
+}
+
+.isEmpty <- function(x) {
+    ## This is a better approach then checking file.size, given that a
+    ## compressed empty file will have size ~20B
+    !length(readLines(x, n = 1))
 }
