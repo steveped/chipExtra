@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">extraChIPs</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.7.10</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.1</span>
       </span>
     </div>
 
@@ -89,71 +89,71 @@
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>gr</dt>
+    <dl><dt id="arg-gr">gr<a class="anchor" aria-label="anchor" href="#arg-gr"></a></dt>
 <dd><p>GRanges object with query ranges to be mapped to genes</p></dd>
 
 
-<dt>genes</dt>
+<dt id="arg-genes">genes<a class="anchor" aria-label="anchor" href="#arg-genes"></a></dt>
 <dd><p>GRanges object containing genes (or any other nominal feature)
 to be assigned</p></dd>
 
 
-<dt>prom</dt>
+<dt id="arg-prom">prom<a class="anchor" aria-label="anchor" href="#arg-prom"></a></dt>
 <dd><p>GRanges object defining promoters</p></dd>
 
 
-<dt>enh</dt>
+<dt id="arg-enh">enh<a class="anchor" aria-label="anchor" href="#arg-enh"></a></dt>
 <dd><p>GRanges object defining Enhancers</p></dd>
 
 
-<dt>gi</dt>
+<dt id="arg-gi">gi<a class="anchor" aria-label="anchor" href="#arg-gi"></a></dt>
 <dd><p>GInteractions object defining interactions. Mappings from
 interactions to genes should be performed as a separate prior step.</p></dd>
 
 
-<dt>cols</dt>
+<dt id="arg-cols">cols<a class="anchor" aria-label="anchor" href="#arg-cols"></a></dt>
 <dd><p>Column names to be assigned as mcols in the output. Columns
 must be minimally present in <code>genes</code>. If all requested columns are found in
 any of prom, enh or gi, these pre-existing mappings will be preferentially
 used. Any columns not found in utilised reference objects will be ignored.</p></dd>
 
 
-<dt>gr2prom</dt>
+<dt id="arg-gr-prom">gr2prom<a class="anchor" aria-label="anchor" href="#arg-gr-prom"></a></dt>
 <dd><p>The maximum permissible distance between a query range and
 any ranges defined as promoters</p></dd>
 
 
-<dt>gr2enh</dt>
+<dt id="arg-gr-enh">gr2enh<a class="anchor" aria-label="anchor" href="#arg-gr-enh"></a></dt>
 <dd><p>The maximum permissible distance between a query range and
 any ranges defined as enhancers</p></dd>
 
 
-<dt>gr2gi</dt>
+<dt id="arg-gr-gi">gr2gi<a class="anchor" aria-label="anchor" href="#arg-gr-gi"></a></dt>
 <dd><p>The maximum permissible distance between a query range and
 any ranges defined as GInteraction anchors</p></dd>
 
 
-<dt>gr2gene</dt>
+<dt id="arg-gr-gene">gr2gene<a class="anchor" aria-label="anchor" href="#arg-gr-gene"></a></dt>
 <dd><p>The maximum permissible distance between a query range and
 genes (for ranges not otherwise mapped)</p></dd>
 
 
-<dt>prom2gene</dt>
+<dt id="arg-prom-gene">prom2gene<a class="anchor" aria-label="anchor" href="#arg-prom-gene"></a></dt>
 <dd><p>The maximum permissible distance between a range provided
 in <code>prom</code> and a gene</p></dd>
 
 
-<dt>enh2gene</dt>
+<dt id="arg-enh-gene">enh2gene<a class="anchor" aria-label="anchor" href="#arg-enh-gene"></a></dt>
 <dd><p>The maximum permissible distance between a range provided
 in <code>enh</code> and a gene</p></dd>
 
 
-<dt>gi2gene</dt>
+<dt id="arg-gi-gene">gi2gene<a class="anchor" aria-label="anchor" href="#arg-gi-gene"></a></dt>
 <dd><p>The maximum permissible distance between a GInteractions
 anchor (provided in <code>gi</code>) and a gene</p></dd>
 
 
-<dt>...</dt>
+<dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
 <dd><p>Passed to findOverlaps and overlapsAny internally</p></dd>
 
 </dl></div>

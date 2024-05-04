@@ -18,7 +18,7 @@ testing"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mat
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">extraChIPs</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.7.10</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.1</span>
       </span>
     </div>
 
@@ -109,55 +109,55 @@ testing</p>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>x</dt>
+    <dl><dt id="arg-x">x<a class="anchor" aria-label="anchor" href="#arg-x"></a></dt>
 <dd><p>GenomicRanges object</p></dd>
 
 
-<dt>...</dt>
+<dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
 <dd><p>Passed to all csaw functions being wrapped</p></dd>
 
 
-<dt>df</dt>
+<dt id="arg-df">df<a class="anchor" aria-label="anchor" href="#arg-df"></a></dt>
 <dd><p>data.frame with results of differential binding analysis performed
 using a sliding window strategy. If not provided, the columns in the
 <code>mcols()</code> element of <code>x</code> will be used</p></dd>
 
 
-<dt>logfc, pval, cpm</dt>
+<dt id="arg-logfc-pval-cpm">logfc, pval, cpm<a class="anchor" aria-label="anchor" href="#arg-logfc-pval-cpm"></a></dt>
 <dd><p>Column names for the values holding window specific
 estimates of change in binding (logfc), overall signal intensity (cpm) and
 the significance from statistical testing (pval)</p></dd>
 
 
-<dt>inc_cols</dt>
+<dt id="arg-inc-cols">inc_cols<a class="anchor" aria-label="anchor" href="#arg-inc-cols"></a></dt>
 <dd><p>(Optional) Character vector of any additional columns in
 <code>df</code> to return</p></dd>
 
 
-<dt>p_adj_method</dt>
+<dt id="arg-p-adj-method">p_adj_method<a class="anchor" aria-label="anchor" href="#arg-p-adj-method"></a></dt>
 <dd><p>One of <code>p.adjust.methods</code></p></dd>
 
 
-<dt>alpha</dt>
+<dt id="arg-alpha">alpha<a class="anchor" aria-label="anchor" href="#arg-alpha"></a></dt>
 <dd><p>Significance threshold to apply during internal calculations</p></dd>
 
 
-<dt>method</dt>
+<dt id="arg-method">method<a class="anchor" aria-label="anchor" href="#arg-method"></a></dt>
 <dd><p>Shorthand versions for which <code>csaw</code> strategy to use for
 merging windows. Choose from 'combine' (<a href="https://rdrr.io/pkg/csaw/man/combineTests.html" class="external-link">combineTests</a>), 'best'
 (<a href="https://rdrr.io/pkg/csaw/man/getBestTest.html" class="external-link">getBestTest</a>) or 'minimal' (<a href="https://rdrr.io/pkg/csaw/man/minimalTests.html" class="external-link">minimalTests</a>).</p></dd>
 
 
-<dt>merge_within</dt>
+<dt id="arg-merge-within">merge_within<a class="anchor" aria-label="anchor" href="#arg-merge-within"></a></dt>
 <dd><p>Merge any non-overlapping windows within this distance</p></dd>
 
 
-<dt>ignore_strand</dt>
+<dt id="arg-ignore-strand">ignore_strand<a class="anchor" aria-label="anchor" href="#arg-ignore-strand"></a></dt>
 <dd><p>Passed internally to <a href="https://rdrr.io/pkg/IRanges/man/inter-range-methods.html" class="external-link">reduce</a> and
 <a href="https://rdrr.io/pkg/IRanges/man/findOverlaps-methods.html" class="external-link">findOverlaps</a></p></dd>
 
 
-<dt>min_win</dt>
+<dt id="arg-min-win">min_win<a class="anchor" aria-label="anchor" href="#arg-min-win"></a></dt>
 <dd><p>Only keep merged windows derived from at least this number</p></dd>
 
 </dl></div>

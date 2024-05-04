@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">extraChIPs</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.7.10</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.1</span>
       </span>
     </div>
 
@@ -136,59 +136,59 @@
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>object</dt>
+    <dl><dt id="arg-object">object<a class="anchor" aria-label="anchor" href="#arg-object"></a></dt>
 <dd><p>A <code>GRanges</code> or <code>data.frame</code>-like object</p></dd>
 
 
-<dt>...</dt>
+<dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
 <dd><p>Not used</p></dd>
 
 
-<dt>scale_by</dt>
+<dt id="arg-scale-by">scale_by<a class="anchor" aria-label="anchor" href="#arg-scale-by"></a></dt>
 <dd><p>Column to scale values by. If provided, values in this column
 will be summed, instead of simply counting entries. Any label in the centre
 of the plot will also reflect this difference</p></dd>
 
 
-<dt>inner</dt>
+<dt id="arg-inner">inner<a class="anchor" aria-label="anchor" href="#arg-inner"></a></dt>
 <dd><p>Column name to create the inner ring</p></dd>
 
 
-<dt>outer</dt>
+<dt id="arg-outer">outer<a class="anchor" aria-label="anchor" href="#arg-outer"></a></dt>
 <dd><p>Column name to create the outer ring, subset by the inner ring</p></dd>
 
 
-<dt>scale_factor</dt>
+<dt id="arg-scale-factor">scale_factor<a class="anchor" aria-label="anchor" href="#arg-scale-factor"></a></dt>
 <dd><p>When scaling by another column, such as width, totals
 will be divided by this value, with 1000 being the default to provide output
 in kb.</p></dd>
 
 
-<dt>r_centre</dt>
+<dt id="arg-r-centre">r_centre<a class="anchor" aria-label="anchor" href="#arg-r-centre"></a></dt>
 <dd><p>The radius of the hole in the centre. Setting to zero will
 create a Pie chart</p></dd>
 
 
-<dt>r_inner, r_outer</dt>
+<dt id="arg-r-inner-r-outer">r_inner, r_outer<a class="anchor" aria-label="anchor" href="#arg-r-inner-r-outer"></a></dt>
 <dd><p>The radii of the inner/outer rings</p></dd>
 
 
-<dt>total_glue</dt>
+<dt id="arg-total-glue">total_glue<a class="anchor" aria-label="anchor" href="#arg-total-glue"></a></dt>
 <dd><p><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a>-syntax for formatting the total which
 appears in the centre of the plot. Internally, the value <code>N</code> will be
 calculated and as such, this value should appear within this argument.</p></dd>
 
 
-<dt>total_size</dt>
+<dt id="arg-total-size">total_size<a class="anchor" aria-label="anchor" href="#arg-total-size"></a></dt>
 <dd><p>Label size total number of entries in the centre of the
 plot.</p></dd>
 
 
-<dt>total_colour</dt>
+<dt id="arg-total-colour">total_colour<a class="anchor" aria-label="anchor" href="#arg-total-colour"></a></dt>
 <dd><p>Label colour for the summary total in the centre</p></dd>
 
 
-<dt>inner_glue, outer_glue</dt>
+<dt id="arg-inner-glue-outer-glue">inner_glue, outer_glue<a class="anchor" aria-label="anchor" href="#arg-inner-glue-outer-glue"></a></dt>
 <dd><p><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a>-syntax for formatting labels
 which appear on each inner/outer segment Internally, the values <code>n</code> and <code>p</code>
 will be calculated as totals and proportions of the total. As such, these
@@ -196,95 +196,95 @@ values can appear within this argument, as well as the fields described in
 the details</p></dd>
 
 
-<dt>total_label, inner_label, outer_label</dt>
+<dt id="arg-total-label-inner-label-outer-label">total_label, inner_label, outer_label<a class="anchor" aria-label="anchor" href="#arg-total-label-inner-label-outer-label"></a></dt>
 <dd><p>Can take values 'text', 'label'
 or 'none'. If setting one the first two values, the labelling function
 <code>geom_*</code> will be called, otherwise no label will be drawn</p></dd>
 
 
-<dt>label_alpha, inner_label_alpha, outer_label_alpha</dt>
+<dt id="arg-label-alpha-inner-label-alpha-outer-label-alpha">label_alpha, inner_label_alpha, outer_label_alpha<a class="anchor" aria-label="anchor" href="#arg-label-alpha-inner-label-alpha-outer-label-alpha"></a></dt>
 <dd><p>transparency for
 labels</p></dd>
 
 
-<dt>label_size, inner_label_size, outer_label_size</dt>
+<dt id="arg-label-size-inner-label-size-outer-label-size">label_size, inner_label_size, outer_label_size<a class="anchor" aria-label="anchor" href="#arg-label-size-inner-label-size-outer-label-size"></a></dt>
 <dd><p>Size of all text labels</p></dd>
 
 
-<dt>label_colour, inner_label_colour, outer_label_colour</dt>
+<dt id="arg-label-colour-inner-label-colour-outer-label-colour">label_colour, inner_label_colour, outer_label_colour<a class="anchor" aria-label="anchor" href="#arg-label-colour-inner-label-colour-outer-label-colour"></a></dt>
 <dd><p>Takes any colour
 specification, with the additional option of 'palette'. In this special case,
 the same palette as is used for each segment will be applied.</p></dd>
 
 
-<dt>min_p, inner_min_p, outer_min_p</dt>
+<dt id="arg-min-p-inner-min-p-outer-min-p">min_p, inner_min_p, outer_min_p<a class="anchor" aria-label="anchor" href="#arg-min-p-inner-min-p-outer-min-p"></a></dt>
 <dd><p>only display labels for segments
 representing greater than this proportion of the total. If inner/outer values
 are specified, the values in <code>min_p</code> will be ignored for that layer</p></dd>
 
 
-<dt>max_p, inner_max_p, outer_max_p</dt>
+<dt id="arg-max-p-inner-max-p-outer-max-p">max_p, inner_max_p, outer_max_p<a class="anchor" aria-label="anchor" href="#arg-max-p-inner-max-p-outer-max-p"></a></dt>
 <dd><p>only display labels for segments
 representing less than this proportion of the total. If inner/outer values
 are specified, the values in <code>max_p</code> will be ignored for that layer</p></dd>
 
 
-<dt>inner_pattern, outer_pattern</dt>
+<dt id="arg-inner-pattern-outer-pattern">inner_pattern, outer_pattern<a class="anchor" aria-label="anchor" href="#arg-inner-pattern-outer-pattern"></a></dt>
 <dd><p>Regular expressions which are combined
 with max_p and min_p values for accurately choosing labels</p></dd>
 
 
-<dt>inner_rotate, outer_rotate</dt>
+<dt id="arg-inner-rotate-outer-rotate">inner_rotate, outer_rotate<a class="anchor" aria-label="anchor" href="#arg-inner-rotate-outer-rotate"></a></dt>
 <dd><p>logical(1). Rotate labels for inner or outer
 rings. This will be ignored by when setting the geom as "label".
 See <a href="https://ggplot2.tidyverse.org/reference/geom_text.html" class="external-link">geom_text</a></p></dd>
 
 
-<dt>explode_inner, explode_outer</dt>
+<dt id="arg-explode-inner-explode-outer">explode_inner, explode_outer<a class="anchor" aria-label="anchor" href="#arg-explode-inner-explode-outer"></a></dt>
 <dd><p>Regular expressions from either the inner
 or outer ring for which segments will be 'exploded'</p></dd>
 
 
-<dt>explode_query</dt>
+<dt id="arg-explode-query">explode_query<a class="anchor" aria-label="anchor" href="#arg-explode-query"></a></dt>
 <dd><p>Setting to AND and specifying values for both the inner
 and outer ring will require matches in both categories</p></dd>
 
 
-<dt>explode_x, explode_y</dt>
+<dt id="arg-explode-x-explode-y">explode_x, explode_y<a class="anchor" aria-label="anchor" href="#arg-explode-x-explode-y"></a></dt>
 <dd><p>Numeric values for shifting exploded values</p></dd>
 
 
-<dt>explode_r</dt>
+<dt id="arg-explode-r">explode_r<a class="anchor" aria-label="anchor" href="#arg-explode-r"></a></dt>
 <dd><p>Radius expansion for exploded values</p></dd>
 
 
-<dt>nudge_r, inner_nudge_r, outer_nudge_r</dt>
+<dt id="arg-nudge-r-inner-nudge-r-outer-nudge-r">nudge_r, inner_nudge_r, outer_nudge_r<a class="anchor" aria-label="anchor" href="#arg-nudge-r-inner-nudge-r-outer-nudge-r"></a></dt>
 <dd><p>Radius expansion for labels</p></dd>
 
 
-<dt>expand</dt>
+<dt id="arg-expand">expand<a class="anchor" aria-label="anchor" href="#arg-expand"></a></dt>
 <dd><p>Passed to <a href="https://ggplot2.tidyverse.org/reference/expansion.html" class="external-link">expansion</a> for both x and y axes.
 Can be helpful if labels are clipped by plot limits</p></dd>
 
 
-<dt>inner_palette</dt>
+<dt id="arg-inner-palette">inner_palette<a class="anchor" aria-label="anchor" href="#arg-inner-palette"></a></dt>
 <dd><p>Colour palette for the inner ring</p></dd>
 
 
-<dt>outer_palette</dt>
+<dt id="arg-outer-palette">outer_palette<a class="anchor" aria-label="anchor" href="#arg-outer-palette"></a></dt>
 <dd><p>Optional colour palette for the outer ring</p></dd>
 
 
-<dt>inner_legend, outer_legend</dt>
+<dt id="arg-inner-legend-outer-legend">inner_legend, outer_legend<a class="anchor" aria-label="anchor" href="#arg-inner-legend-outer-legend"></a></dt>
 <dd><p>logical(1). Show legends for either layer</p></dd>
 
 
-<dt>outer_p_by</dt>
+<dt id="arg-outer-p-by">outer_p_by<a class="anchor" aria-label="anchor" href="#arg-outer-p-by"></a></dt>
 <dd><p>Scale the proportions for outer segments by the complete
 dataset, or within each inner segment</p></dd>
 
 
-<dt>layout</dt>
+<dt id="arg-layout">layout<a class="anchor" aria-label="anchor" href="#arg-layout"></a></dt>
 <dd><p>Passed to <a href="https://patchwork.data-imaginist.com/reference/plot_layout.html" class="external-link">plot_layout</a></p></dd>
 
 </dl></div>

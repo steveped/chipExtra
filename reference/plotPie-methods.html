@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">extraChIPs</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.7.10</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.1</span>
       </span>
     </div>
 
@@ -108,92 +108,92 @@
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>object</dt>
+    <dl><dt id="arg-object">object<a class="anchor" aria-label="anchor" href="#arg-object"></a></dt>
 <dd><p>An object (<code>data.frame</code>)</p></dd>
 
 
-<dt>...</dt>
+<dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
 <dd><p>Not used</p></dd>
 
 
-<dt>scale_by</dt>
+<dt id="arg-scale-by">scale_by<a class="anchor" aria-label="anchor" href="#arg-scale-by"></a></dt>
 <dd><p>Scale the counts by this column. In this case of a GRanges
 object this defaults to the count (scale_by = "n") but can also be specified
 as being width of each range (scale_by = "width"). If choosing width, width
 will be displayed in Kb</p></dd>
 
 
-<dt>fill</dt>
+<dt id="arg-fill">fill<a class="anchor" aria-label="anchor" href="#arg-fill"></a></dt>
 <dd><p>The category/column used to fill the slices of the pie charts</p></dd>
 
 
-<dt>x</dt>
+<dt id="arg-x">x<a class="anchor" aria-label="anchor" href="#arg-x"></a></dt>
 <dd><p>The second (optional) category/column to place along the x-axis</p></dd>
 
 
-<dt>y</dt>
+<dt id="arg-y">y<a class="anchor" aria-label="anchor" href="#arg-y"></a></dt>
 <dd><p>The final (optional) category/column to plce along the y-axis</p></dd>
 
 
-<dt>scale_factor</dt>
+<dt id="arg-scale-factor">scale_factor<a class="anchor" aria-label="anchor" href="#arg-scale-factor"></a></dt>
 <dd><p>When scaling by another column, such as width, totals
 will be divided by this value, with 1000 being the default to provide output
 in kb.</p></dd>
 
 
-<dt>width</dt>
+<dt id="arg-width">width<a class="anchor" aria-label="anchor" href="#arg-width"></a></dt>
 <dd><p>Scale the width of all pies</p></dd>
 
 
-<dt>total_geom</dt>
+<dt id="arg-total-geom">total_geom<a class="anchor" aria-label="anchor" href="#arg-total-geom"></a></dt>
 <dd><p>The geom_* to use for the totals at the centre of each pie.
 Setting this to 'none' will disable totals</p></dd>
 
 
-<dt>total_glue</dt>
+<dt id="arg-total-glue">total_glue<a class="anchor" aria-label="anchor" href="#arg-total-glue"></a></dt>
 <dd><p><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a> syntax to use for the totals in the
 centre of each pie. The column 'N' will produce the totals and any other
 values or formatting may be added here.</p></dd>
 
 
-<dt>total_colour, total_fill, total_alpha, total_size</dt>
+<dt id="arg-total-colour-total-fill-total-alpha-total-size">total_colour, total_fill, total_alpha, total_size<a class="anchor" aria-label="anchor" href="#arg-total-colour-total-fill-total-alpha-total-size"></a></dt>
 <dd><p>Colour, fill, alpha and
 size for the main totals in the centre of each pie chart</p></dd>
 
 
-<dt>min_p</dt>
+<dt id="arg-min-p">min_p<a class="anchor" aria-label="anchor" href="#arg-min-p"></a></dt>
 <dd><p>The minimum proportion of the total required for adding labels.
 Effectively removes labels from pie charts with few members. Alternatively
 when only one column is specified, categories below this will not be shown
 around the edge of the plot</p></dd>
 
 
-<dt>max_p</dt>
+<dt id="arg-max-p">max_p<a class="anchor" aria-label="anchor" href="#arg-max-p"></a></dt>
 <dd><p>only display labels for segments representing less than this
 proportion of the total.</p></dd>
 
 
-<dt>cat_geom</dt>
+<dt id="arg-cat-geom">cat_geom<a class="anchor" aria-label="anchor" href="#arg-cat-geom"></a></dt>
 <dd><p>The geom_* to use for category labels corresponding to each
 slice of the pie. Setting this to 'none' will disable category labels</p></dd>
 
 
-<dt>cat_glue</dt>
+<dt id="arg-cat-glue">cat_glue<a class="anchor" aria-label="anchor" href="#arg-cat-glue"></a></dt>
 <dd><p><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a> syntax to use for the category labels
 corresponding to each slice of the pie charts. The columns 'n' and 'p' can
 be used to print totals and proportions for each slice.</p></dd>
 
 
-<dt>cat_colour, cat_fill, cat_size, cat_alpha</dt>
+<dt id="arg-cat-colour-cat-fill-cat-size-cat-alpha">cat_colour, cat_fill, cat_size, cat_alpha<a class="anchor" aria-label="anchor" href="#arg-cat-colour-cat-fill-cat-size-cat-alpha"></a></dt>
 <dd><p>Colour, fill, size and alpha
 for category labels</p></dd>
 
 
-<dt>cat_adj</dt>
+<dt id="arg-cat-adj">cat_adj<a class="anchor" aria-label="anchor" href="#arg-cat-adj"></a></dt>
 <dd><p>Adjust category labels</p></dd>
 
 
-<dt>hole_width</dt>
+<dt id="arg-hole-width">hole_width<a class="anchor" aria-label="anchor" href="#arg-hole-width"></a></dt>
 <dd><p>Add a hole in the middle to turn the plot into a donut.
 Values between zero and 1 work best. Only implemented for pie charts using
 one value (i.e. fill)</p></dd>

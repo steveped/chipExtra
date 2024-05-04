@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">extraChIPs</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.7.10</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.1</span>
       </span>
     </div>
 
@@ -112,16 +112,16 @@
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>gr</dt>
+    <dl><dt id="arg-gr">gr<a class="anchor" aria-label="anchor" href="#arg-gr"></a></dt>
 <dd><p>The range(s) of interest. Must be on a single chromosome</p></dd>
 
 
-<dt>hic</dt>
+<dt id="arg-hic">hic<a class="anchor" aria-label="anchor" href="#arg-hic"></a></dt>
 <dd><p>Any HiC interactions to be included as a GenomicInteractions
 object. If not supplied, no HiC track will be drawn.</p></dd>
 
 
-<dt>features</dt>
+<dt id="arg-features">features<a class="anchor" aria-label="anchor" href="#arg-features"></a></dt>
 <dd><p>A named GRangesList or list of GRangesList objects. Each
 GRangesList should contain features in each element which will drawn on the
 same track. If providing a list, each GRangesList within the list will drawn
@@ -129,14 +129,14 @@ on a separate track. If this argument is not specified, no feature track will
 be drawn. Features will be drawn with colours provided in  <code>featcol</code>.</p></dd>
 
 
-<dt>genes</dt>
+<dt id="arg-genes">genes<a class="anchor" aria-label="anchor" href="#arg-genes"></a></dt>
 <dd><p>A GRanges object with exon structure for each transcript/gene.
 If not included, no track will be drawn for gene/transcript structure.
 The expected mcols in this object are <code>type</code>, <code>gene</code>, <code>exon</code> <code>transcript</code>
 and <code>symbol</code>. See data(ex_trans) for an example.</p></dd>
 
 
-<dt>coverage</dt>
+<dt id="arg-coverage">coverage<a class="anchor" aria-label="anchor" href="#arg-coverage"></a></dt>
 <dd><p>A named list of BigWigFileList objects containing the
 primary tracks to show coverage for. Each list element will be drawn on a
 separate track, with elements within each BigWigFileList shown on the same
@@ -145,7 +145,7 @@ BigWigFileList will plot all individual files on separate tracks.
 If not included, no coverage tracks will be drawn.</p></dd>
 
 
-<dt>annotation</dt>
+<dt id="arg-annotation">annotation<a class="anchor" aria-label="anchor" href="#arg-annotation"></a></dt>
 <dd><p>Annotations for the coverage track(s).
 A single GRangesList if coverage is a BigWigListList.
 If coverage is supplied as a list of BigWigFileLists, a named list of
@@ -153,15 +153,15 @@ GRangesList objects for each coverage track being annotatated. Names must
 match those given for coverage.</p></dd>
 
 
-<dt>zoom</dt>
+<dt id="arg-zoom">zoom<a class="anchor" aria-label="anchor" href="#arg-zoom"></a></dt>
 <dd><p>Multiplicative factor for zooming in and out</p></dd>
 
 
-<dt>shift</dt>
+<dt id="arg-shift">shift<a class="anchor" aria-label="anchor" href="#arg-shift"></a></dt>
 <dd><p>Shift the plot. Applied after zooming</p></dd>
 
 
-<dt>max</dt>
+<dt id="arg-max">max<a class="anchor" aria-label="anchor" href="#arg-max"></a></dt>
 <dd><p>The maximum width of the plotting region. Given that the width of
 the final plotting window will be determined by any HiC interactions, this
 argument excludes any interactions beyond this distance. Plotting can be
@@ -169,22 +169,22 @@ somewhat slow if any long range interactions are included. Ignored if no HiC
 interactions are supplied.</p></dd>
 
 
-<dt>axistrack</dt>
+<dt id="arg-axistrack">axistrack<a class="anchor" aria-label="anchor" href="#arg-axistrack"></a></dt>
 <dd><p>logical. Add an AxisTrack()</p></dd>
 
 
-<dt>cytobands</dt>
+<dt id="arg-cytobands">cytobands<a class="anchor" aria-label="anchor" href="#arg-cytobands"></a></dt>
 <dd><p>Cytogenetic bands to be displayed on each chromosome.
 See data('grch37.cytobands') for the correct format. Only drawn if a
 cytobands data.frame is provided.</p></dd>
 
 
-<dt>covtype</dt>
+<dt id="arg-covtype">covtype<a class="anchor" aria-label="anchor" href="#arg-covtype"></a></dt>
 <dd><p>The plot type for coverage. Currently only lines ("l")
 and heatmaps ("heatmap") are supported</p></dd>
 
 
-<dt>linecol</dt>
+<dt id="arg-linecol">linecol<a class="anchor" aria-label="anchor" href="#arg-linecol"></a></dt>
 <dd><p>If passing a BigWigFileList to coverage, a vector of colours.
 If passing a list of BigWigFileList objects to coverage, a list of colours
 with structure that matches the object being passed to coverage, i.e. a
@@ -192,46 +192,46 @@ named list of the same length, with elements who's length matches each
 BigWigFileList. Only used if covtype = "l".</p></dd>
 
 
-<dt>gradient</dt>
+<dt id="arg-gradient">gradient<a class="anchor" aria-label="anchor" href="#arg-gradient"></a></dt>
 <dd><p>Colour gradient for heatmaps</p></dd>
 
 
-<dt>hiccol</dt>
+<dt id="arg-hiccol">hiccol<a class="anchor" aria-label="anchor" href="#arg-hiccol"></a></dt>
 <dd><p>list with names <code>"anchors"</code> and <code>"interactions"</code>. Colours
 are passed to these elements</p></dd>
 
 
-<dt>featcol</dt>
+<dt id="arg-featcol">featcol<a class="anchor" aria-label="anchor" href="#arg-featcol"></a></dt>
 <dd><p>Named vector (or list) of colours for each feature. Must be
 provided if drawing features</p></dd>
 
 
-<dt>genecol</dt>
+<dt id="arg-genecol">genecol<a class="anchor" aria-label="anchor" href="#arg-genecol"></a></dt>
 <dd><p>Named vector (or list) of colours for each gene category</p></dd>
 
 
-<dt>annotcol</dt>
+<dt id="arg-annotcol">annotcol<a class="anchor" aria-label="anchor" href="#arg-annotcol"></a></dt>
 <dd><p>Colours matching the coverage annotations</p></dd>
 
 
-<dt>highlight</dt>
+<dt id="arg-highlight">highlight<a class="anchor" aria-label="anchor" href="#arg-highlight"></a></dt>
 <dd><p>Outline colour for the highlight track. Setting this to
 <code>NULL</code> will remove the highlight</p></dd>
 
 
-<dt>hicsize, featsize, genesize, covsize, annotsize</dt>
+<dt id="arg-hicsize-featsize-genesize-covsize-annotsize">hicsize, featsize, genesize, covsize, annotsize<a class="anchor" aria-label="anchor" href="#arg-hicsize-featsize-genesize-covsize-annotsize"></a></dt>
 <dd><p>Relative sizes for each track (hic, features, genes, coverage &amp; annotation)</p></dd>
 
 
-<dt>hicname, featname</dt>
+<dt id="arg-hicname-featname">hicname, featname<a class="anchor" aria-label="anchor" href="#arg-hicname-featname"></a></dt>
 <dd><p>Names displayed in the LHS panel</p></dd>
 
 
-<dt>featstack</dt>
+<dt id="arg-featstack">featstack<a class="anchor" aria-label="anchor" href="#arg-featstack"></a></dt>
 <dd><p>Stacking for the fature track</p></dd>
 
 
-<dt>collapseTranscripts</dt>
+<dt id="arg-collapsetranscripts">collapseTranscripts<a class="anchor" aria-label="anchor" href="#arg-collapsetranscripts"></a></dt>
 <dd><p>Passed to <a href="https://rdrr.io/pkg/Gviz/man/GeneRegionTrack-class.html" class="external-link">GeneRegionTrack</a> for the
 genes track. Defaults to <code>"auto"</code> for automatic setting. If the number of
 transcripts to be plotted is &gt; <code>maxtrans</code>, the argument will be
@@ -239,42 +239,42 @@ automatically set to <code>"meta"</code>, otherwise this will be passed as <code
 will show all transcripts.</p></dd>
 
 
-<dt>maxTrans</dt>
+<dt id="arg-maxtrans">maxTrans<a class="anchor" aria-label="anchor" href="#arg-maxtrans"></a></dt>
 <dd><p>Only used if <code>collapseTranscripts</code> is set to "auto".</p></dd>
 
 
-<dt>ylim</dt>
+<dt id="arg-ylim">ylim<a class="anchor" aria-label="anchor" href="#arg-ylim"></a></dt>
 <dd><p>If a numeric vector, this will be passed to all coverage tracks.
 Alternatively, a named list of y-limits for each coverage track with names
 that match those in each element of the coverage list.</p></dd>
 
 
-<dt>...</dt>
+<dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
 <dd><p>Passed to <a href="https://rdrr.io/pkg/Gviz/man/DataTrack-class.html" class="external-link">DataTrack</a> for the <strong>coverage tracks</strong> only.
 Useful arguments may be things like <code>legend</code></p></dd>
 
 
-<dt>fontsize</dt>
+<dt id="arg-fontsize">fontsize<a class="anchor" aria-label="anchor" href="#arg-fontsize"></a></dt>
 <dd><p>Applied across all tracks</p></dd>
 
 
-<dt>cex.title</dt>
+<dt id="arg-cex-title">cex.title<a class="anchor" aria-label="anchor" href="#arg-cex-title"></a></dt>
 <dd><p>Passed to all tracks</p></dd>
 
 
-<dt>rotation.title</dt>
+<dt id="arg-rotation-title">rotation.title<a class="anchor" aria-label="anchor" href="#arg-rotation-title"></a></dt>
 <dd><p>Passed to all tracks</p></dd>
 
 
-<dt>col.title</dt>
+<dt id="arg-col-title">col.title<a class="anchor" aria-label="anchor" href="#arg-col-title"></a></dt>
 <dd><p>Passed to all tracks</p></dd>
 
 
-<dt>background.title</dt>
+<dt id="arg-background-title">background.title<a class="anchor" aria-label="anchor" href="#arg-background-title"></a></dt>
 <dd><p>Passed to all tracks</p></dd>
 
 
-<dt>title.width</dt>
+<dt id="arg-title-width">title.width<a class="anchor" aria-label="anchor" href="#arg-title-width"></a></dt>
 <dd><p>Expansion factor passed to <a href="https://rdrr.io/pkg/Gviz/man/plotTracks.html" class="external-link">plotTracks</a>, and
 used to widen the panels on the LHS of all tracks.
 Can have unpredictable effects on the font

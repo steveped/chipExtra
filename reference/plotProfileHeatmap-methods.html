@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">extraChIPs</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.7.10</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.1</span>
       </span>
     </div>
 
@@ -118,58 +118,58 @@
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>object</dt>
+    <dl><dt id="arg-object">object<a class="anchor" aria-label="anchor" href="#arg-object"></a></dt>
 <dd><p>A GRanges or GRangesList object</p></dd>
 
 
-<dt>...</dt>
+<dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
 <dd><p>Passed to <a href="https://ggplot2.tidyverse.org/reference/facet_grid.html" class="external-link">facet_grid</a> internally. Can be utilised
 for switching panel strips or passing a labeller function</p></dd>
 
 
-<dt>profileCol</dt>
+<dt id="arg-profilecol">profileCol<a class="anchor" aria-label="anchor" href="#arg-profilecol"></a></dt>
 <dd><p>Column name specifying where to find the profile DataFrames</p></dd>
 
 
-<dt>xValue, fillValue</dt>
+<dt id="arg-xvalue-fillvalue">xValue, fillValue<a class="anchor" aria-label="anchor" href="#arg-xvalue-fillvalue"></a></dt>
 <dd><p>Columns within the profile DataFrames for heatmaps</p></dd>
 
 
-<dt>facetX, facetY</dt>
+<dt id="arg-facetx-facety">facetX, facetY<a class="anchor" aria-label="anchor" href="#arg-facetx-facety"></a></dt>
 <dd><p>Columns used for faceting across the x- or y-axis
 respectively</p></dd>
 
 
-<dt>colour</dt>
+<dt id="arg-colour">colour<a class="anchor" aria-label="anchor" href="#arg-colour"></a></dt>
 <dd><p>Column used for colouring lines in the summary panel. Defaults
 to any column used for facetY</p></dd>
 
 
-<dt>linetype</dt>
+<dt id="arg-linetype">linetype<a class="anchor" aria-label="anchor" href="#arg-linetype"></a></dt>
 <dd><p>Column used for linetypes in the summary panel</p></dd>
 
 
-<dt>summariseBy</dt>
+<dt id="arg-summariseby">summariseBy<a class="anchor" aria-label="anchor" href="#arg-summariseby"></a></dt>
 <dd><p>Function for creating the summary plot in the top panel.
 If set to 'none', no summary plot will be drawn. Otherwise the top panel will
 contain a line-plot representing this summary value for each x-axis bin</p></dd>
 
 
-<dt>xLab, yLab, fillLab</dt>
+<dt id="arg-xlab-ylab-filllab">xLab, yLab, fillLab<a class="anchor" aria-label="anchor" href="#arg-xlab-ylab-filllab"></a></dt>
 <dd><p>Labels for plotting aesthetics. Can be overwritten
 using labs() on any returned object</p></dd>
 
 
-<dt>labelFunX</dt>
+<dt id="arg-labelfunx">labelFunX<a class="anchor" aria-label="anchor" href="#arg-labelfunx"></a></dt>
 <dd><p>Function for formatting x-axis labels</p></dd>
 
 
-<dt>relHeight</dt>
+<dt id="arg-relheight">relHeight<a class="anchor" aria-label="anchor" href="#arg-relheight"></a></dt>
 <dd><p>The relative height of the top summary panel.
 Represents the fraction of the plotting area taken up by the summary panel.</p></dd>
 
 
-<dt>sortFilter</dt>
+<dt id="arg-sortfilter">sortFilter<a class="anchor" aria-label="anchor" href="#arg-sortfilter"></a></dt>
 <dd><p>If calling on a GRangesList, a method for subsetting the
 original object (e.g. 1:2). If calling on a GRanges object should be and
 expression able to be parsed as a filtering expression using
@@ -179,17 +179,17 @@ all. Ranges will always be sorted such that those with the strongest signal
 are at the top of the plot</p></dd>
 
 
-<dt>maxDist</dt>
+<dt id="arg-maxdist">maxDist<a class="anchor" aria-label="anchor" href="#arg-maxdist"></a></dt>
 <dd><p>Maximum distance from the centre to find the strongest signal
 when arranging the ranges</p></dd>
 
 
-<dt>summaryLabelSide</dt>
+<dt id="arg-summarylabelside">summaryLabelSide<a class="anchor" aria-label="anchor" href="#arg-summarylabelside"></a></dt>
 <dd><p>Side to place y-axis for the summary plot in the top
 panel</p></dd>
 
 
-<dt>respectLevels</dt>
+<dt id="arg-respectlevels">respectLevels<a class="anchor" aria-label="anchor" href="#arg-respectlevels"></a></dt>
 <dd><p>logical(1) If FALSE, facets along the y-axis will be
 arranged in descending order of signal, otherwise any original factor levels
 will be retained</p></dd>

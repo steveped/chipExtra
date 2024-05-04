@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">extraChIPs</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.7.10</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.1</span>
       </span>
     </div>
 
@@ -84,37 +84,37 @@
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>x</dt>
+    <dl><dt id="arg-x">x<a class="anchor" aria-label="anchor" href="#arg-x"></a></dt>
 <dd><p>A GRangesList</p></dd>
 
 
-<dt>p</dt>
+<dt id="arg-p">p<a class="anchor" aria-label="anchor" href="#arg-p"></a></dt>
 <dd><p>The minimum proportion of samples (i.e. elements of <code>x</code>) required
 for a peak to be retained in the output. By default all merged peaks will
 be returned</p></dd>
 
 
-<dt>var</dt>
+<dt id="arg-var">var<a class="anchor" aria-label="anchor" href="#arg-var"></a></dt>
 <dd><p>Additional columns in the <code>mcols</code> element to retain</p></dd>
 
 
-<dt>method</dt>
+<dt id="arg-method">method<a class="anchor" aria-label="anchor" href="#arg-method"></a></dt>
 <dd><p>Either return the union of all overlapping ranges, or the
 regions within the overlapping ranges which are covered by the specified
 proportion of replicates. When using p = 0, both methods will return identical
 results</p></dd>
 
 
-<dt>ignore.strand, simplify, ...</dt>
+<dt id="arg-ignore-strand-simplify-">ignore.strand, simplify, ...<a class="anchor" aria-label="anchor" href="#arg-ignore-strand-simplify-"></a></dt>
 <dd><p>Passed to <a href="reduceMC.html">reduceMC</a> or
 <a href="setoptsMC-methods.html">intersectMC</a> internally</p></dd>
 
 
-<dt>min_width</dt>
+<dt id="arg-min-width">min_width<a class="anchor" aria-label="anchor" href="#arg-min-width"></a></dt>
 <dd><p>Discard any regions below this width</p></dd>
 
 
-<dt>merge_within</dt>
+<dt id="arg-merge-within">merge_within<a class="anchor" aria-label="anchor" href="#arg-merge-within"></a></dt>
 <dd><p>Passed to <a href="https://rdrr.io/pkg/IRanges/man/inter-range-methods.html" class="external-link">reduce</a> as <code>min.gapwidth</code></p></dd>
 
 </dl></div>

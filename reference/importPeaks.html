@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">extraChIPs</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.7.10</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.1</span>
       </span>
     </div>
 
@@ -86,52 +86,52 @@
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>x</dt>
+    <dl><dt id="arg-x">x<a class="anchor" aria-label="anchor" href="#arg-x"></a></dt>
 <dd><p>One or more files to be imported. All files must be of the same
 type, i.e. narrow or broad</p></dd>
 
 
-<dt>type</dt>
+<dt id="arg-type">type<a class="anchor" aria-label="anchor" href="#arg-type"></a></dt>
 <dd><p>The type of peaks to be imported</p></dd>
 
 
-<dt>blacklist</dt>
+<dt id="arg-blacklist">blacklist<a class="anchor" aria-label="anchor" href="#arg-blacklist"></a></dt>
 <dd><p>A set of ranges to be excluded</p></dd>
 
 
-<dt>seqinfo</dt>
+<dt id="arg-seqinfo">seqinfo<a class="anchor" aria-label="anchor" href="#arg-seqinfo"></a></dt>
 <dd><p>A seqinfo object to be applied to the GRanges objects</p></dd>
 
 
-<dt>pruning.mode</dt>
+<dt id="arg-pruning-mode">pruning.mode<a class="anchor" aria-label="anchor" href="#arg-pruning-mode"></a></dt>
 <dd><p>How to handle conflicts if supplying a seqinfo object.
 Defaults to <code>pruning.mode = "coarse"</code>. Only "coarse" and "error" are
 implemented. See <a href="https://rdrr.io/pkg/GenomeInfoDb/man/seqinfo.html" class="external-link">seqinfo</a>.</p></dd>
 
 
-<dt>sort</dt>
+<dt id="arg-sort">sort<a class="anchor" aria-label="anchor" href="#arg-sort"></a></dt>
 <dd><p>logical. Should the ranges be sorted during import</p></dd>
 
 
-<dt>setNames</dt>
+<dt id="arg-setnames">setNames<a class="anchor" aria-label="anchor" href="#arg-setnames"></a></dt>
 <dd><p>logical Set basename(x) as the name for each element of the
 GRangesList</p></dd>
 
 
-<dt>glueNames</dt>
+<dt id="arg-gluenames">glueNames<a class="anchor" aria-label="anchor" href="#arg-gluenames"></a></dt>
 <dd><p><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a> syntax for naming list elements</p></dd>
 
 
-<dt>centre</dt>
+<dt id="arg-centre">centre<a class="anchor" aria-label="anchor" href="#arg-centre"></a></dt>
 <dd><p>Add the estimated peak centre. Ignored unless type = "narrow"</p></dd>
 
 
-<dt>nameRanges</dt>
+<dt id="arg-nameranges">nameRanges<a class="anchor" aria-label="anchor" href="#arg-nameranges"></a></dt>
 <dd><p>Place any values in the name column as range names within
 each file.</p></dd>
 
 
-<dt>...</dt>
+<dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
 <dd><p>passed to <code>sort</code></p></dd>
 
 </dl></div>
