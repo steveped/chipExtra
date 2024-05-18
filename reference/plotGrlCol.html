@@ -3,8 +3,6 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]--></head><body data-spy="scroll" data-target="#toc">
-    
-
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -17,10 +15,9 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">extraChIPs</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.9.2</span>
       </span>
     </div>
-
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav"><li>
   <a href="../reference/index.html">Reference</a>
@@ -28,7 +25,6 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Vignettes
-     
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -47,15 +43,11 @@
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/smped/extraChIPs" class="external-link">
     <span class="fa fa-github fa-lg"></span>
-     
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
-
-      
-
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
@@ -63,11 +55,9 @@
     <small class="dont-index">Source: <a href="https://github.com/smped/extraChIPs/blob/HEAD/R/plotGrlCol.R" class="external-link"><code>R/plotGrlCol.R</code></a></small>
     <div class="hidden name"><code>plotGrlCol.Rd</code></div>
     </div>
-
     <div class="ref-description">
     <p>Draw a plot from a GRangesList column using ggplot2</p>
     </div>
-
     <div id="ref-usage">
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">plotGrlCol</span><span class="op">(</span></span>
 <span>  <span class="va">x</span>,</span>
@@ -91,88 +81,54 @@
 <span>  digits <span class="op">=</span> <span class="fl">0</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
-
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt id="arg-x">x<a class="anchor" aria-label="anchor" href="#arg-x"></a></dt>
 <dd><p>A GRangesList</p></dd>
-
-
 <dt id="arg-var">var<a class="anchor" aria-label="anchor" href="#arg-var"></a></dt>
 <dd><p>The variable to plot. Either a column in the mcols element or
 width. Can be quoted or unquoted</p></dd>
-
-
 <dt id="arg-geom">geom<a class="anchor" aria-label="anchor" href="#arg-geom"></a></dt>
 <dd><p>Choose between different geoms, or even provide a geom_*()
 function</p></dd>
-
-
 <dt id="arg--id">.id<a class="anchor" aria-label="anchor" href="#arg--id"></a></dt>
 <dd><p>The column name to place the element names. Passed internally to
 the same argument in <a href="https://dplyr.tidyverse.org/reference/bind_rows.html" class="external-link">bind_rows</a></p></dd>
-
-
 <dt id="arg-df">df<a class="anchor" aria-label="anchor" href="#arg-df"></a></dt>
 <dd><p>Optional data.frame with columns to be passed to the colour or
 fill parameters. Must contain a column with the same name as the
 value passed to the <code>.id</code> argument.</p></dd>
-
-
 <dt id="arg-fill-colour">fill, colour<a class="anchor" aria-label="anchor" href="#arg-fill-colour"></a></dt>
 <dd><p>Optional column names found in the df. Can be quoted or
 unquoted</p></dd>
-
-
 <dt id="arg-q">q<a class="anchor" aria-label="anchor" href="#arg-q"></a></dt>
 <dd><p>The overall percentile to be drawn as a labelled, horizontal line.
 Set q = 0 to hide this line</p></dd>
-
-
 <dt id="arg-q-size">q_size<a class="anchor" aria-label="anchor" href="#arg-q-size"></a></dt>
 <dd><p>Text size of percentile label</p></dd>
-
-
 <dt id="arg-qline-type-qline-col">qline_type, qline_col<a class="anchor" aria-label="anchor" href="#arg-qline-type-qline-col"></a></dt>
 <dd><p>Linetype and colour arguments for the horizontal
 line showing the specified percentile(s)</p></dd>
-
-
 <dt id="arg-total">total<a class="anchor" aria-label="anchor" href="#arg-total"></a></dt>
 <dd><p>Glue syntax for totals, representing the length of each
 GRangesList element</p></dd>
-
-
 <dt id="arg-total-geom">total_geom<a class="anchor" aria-label="anchor" href="#arg-total-geom"></a></dt>
 <dd><p>Passed to <a href="https://ggplot2.tidyverse.org/reference/annotate.html" class="external-link">annotate</a>. Set to <code>none</code> to hide
 totals</p></dd>
-
-
 <dt id="arg-total-pos">total_pos<a class="anchor" aria-label="anchor" href="#arg-total-pos"></a></dt>
 <dd><p>Position for placing totals</p></dd>
-
-
 <dt id="arg-total-size-total-alpha">total_size, total_alpha<a class="anchor" aria-label="anchor" href="#arg-total-size-total-alpha"></a></dt>
 <dd><p>Size and transparency of totals</p></dd>
-
-
 <dt id="arg-total-adj">total_adj<a class="anchor" aria-label="anchor" href="#arg-total-adj"></a></dt>
 <dd><p>Adjustment for labels</p></dd>
-
-
 <dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
 <dd><p>Passed to the geom if selecting via character string. Ignored
 otherwise</p></dd>
-
-
 <dt id="arg-digits">digits<a class="anchor" aria-label="anchor" href="#arg-digits"></a></dt>
 <dd><p>Number of decimal places for the horizontal line label</p></dd>
-
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
 <p>A ggplot object</p>
     </div>
     <div id="details">
@@ -193,7 +149,6 @@ associated label.</p>
 able to be placed across the median values, or at the top and bottom
 extremes of the plot.</p>
     </div>
-
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co">## Load some peaks</span></span></span>
@@ -234,22 +189,12 @@ extremes of the plot.</p>
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>
     </nav></div>
 </div>
-
-
       <footer><div class="copyright">
   <p></p><p>Developed by <a href="https://github.com/smped" class="external-link">Stevie Pederson</a>.</p>
 </div>
-
 <div class="pkgdown">
   <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.9000.</p>
 </div>
-
       </footer></div>
-
-  
-
-
-  
-
   </body></html>
 

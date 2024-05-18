@@ -19,8 +19,6 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
-    
-
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -33,10 +31,9 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">extraChIPs</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.9.2</span>
       </span>
     </div>
-
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
@@ -45,7 +42,6 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Vignettes
-     
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
@@ -68,7 +64,6 @@
 <li>
   <a href="https://github.com/smped/extraChIPs" class="external-link">
     <span class="fa fa-github fa-lg"></span>
-     
   </a>
 </li>
       </ul>
@@ -78,9 +73,6 @@
 <!--/.container -->
 </div>
 <!--/.navbar -->
-
-      
-
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
@@ -94,16 +86,10 @@ AustraliaDame Roma Mitchell Cancer Researc Laboratories, University of
 AdelaideJohn Curtin School of Medical Research, Australian National
 University<br><a class="author_email" href="mailto:#"></a><a href="mailto:stephen.pederson.au@gmail.com" class="email">stephen.pederson.au@gmail.com</a>
       </address>
-                  
-      
-      <small class="dont-index">Source: <a href="https://github.com/smped/extraChIPs/blob/HEAD/vignettes/differential_signal_sliding.Rmd" class="external-link"><code>vignettes/differential_signal_sliding.Rmd</code></a></small>
+                              <small class="dont-index">Source: <a href="https://github.com/smped/extraChIPs/blob/HEAD/vignettes/differential_signal_sliding.Rmd" class="external-link"><code>vignettes/differential_signal_sliding.Rmd</code></a></small>
       <div class="hidden name"><code>differential_signal_sliding.Rmd</code></div>
-
     </div>
-
-    
-    
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+        <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">knitr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/knitr/man/opts_chunk.html" class="external-link">opts_chunk</a></span><span class="op">$</span><span class="fu">set</span><span class="op">(</span>message <span class="op">=</span> <span class="cn">FALSE</span>, crop <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
 <div class="section level2">
 <h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
@@ -1279,7 +1265,12 @@ the HFGC components.</p>
 <span><span class="co">## LAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.20.so;  LAPACK version 3.10.0</span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## locale:</span></span>
-<span><span class="co">## [1] C</span></span>
+<span><span class="co">##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              </span></span>
+<span><span class="co">##  [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    </span></span>
+<span><span class="co">##  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   </span></span>
+<span><span class="co">##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 </span></span>
+<span><span class="co">##  [9] LC_ADDRESS=C               LC_TELEPHONE=C            </span></span>
+<span><span class="co">## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       </span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## time zone: UTC</span></span>
 <span><span class="co">## tzcode source: system (glibc)</span></span>
@@ -1295,7 +1286,7 @@ the HFGC components.</p>
 <span><span class="co">##  [7] mclust_6.1.1                quantro_1.38.0             </span></span>
 <span><span class="co">##  [9] magrittr_2.0.3              here_1.0.1                 </span></span>
 <span><span class="co">## [11] glue_1.7.0                  scales_1.3.0               </span></span>
-<span><span class="co">## [13] plyranges_1.24.0            extraChIPs_1.8.1           </span></span>
+<span><span class="co">## [13] plyranges_1.24.0            extraChIPs_1.9.2           </span></span>
 <span><span class="co">## [15] ggside_0.3.1                patchwork_1.2.0            </span></span>
 <span><span class="co">## [17] edgeR_4.2.0                 limma_3.60.0               </span></span>
 <span><span class="co">## [19] rtracklayer_1.64.0          BiocParallel_1.38.0        </span></span>
@@ -1327,7 +1318,7 @@ the HFGC components.</p>
 <span><span class="co">##  [23] textshaping_0.3.7          formatR_1.14              </span></span>
 <span><span class="co">##  [25] sass_0.4.9                 genefilter_1.86.0         </span></span>
 <span><span class="co">##  [27] askpass_1.2.0              pkgdown_2.0.9.9000        </span></span>
-<span><span class="co">##  [29] systemfonts_1.0.6          foreign_0.8-86            </span></span>
+<span><span class="co">##  [29] systemfonts_1.1.0          foreign_0.8-86            </span></span>
 <span><span class="co">##  [31] siggenes_1.78.0            illuminaio_0.46.0         </span></span>
 <span><span class="co">##  [33] dichromat_2.0-0.1          scrime_1.3.5              </span></span>
 <span><span class="co">##  [35] BSgenome_1.72.0            rstudioapi_0.16.0         </span></span>
@@ -1336,7 +1327,7 @@ the HFGC components.</p>
 <span><span class="co">##  [41] interp_1.1-6               futile.logger_1.4.3       </span></span>
 <span><span class="co">##  [43] fansi_1.0.6                abind_1.4-5               </span></span>
 <span><span class="co">##  [45] lifecycle_1.0.4            yaml_2.3.8                </span></span>
-<span><span class="co">##  [47] rhdf5_2.48.0               SparseArray_1.4.0         </span></span>
+<span><span class="co">##  [47] rhdf5_2.48.0               SparseArray_1.4.3         </span></span>
 <span><span class="co">##  [49] BiocFileCache_2.12.0       grid_4.4.0                </span></span>
 <span><span class="co">##  [51] blob_1.2.4                 crayon_1.5.2              </span></span>
 <span><span class="co">##  [53] lattice_0.22-6             ComplexUpset_1.3.3        </span></span>
@@ -1346,8 +1337,8 @@ the HFGC components.</p>
 <span><span class="co">##  [61] metapod_1.12.0             rjson_0.2.21              </span></span>
 <span><span class="co">##  [63] codetools_0.2-20           data.table_1.15.4         </span></span>
 <span><span class="co">##  [65] vctrs_0.6.5                png_0.1-8                 </span></span>
-<span><span class="co">##  [67] gtable_0.3.5               cachem_1.0.8              </span></span>
-<span><span class="co">##  [69] xfun_0.43                  S4Arrays_1.4.0            </span></span>
+<span><span class="co">##  [67] gtable_0.3.5               cachem_1.1.0              </span></span>
+<span><span class="co">##  [69] xfun_0.44                  S4Arrays_1.4.0            </span></span>
 <span><span class="co">##  [71] survival_3.6-4             iterators_1.0.14          </span></span>
 <span><span class="co">##  [73] statmod_1.5.0              GenomicInteractions_1.38.0</span></span>
 <span><span class="co">##  [75] nlme_3.1-164               bit64_4.0.5               </span></span>
@@ -1359,23 +1350,23 @@ the HFGC components.</p>
 <span><span class="co">##  [87] bit_4.0.5                  compiler_4.4.0            </span></span>
 <span><span class="co">##  [89] curl_5.2.1                 httr2_1.0.1               </span></span>
 <span><span class="co">##  [91] htmlTable_2.4.2            xml2_1.3.6                </span></span>
-<span><span class="co">##  [93] desc_1.4.3                 DelayedArray_0.30.0       </span></span>
+<span><span class="co">##  [93] desc_1.4.3                 DelayedArray_0.30.1       </span></span>
 <span><span class="co">##  [95] bookdown_0.39              checkmate_2.3.1           </span></span>
 <span><span class="co">##  [97] quadprog_1.5-8             rappdirs_0.3.3            </span></span>
-<span><span class="co">##  [99] digest_0.6.35              rmarkdown_2.26.2          </span></span>
+<span><span class="co">##  [99] digest_0.6.35              rmarkdown_2.27.1          </span></span>
 <span><span class="co">## [101] GEOquery_2.72.0            htmltools_0.5.8.1         </span></span>
 <span><span class="co">## [103] pkgconfig_2.0.3            jpeg_0.1-10               </span></span>
 <span><span class="co">## [105] base64enc_0.1-3            sparseMatrixStats_1.16.0  </span></span>
 <span><span class="co">## [107] highr_0.10                 dbplyr_2.5.0              </span></span>
-<span><span class="co">## [109] fastmap_1.1.1              ensembldb_2.28.0          </span></span>
+<span><span class="co">## [109] fastmap_1.2.0              ensembldb_2.28.0          </span></span>
 <span><span class="co">## [111] rlang_1.1.3                htmlwidgets_1.6.4         </span></span>
 <span><span class="co">## [113] UCSC.utils_1.0.0           DelayedMatrixStats_1.26.0 </span></span>
-<span><span class="co">## [115] farver_2.1.1               jquerylib_0.1.4           </span></span>
+<span><span class="co">## [115] farver_2.1.2               jquerylib_0.1.4           </span></span>
 <span><span class="co">## [117] jsonlite_1.8.8             VariantAnnotation_1.50.0  </span></span>
 <span><span class="co">## [119] RCurl_1.98-1.14            Formula_1.2-5             </span></span>
 <span><span class="co">## [121] GenomeInfoDbData_1.2.12    Rhdf5lib_1.26.0           </span></span>
 <span><span class="co">## [123] munsell_0.5.1              Rcpp_1.0.12               </span></span>
-<span><span class="co">## [125] stringi_1.8.3              zlibbioc_1.50.0           </span></span>
+<span><span class="co">## [125] stringi_1.8.4              zlibbioc_1.50.0           </span></span>
 <span><span class="co">## [127] MASS_7.3-60.2              plyr_1.8.9                </span></span>
 <span><span class="co">## [129] bumphunter_1.46.0          minfi_1.50.0              </span></span>
 <span><span class="co">## [131] parallel_4.4.0             deldir_2.0-4              </span></span>
@@ -1385,13 +1376,13 @@ the HFGC components.</p>
 <span><span class="co">## [139] futile.options_1.0.1       XML_3.99-0.16.1           </span></span>
 <span><span class="co">## [141] evaluate_0.23              latticeExtra_0.6-30       </span></span>
 <span><span class="co">## [143] biovizBase_1.52.0          lambda.r_1.2.4            </span></span>
-<span><span class="co">## [145] BiocManager_1.30.22        tzdb_0.4.0                </span></span>
+<span><span class="co">## [145] BiocManager_1.30.23        tzdb_0.4.0                </span></span>
 <span><span class="co">## [147] foreach_1.5.2              tweenr_2.0.3              </span></span>
-<span><span class="co">## [149] MatrixModels_0.5-3         openssl_2.1.2             </span></span>
+<span><span class="co">## [149] MatrixModels_0.5-3         openssl_2.2.0             </span></span>
 <span><span class="co">## [151] polyclip_1.10-6            reshape_0.8.9             </span></span>
-<span><span class="co">## [153] ggforce_0.4.2              broom_1.0.5               </span></span>
+<span><span class="co">## [153] ggforce_0.4.2              broom_1.0.6               </span></span>
 <span><span class="co">## [155] xtable_1.8-4               restfulr_0.0.15           </span></span>
-<span><span class="co">## [157] AnnotationFilter_1.28.0    ragg_1.3.0                </span></span>
+<span><span class="co">## [157] AnnotationFilter_1.28.0    ragg_1.3.2                </span></span>
 <span><span class="co">## [159] memoise_2.0.1              AnnotationDbi_1.66.0      </span></span>
 <span><span class="co">## [161] GenomicAlignments_1.40.0   cluster_2.1.6             </span></span>
 <span><span class="co">## [163] timechange_0.3.0</span></span></code></pre>
@@ -1472,34 +1463,20 @@ Combining Dependent Tests.” <em>Proc. Natl. Acad. Sci. U. S. A.</em> 116
 <p><br></p>
 </div>
   </div>
-
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
-
         <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
     </nav>
 </div>
-
 </div>
-
-
-
       <footer><div class="copyright">
   <p></p>
 <p>Developed by <a href="https://github.com/smped" class="external-link">Stevie Pederson</a>.</p>
 </div>
-
 <div class="pkgdown">
   <p></p>
 <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.9000.</p>
 </div>
-
       </footer>
 </div>
-
-  
-
-
-  
-
   </body>
 </html>

@@ -3,8 +3,6 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]--></head><body data-spy="scroll" data-target="#toc">
-    
-
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -17,10 +15,9 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">extraChIPs</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.9.2</span>
       </span>
     </div>
-
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav"><li>
   <a href="../reference/index.html">Reference</a>
@@ -28,7 +25,6 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Vignettes
-     
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -47,15 +43,11 @@
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/smped/extraChIPs" class="external-link">
     <span class="fa fa-github fa-lg"></span>
-     
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
-
-      
-
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
@@ -63,11 +55,9 @@
     <small class="dont-index">Source: <a href="https://github.com/smped/extraChIPs/blob/HEAD/R/dualFilter.R" class="external-link"><code>R/dualFilter.R</code></a></small>
     <div class="hidden name"><code>dualFilter.Rd</code></div>
     </div>
-
     <div class="ref-description">
     <p>Apply two filters to counts generated using sliding windows</p>
     </div>
-
     <div id="ref-usage">
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">dualFilter</span><span class="op">(</span></span>
 <span>  <span class="va">x</span>,</span>
@@ -81,56 +71,36 @@
 <span>  BPPARAM <span class="op">=</span> <span class="fu">bpparam</span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
-
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt id="arg-x">x<a class="anchor" aria-label="anchor" href="#arg-x"></a></dt>
 <dd><p>RangedSummarizedExperiment containing sample counts</p></dd>
-
-
 <dt id="arg-bg">bg<a class="anchor" aria-label="anchor" href="#arg-bg"></a></dt>
 <dd><p>RangedSummarizedExperiment containing background/input counts,
 or alternate method for selecting samples from within x, such as a logical,
 numeric or character vector</p></dd>
-
-
 <dt id="arg-ref">ref<a class="anchor" aria-label="anchor" href="#arg-ref"></a></dt>
 <dd><p>GRanges object containing ranges where signal is expected</p></dd>
-
-
 <dt id="arg-q">q<a class="anchor" aria-label="anchor" href="#arg-q"></a></dt>
 <dd><p>The upper percentile of the reference ranges expected to be returned
 when tuning the filtering criteria</p></dd>
-
-
 <dt id="arg-logcpm">logCPM<a class="anchor" aria-label="anchor" href="#arg-logcpm"></a></dt>
 <dd><p>logical(1) Add a logCPM assay to the returned data</p></dd>
-
-
 <dt id="arg-keep-totals">keep.totals<a class="anchor" aria-label="anchor" href="#arg-keep-totals"></a></dt>
 <dd><p>logical(1) Keep the original library sizes or replace
 using only the retained windows</p></dd>
-
-
 <dt id="arg-bin-size">bin.size<a class="anchor" aria-label="anchor" href="#arg-bin-size"></a></dt>
 <dd><p>Bin sizes when calling <a href="https://rdrr.io/pkg/csaw/man/filterWindows.html" class="external-link">filterWindowsControl</a>.
 If not specified will default to the largest of 2000bp or 10x the window
 size</p></dd>
-
-
 <dt id="arg-prior-count">prior.count<a class="anchor" aria-label="anchor" href="#arg-prior-count"></a></dt>
 <dd><p>Passed to <a href="https://rdrr.io/pkg/csaw/man/filterWindows.html" class="external-link">filterWindowsControl</a> and
 <a href="https://rdrr.io/pkg/csaw/man/filterWindows.html" class="external-link">filterWindowsProportion</a></p></dd>
-
-
 <dt id="arg-bpparam">BPPARAM<a class="anchor" aria-label="anchor" href="#arg-bpparam"></a></dt>
 <dd><p>Settings for running in parallel</p></dd>
-
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
 <p>A <a href="https://rdrr.io/pkg/SummarizedExperiment/man/RangedSummarizedExperiment-class.html" class="external-link">RangedSummarizedExperiment</a> which is a
 filtered subset of the original object. If requested the assay "logCPM" will
 be added (<code>TRUE</code> by default)</p>
@@ -161,34 +131,33 @@ This should only be performed if no Input sample is available.</p>
 machine or file structure to that which the original sliding windows were
 prepared. Please see the example/vignette for runnable code.</p>
     </div>
-
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="co">## Taken from the differential_binding vignette</span></span></span>
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> -- <span style="font-weight: bold;">Attaching core tidyverse packages</span> ------------------------ tidyverse 2.0.0 --</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BB00;">v</span> <span style="color: #0000BB;">dplyr    </span> 1.1.4     <span style="color: #00BB00;">v</span> <span style="color: #0000BB;">readr    </span> 2.1.5</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BB00;">v</span> <span style="color: #0000BB;">forcats  </span> 1.0.0     <span style="color: #00BB00;">v</span> <span style="color: #0000BB;">stringr  </span> 1.5.1</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BB00;">v</span> <span style="color: #0000BB;">lubridate</span> 1.9.3     <span style="color: #00BB00;">v</span> <span style="color: #0000BB;">tidyr    </span> 1.3.1</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BB00;">v</span> <span style="color: #0000BB;">purrr    </span> 1.0.2     </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> -- <span style="font-weight: bold;">Conflicts</span> ------------------------------------------ tidyverse_conflicts() --</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">lubridate</span>::<span style="color: #00BB00;">%within%()</span> masks <span style="color: #0000BB;">IRanges</span>::%within%()</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">ggplot2</span>::<span style="color: #00BB00;">Position()</span>   masks <span style="color: #0000BB;">BiocGenerics</span>::Position(), <span style="color: #0000BB;">base</span>::Position()</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">collapse()</span>     masks <span style="color: #0000BB;">IRanges</span>::collapse()</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">combine()</span>      masks <span style="color: #0000BB;">Biobase</span>::combine(), <span style="color: #0000BB;">BiocGenerics</span>::combine()</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">count()</span>        masks <span style="color: #0000BB;">matrixStats</span>::count()</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">desc()</span>         masks <span style="color: #0000BB;">IRanges</span>::desc()</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">tidyr</span>::<span style="color: #00BB00;">expand()</span>       masks <span style="color: #0000BB;">S4Vectors</span>::expand()</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">filter()</span>       masks <span style="color: #0000BB;">stats</span>::filter()</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">first()</span>        masks <span style="color: #0000BB;">S4Vectors</span>::first()</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">lag()</span>          masks <span style="color: #0000BB;">stats</span>::lag()</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">purrr</span>::<span style="color: #00BB00;">reduce()</span>       masks <span style="color: #0000BB;">GenomicRanges</span>::reduce(), <span style="color: #0000BB;">IRanges</span>::reduce()</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">rename()</span>       masks <span style="color: #0000BB;">S4Vectors</span>::rename()</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">lubridate</span>::<span style="color: #00BB00;">second()</span>   masks <span style="color: #0000BB;">S4Vectors</span>::second()</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">lubridate</span>::<span style="color: #00BB00;">second&lt;-()</span> masks <span style="color: #0000BB;">S4Vectors</span>::second&lt;-()</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">slice()</span>        masks <span style="color: #0000BB;">IRanges</span>::slice()</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">i</span> Use the conflicted package (<span style="color: #0000BB; font-style: italic;">&lt;http://conflicted.r-lib.org/&gt;</span>) to force all conflicts to become errors</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── <span style="font-weight: bold;">Attaching core tidyverse packages</span> ──────────────────────── tidyverse 2.0.0 ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">dplyr    </span> 1.1.4     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">readr    </span> 2.1.5</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">forcats  </span> 1.0.0     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">stringr  </span> 1.5.1</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">lubridate</span> 1.9.3     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">tidyr    </span> 1.3.1</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">purrr    </span> 1.0.2     </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── <span style="font-weight: bold;">Conflicts</span> ────────────────────────────────────────── tidyverse_conflicts() ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">lubridate</span>::<span style="color: #00BB00;">%within%()</span> masks <span style="color: #0000BB;">IRanges</span>::%within%()</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">ggplot2</span>::<span style="color: #00BB00;">Position()</span>   masks <span style="color: #0000BB;">BiocGenerics</span>::Position(), <span style="color: #0000BB;">base</span>::Position()</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">collapse()</span>     masks <span style="color: #0000BB;">IRanges</span>::collapse()</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">combine()</span>      masks <span style="color: #0000BB;">Biobase</span>::combine(), <span style="color: #0000BB;">BiocGenerics</span>::combine()</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">count()</span>        masks <span style="color: #0000BB;">matrixStats</span>::count()</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">desc()</span>         masks <span style="color: #0000BB;">IRanges</span>::desc()</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">tidyr</span>::<span style="color: #00BB00;">expand()</span>       masks <span style="color: #0000BB;">S4Vectors</span>::expand()</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">filter()</span>       masks <span style="color: #0000BB;">stats</span>::filter()</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">first()</span>        masks <span style="color: #0000BB;">S4Vectors</span>::first()</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">lag()</span>          masks <span style="color: #0000BB;">stats</span>::lag()</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">purrr</span>::<span style="color: #00BB00;">reduce()</span>       masks <span style="color: #0000BB;">GenomicRanges</span>::reduce(), <span style="color: #0000BB;">IRanges</span>::reduce()</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">rename()</span>       masks <span style="color: #0000BB;">S4Vectors</span>::rename()</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">lubridate</span>::<span style="color: #00BB00;">second()</span>   masks <span style="color: #0000BB;">S4Vectors</span>::second()</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">lubridate</span>::<span style="color: #00BB00;">second&lt;-()</span> masks <span style="color: #0000BB;">S4Vectors</span>::second&lt;-()</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">slice()</span>        masks <span style="color: #0000BB;">IRanges</span>::slice()</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Use the conflicted package (<span style="color: #0000BB; font-style: italic;">&lt;http://conflicted.r-lib.org/&gt;</span>) to force all conflicts to become errors</span>
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://bioconductor.org/packages/Rsamtools" class="external-link">Rsamtools</a></span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Loading required package: Biostrings</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Loading required package: XVector</span>
@@ -276,22 +245,12 @@ prepared. Please see the example/vignette for runnable code.</p>
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>
     </nav></div>
 </div>
-
-
       <footer><div class="copyright">
   <p></p><p>Developed by <a href="https://github.com/smped" class="external-link">Stevie Pederson</a>.</p>
 </div>
-
 <div class="pkgdown">
   <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.9000.</p>
 </div>
-
       </footer></div>
-
-  
-
-
-  
-
   </body></html>
 

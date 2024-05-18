@@ -3,8 +3,6 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]--></head><body data-spy="scroll" data-target="#toc">
-    
-
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -17,10 +15,9 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">extraChIPs</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.9.2</span>
       </span>
     </div>
-
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav"><li>
   <a href="../reference/index.html">Reference</a>
@@ -28,7 +25,6 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Vignettes
-     
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -47,15 +43,11 @@
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/smped/extraChIPs" class="external-link">
     <span class="fa fa-github fa-lg"></span>
-     
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
-
-      
-
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
@@ -63,11 +55,9 @@
     <small class="dont-index">Source: <a href="https://github.com/smped/extraChIPs/blob/HEAD/R/voomWeightsFromCPM.R" class="external-link"><code>R/voomWeightsFromCPM.R</code></a></small>
     <div class="hidden name"><code>voomWeightsFromCPM.Rd</code></div>
     </div>
-
     <div class="ref-description">
     <p>Estimate voom precision weights directly From CPM values</p>
     </div>
-
     <div id="ref-usage">
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">voomWeightsFromCPM</span><span class="op">(</span></span>
 <span>  <span class="va">cpm</span>,</span>
@@ -79,62 +69,40 @@
 <span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
-
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt id="arg-cpm">cpm<a class="anchor" aria-label="anchor" href="#arg-cpm"></a></dt>
 <dd><p>Matrix of CPM or logCPM values</p></dd>
-
-
 <dt id="arg-design">design<a class="anchor" aria-label="anchor" href="#arg-design"></a></dt>
 <dd><p>The design matrix for the experiment</p></dd>
-
-
 <dt id="arg-w-">w0<a class="anchor" aria-label="anchor" href="#arg-w-"></a></dt>
 <dd><p>Initial vector of sample weights. Should be calculated using
 <a href="https://rdrr.io/pkg/limma/man/arrayWeights.html" class="external-link">arrayWeights</a></p></dd>
-
-
 <dt id="arg-lib-size">lib.size<a class="anchor" aria-label="anchor" href="#arg-lib-size"></a></dt>
 <dd><p>Initial library sizes. Must be provided as these are no
 estimable from CPM values</p></dd>
-
-
 <dt id="arg-islogcpm">isLogCPM<a class="anchor" aria-label="anchor" href="#arg-islogcpm"></a></dt>
 <dd><p>logical(1). Indicates whether the data is log2 transformed
 already. Most commonly (e.g. if using the output of cqn) it will be,</p></dd>
-
-
 <dt id="arg-span">span<a class="anchor" aria-label="anchor" href="#arg-span"></a></dt>
 <dd><p>Width of the smoothing window used for the lowess mean-variance
 trend. Expressed as a proportion between 0 and 1.</p></dd>
-
-
 <dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
 <dd><p>Passed to lmFit internally</p></dd>
-
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
 <p>An object of class <code>EList</code> as would be output by voom.
 Importantly, there will be no <code>genes</code> element, although this can be
 added later.
 Similarly, the returned <code>targets</code> element will only contain sample
 names and library sizes.
 This can be incorporated with any other metadata as required.</p>
-
-
 <p>Plotting data is always returned, noting the the value <code>sx</code> has
 been offset by the library sizes and will be simple logCPM values.
 As such, the fitted <code>Amean</code> is also returned in this list element.</p>
-
-
 <p>If initial sample weights were provided, modified weights will also be
 returned, as the initial function <a href="https://rdrr.io/pkg/limma/man/voomWithQualityWeights.html" class="external-link">voomWithQualityWeights</a></p>
-
-
 <p>performs two rounds of estimation of sample weights.
 Here we would simply provide the initial weights a priori, with the
 second round performed within the function.
@@ -164,7 +132,6 @@ The first is on the initial data, with the inappropriate mean-variance
 relationship, whilst the second round is after incorporation of the precision
 weights.</p>
     </div>
-
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">bamFiles</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"exdata"</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"rep1.bam"</span>, <span class="st">"rep2.bam"</span><span class="op">)</span>, package<span class="op">=</span><span class="st">"csaw"</span><span class="op">)</span></span></span>
@@ -179,22 +146,12 @@ weights.</p>
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>
     </nav></div>
 </div>
-
-
       <footer><div class="copyright">
   <p></p><p>Developed by <a href="https://github.com/smped" class="external-link">Stevie Pederson</a>.</p>
 </div>
-
 <div class="pkgdown">
   <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.9000.</p>
 </div>
-
       </footer></div>
-
-  
-
-
-  
-
   </body></html>
 

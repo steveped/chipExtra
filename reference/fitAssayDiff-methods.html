@@ -3,8 +3,6 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]--></head><body data-spy="scroll" data-target="#toc">
-    
-
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -17,10 +15,9 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">extraChIPs</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.9.2</span>
       </span>
     </div>
-
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav"><li>
   <a href="../reference/index.html">Reference</a>
@@ -28,7 +25,6 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Vignettes
-     
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -47,15 +43,11 @@
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/smped/extraChIPs" class="external-link">
     <span class="fa fa-github fa-lg"></span>
-     
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
-
-      
-
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
@@ -63,11 +55,9 @@
     <small class="dont-index">Source: <a href="https://github.com/smped/extraChIPs/blob/HEAD/R/fitAssayDiff.R" class="external-link"><code>R/fitAssayDiff.R</code></a></small>
     <div class="hidden name"><code>fitAssayDiff-methods.Rd</code></div>
     </div>
-
     <div class="ref-description">
     <p>Detect differential ChIP signal using one of many approaches</p>
     </div>
-
     <div id="ref-usage">
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">fitAssayDiff</span><span class="op">(</span><span class="va">x</span>, <span class="va">...</span><span class="op">)</span></span>
 <span></span>
@@ -92,101 +82,65 @@
 <span>  type <span class="op">=</span> <span class="st">"apeglm"</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
-
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt id="arg-x">x<a class="anchor" aria-label="anchor" href="#arg-x"></a></dt>
 <dd><p>a SummarizedExperiment object</p></dd>
-
-
 <dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
 <dd><p>Passed to <a href="https://rdrr.io/pkg/edgeR/man/calcNormFactors.html" class="external-link">normLibSizes</a> and</p></dd>
-
-
 <dt id="arg-assay">assay<a class="anchor" aria-label="anchor" href="#arg-assay"></a></dt>
 <dd><p>The assay to use for analysis</p></dd>
-
-
 <dt id="arg-design">design<a class="anchor" aria-label="anchor" href="#arg-design"></a></dt>
 <dd><p>The design matrix to use for analysis</p></dd>
-
-
 <dt id="arg-coef">coef<a class="anchor" aria-label="anchor" href="#arg-coef"></a></dt>
 <dd><p>The required column from the design matrix</p></dd>
-
-
 <dt id="arg-lib-size">lib.size<a class="anchor" aria-label="anchor" href="#arg-lib-size"></a></dt>
 <dd><p>The column within the colData element which contains the
 library size information. If set to NULL, column summaries will be used.</p></dd>
-
-
 <dt id="arg-method">method<a class="anchor" aria-label="anchor" href="#arg-method"></a></dt>
 <dd><p>the analytic method to be used. Can be 'qlf' which will fit
 counts using the <a href="https://rdrr.io/pkg/edgeR/man/glmQLFit.html" class="external-link">glmQLFit</a> strategy , or 'lt' which fits the
 <a href="https://rdrr.io/pkg/limma/man/ebayes.html" class="external-link">limma-trend</a> model on logCPM, or pre-processed logCPM
 values. Setting method = 'wald' will call <a href="https://rdrr.io/pkg/DESeq2/man/nbinomWaldTest.html" class="external-link">nbinomWaldTest</a></p></dd>
-
-
 <dt id="arg-norm">norm<a class="anchor" aria-label="anchor" href="#arg-norm"></a></dt>
 <dd><p>The normalisation strategy to use when running the
 glmQLF model or the Wald test. The value 'none' relies solely on
 library-size normalisation, and is the default. All methods available in
 <a href="https://rdrr.io/pkg/edgeR/man/calcNormFactors.html" class="external-link">normLibSizes</a> are implemented. Ignored when using method = "lt"</p></dd>
-
-
 <dt id="arg-groups">groups<a class="anchor" aria-label="anchor" href="#arg-groups"></a></dt>
 <dd><p>character(1) If a column name is supplied here, group-based
 normalisation will be applied to GLM models treating data in this column
 as a grouping factor. Ignored when using method = "lt"</p></dd>
-
-
 <dt id="arg-fc-lfc">fc, lfc<a class="anchor" aria-label="anchor" href="#arg-fc-lfc"></a></dt>
 <dd><p>Thresholds passed to <a href="https://rdrr.io/pkg/limma/man/ebayes.html" class="external-link">treat</a>,
 <a href="https://rdrr.io/pkg/edgeR/man/glmTreat.html" class="external-link">glmTreat</a> or <a href="https://rdrr.io/pkg/DESeq2/man/lfcShrink.html" class="external-link">lfcShrink</a></p></dd>
-
-
 <dt id="arg-asranges">asRanges<a class="anchor" aria-label="anchor" href="#arg-asranges"></a></dt>
 <dd><p>logical(1). By default, the returned object will be a
 <code>SummarizedExperiment</code> object with the results added to the <code>rowData</code>
 element. Setting <code>asRanges = TRUE</code> will only return the GRanges object from
 this element</p></dd>
-
-
 <dt id="arg-offset">offset<a class="anchor" aria-label="anchor" href="#arg-offset"></a></dt>
 <dd><p>If provided will be used as the offset when a DGEList object
 is created during model fitting for method = 'qlf'</p></dd>
-
-
 <dt id="arg-weighted">weighted<a class="anchor" aria-label="anchor" href="#arg-weighted"></a></dt>
 <dd><p>logical(1) Passed to  <a href="https://rdrr.io/pkg/edgeR/man/calcNormFactors.html" class="external-link">normLibSizes</a>. Only used
 when applying a TMM-type normalisation strategy</p></dd>
-
-
 <dt id="arg-null">null<a class="anchor" aria-label="anchor" href="#arg-null"></a></dt>
 <dd><p>Passed to <a href="https://rdrr.io/pkg/edgeR/man/glmTreat.html" class="external-link">glmTreat</a>
 <a href="https://rdrr.io/pkg/edgeR/man/glmQLFit.html" class="external-link">glmQLFit</a> when method = "qlf".
 If method = "lt", instead passed to <a href="https://rdrr.io/pkg/limma/man/lmFit.html" class="external-link">lmFit</a></p></dd>
-
-
 <dt id="arg-robust">robust<a class="anchor" aria-label="anchor" href="#arg-robust"></a></dt>
 <dd><p>Passed to <a href="https://rdrr.io/pkg/limma/man/ebayes.html" class="external-link">treat</a> and <a href="https://rdrr.io/pkg/limma/man/ebayes.html" class="external-link">eBayes</a></p></dd>
-
-
 <dt id="arg-type">type<a class="anchor" aria-label="anchor" href="#arg-type"></a></dt>
 <dd><p>Passed to <a href="https://rdrr.io/pkg/DESeq2/man/lfcShrink.html" class="external-link">lfcShrink</a></p></dd>
-
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
 <p>A SummarizedExperiment object with results set as the <code>rowData</code> element.
 Any existing columns not contained in the differential ChIP results will be
 retained.
 Results from testing will contain logCPM, logFC, PValue and any t/F
 statistic as appropriate, along with an FDR-adjusted p-value.</p>
-
-
 <p>If specifying a range-based H0 by setting lfc != 0, an additional column
 p_mu0 will be included which is the p-value for the point H0: logFC = 0.
 These are not used for FDR-adjusted p-values but can be helpful when
@@ -232,7 +186,6 @@ be applied.</p>
 if requiring intermediate output from any steps, then these can be run
 individually as conventionally specified.</p>
     </div>
-
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">nrows</span> <span class="op">&lt;-</span> <span class="fl">200</span>; <span class="va">ncols</span> <span class="op">&lt;-</span> <span class="fl">6</span></span></span>
@@ -273,22 +226,12 @@ individually as conventionally specified.</p>
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>
     </nav></div>
 </div>
-
-
       <footer><div class="copyright">
   <p></p><p>Developed by <a href="https://github.com/smped" class="external-link">Stevie Pederson</a>.</p>
 </div>
-
 <div class="pkgdown">
   <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.9000.</p>
 </div>
-
       </footer></div>
-
-  
-
-
-  
-
   </body></html>
 

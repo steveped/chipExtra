@@ -3,8 +3,6 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]--></head><body data-spy="scroll" data-target="#toc">
-    
-
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -17,10 +15,9 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">extraChIPs</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.9.2</span>
       </span>
     </div>
-
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav"><li>
   <a href="../reference/index.html">Reference</a>
@@ -28,7 +25,6 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Vignettes
-     
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -47,15 +43,11 @@
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/smped/extraChIPs" class="external-link">
     <span class="fa fa-github fa-lg"></span>
-     
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
-
-      
-
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
@@ -63,11 +55,9 @@
     <small class="dont-index">Source: <a href="https://github.com/smped/extraChIPs/blob/HEAD/R/AllGenerics.R" class="external-link"><code>R/AllGenerics.R</code></a>, <a href="https://github.com/smped/extraChIPs/blob/HEAD/R/getProfileData.R" class="external-link"><code>R/getProfileData.R</code></a></small>
     <div class="hidden name"><code>getProfileData-methods.Rd</code></div>
     </div>
-
     <div class="ref-description">
     <p>Get coverage Profile Data surrounding specified ranges</p>
     </div>
-
     <div id="ref-usage">
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">getProfileData</span><span class="op">(</span><span class="va">x</span>, <span class="va">gr</span>, <span class="va">...</span><span class="op">)</span></span>
 <span></span>
@@ -112,61 +102,37 @@
 <span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
-
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt id="arg-x">x<a class="anchor" aria-label="anchor" href="#arg-x"></a></dt>
 <dd><p>A BigWigFile or BigWiFileList</p></dd>
-
-
 <dt id="arg-gr">gr<a class="anchor" aria-label="anchor" href="#arg-gr"></a></dt>
 <dd><p>A GRanges object</p></dd>
-
-
 <dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
 <dd><p>Passed to <a href="https://rdrr.io/pkg/EnrichedHeatmap/man/normalizeToMatrix.html" class="external-link">normalizeToMatrix</a></p></dd>
-
-
 <dt id="arg-upstream">upstream<a class="anchor" aria-label="anchor" href="#arg-upstream"></a></dt>
 <dd><p>The distance to extend upstream from the centre of each
 range within <code>gr</code></p></dd>
-
-
 <dt id="arg-downstream">downstream<a class="anchor" aria-label="anchor" href="#arg-downstream"></a></dt>
 <dd><p>The distance to extend downstream from the centre of each
 range within <code>gr</code></p></dd>
-
-
 <dt id="arg-bins">bins<a class="anchor" aria-label="anchor" href="#arg-bins"></a></dt>
 <dd><p>The total number of bins to break the extended ranges into</p></dd>
-
-
 <dt id="arg-mean-mode">mean_mode<a class="anchor" aria-label="anchor" href="#arg-mean-mode"></a></dt>
 <dd><p>The method used for calculating the score for each bin.
 See <a href="https://rdrr.io/pkg/EnrichedHeatmap/man/normalizeToMatrix.html" class="external-link">normalizeToMatrix</a> for details</p></dd>
-
-
 <dt id="arg-log">log<a class="anchor" aria-label="anchor" href="#arg-log"></a></dt>
 <dd><p>logical(1) Should the returned values be log2-transformed</p></dd>
-
-
 <dt id="arg-offset">offset<a class="anchor" aria-label="anchor" href="#arg-offset"></a></dt>
 <dd><p>Value added to data if log-transforming. Ignored otherwise</p></dd>
-
-
 <dt id="arg-n-max">n_max<a class="anchor" aria-label="anchor" href="#arg-n-max"></a></dt>
 <dd><p>Upper limit on the number of ranges to return profile data for.
 By default, no limit will be applied .</p></dd>
-
-
 <dt id="arg-bpparam">BPPARAM<a class="anchor" aria-label="anchor" href="#arg-bpparam"></a></dt>
 <dd><p>Passed internally to <a href="https://rdrr.io/pkg/BiocParallel/man/bplapply.html" class="external-link">bplapply</a></p></dd>
-
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
 <p>GRanges or GrangesList with column profile_data, as described above</p>
     </div>
     <div id="details">
@@ -187,7 +153,6 @@ Column names in each DataFrame are <code>score</code>, <code>position</code> and
 default. To run in parallel pass a <a href="https://rdrr.io/pkg/BiocParallel/man/MulticoreParam-class.html" class="external-link">MulticoreParam</a> object
 to the <code>BPPARAM</code> argument.</p>
     </div>
-
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">bw</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"tests"</span>, <span class="st">"test.bw"</span>, package <span class="op">=</span> <span class="st">"rtracklayer"</span><span class="op">)</span></span></span>
@@ -225,22 +190,12 @@ to the <code>BPPARAM</code> argument.</p>
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>
     </nav></div>
 </div>
-
-
       <footer><div class="copyright">
   <p></p><p>Developed by <a href="https://github.com/smped" class="external-link">Stevie Pederson</a>.</p>
 </div>
-
 <div class="pkgdown">
   <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.9000.</p>
 </div>
-
       </footer></div>
-
-  
-
-
-  
-
   </body></html>
 

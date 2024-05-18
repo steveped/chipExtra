@@ -3,8 +3,6 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]--></head><body data-spy="scroll" data-target="#toc">
-    
-
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -17,10 +15,9 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">extraChIPs</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.9.2</span>
       </span>
     </div>
-
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav"><li>
   <a href="../reference/index.html">Reference</a>
@@ -28,7 +25,6 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Vignettes
-     
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -47,15 +43,11 @@
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/smped/extraChIPs" class="external-link">
     <span class="fa fa-github fa-lg"></span>
-     
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
-
-      
-
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
@@ -63,11 +55,9 @@
     <small class="dont-index">Source: <a href="https://github.com/smped/extraChIPs/blob/HEAD/R/plotPairwise.R" class="external-link"><code>R/plotPairwise.R</code></a></small>
     <div class="hidden name"><code>plotPairwise.Rd</code></div>
     </div>
-
     <div class="ref-description">
     <p>Plot Pairwise Values from a GRangeList by overlapping GRanges</p>
     </div>
-
     <div id="ref-usage">
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">plotPairwise</span><span class="op">(</span></span>
 <span>  <span class="va">x</span>,</span>
@@ -104,126 +94,74 @@
 <span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
-
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt id="arg-x">x<a class="anchor" aria-label="anchor" href="#arg-x"></a></dt>
 <dd><p>A GRangesList</p></dd>
-
-
 <dt id="arg-var">var<a class="anchor" aria-label="anchor" href="#arg-var"></a></dt>
 <dd><p>The colunm to compare between list elements</p></dd>
-
-
 <dt id="arg-colour">colour<a class="anchor" aria-label="anchor" href="#arg-colour"></a></dt>
 <dd><p>Optional column to use for combining across elements and
 setting point colour</p></dd>
-
-
 <dt id="arg-label">label<a class="anchor" aria-label="anchor" href="#arg-label"></a></dt>
 <dd><p>Optional column to use for labelling ranges with the most
 extreme changes</p></dd>
-
-
 <dt id="arg-index">index<a class="anchor" aria-label="anchor" href="#arg-index"></a></dt>
 <dd><p>Which list elements to compare</p></dd>
-
-
 <dt id="arg-p-method-ignore-strand-min-width">p, method, ignore.strand, min_width<a class="anchor" aria-label="anchor" href="#arg-p-method-ignore-strand-min-width"></a></dt>
 <dd><p>Passed to <code><a href="makeConsensus.html">makeConsensus()</a></code></p></dd>
-
-
 <dt id="arg-xside-yside">xside, yside<a class="anchor" aria-label="anchor" href="#arg-xside-yside"></a></dt>
 <dd><p>Will call geom_(x/y)side* from the package ggside and
 show additional panels on the top and right of the plot respectively</p></dd>
-
-
 <dt id="arg-side-panel-width">side_panel_width<a class="anchor" aria-label="anchor" href="#arg-side-panel-width"></a></dt>
 <dd><p>Set the relative widths of the side panels</p></dd>
-
-
 <dt id="arg-side-alpha">side_alpha<a class="anchor" aria-label="anchor" href="#arg-side-alpha"></a></dt>
 <dd><p>Set fill transparency in side panels</p></dd>
-
-
 <dt id="arg-xside-axis-pos">xside_axis_pos<a class="anchor" aria-label="anchor" href="#arg-xside-axis-pos"></a></dt>
 <dd><p>Position for axis_labels in the top panel when using
 a discrete axis</p></dd>
-
-
 <dt id="arg-yside-axis-label">yside_axis_label<a class="anchor" aria-label="anchor" href="#arg-yside-axis-label"></a></dt>
 <dd><p>Wrapping for axis labels on the right-side panel when
 using a discrete axis. Set to waiver() to turn off wrapping</p></dd>
-
-
 <dt id="arg-smooth">smooth<a class="anchor" aria-label="anchor" href="#arg-smooth"></a></dt>
 <dd><p>logical(1). If TRUE a regression line will be drawn using
 <a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html" class="external-link">geom_smooth</a>. To add this manually, set to FALSE and call
 this geom with any custom parameters after creating the plot</p></dd>
-
-
 <dt id="arg-rho-geom">rho_geom<a class="anchor" aria-label="anchor" href="#arg-rho-geom"></a></dt>
 <dd><p>Used to add correlation coefficients for the two values</p></dd>
-
-
 <dt id="arg-rho-col-rho-size-rho-alpha">rho_col, rho_size, rho_alpha<a class="anchor" aria-label="anchor" href="#arg-rho-col-rho-size-rho-alpha"></a></dt>
 <dd><p>Parameters for displaying the correlation</p></dd>
-
-
 <dt id="arg-rho-pos">rho_pos<a class="anchor" aria-label="anchor" href="#arg-rho-pos"></a></dt>
 <dd><p>Place the correlation coefficient within the plotting region</p></dd>
-
-
 <dt id="arg-label-geom">label_geom<a class="anchor" aria-label="anchor" href="#arg-label-geom"></a></dt>
 <dd><p>Used to add labels from the column specified in label</p></dd>
-
-
 <dt id="arg-label-width">label_width<a class="anchor" aria-label="anchor" href="#arg-label-width"></a></dt>
 <dd><p>Label text will be truncated to this length</p></dd>
-
-
 <dt id="arg-label-sep">label_sep<a class="anchor" aria-label="anchor" href="#arg-label-sep"></a></dt>
 <dd><p>If multiple values (e.g. genes) are mapped to a range,
 separate values using this string</p></dd>
-
-
 <dt id="arg-label-size-label-alpha">label_size, label_alpha<a class="anchor" aria-label="anchor" href="#arg-label-size-label-alpha"></a></dt>
 <dd><p>Passed to the geom used for adding labels</p></dd>
-
-
 <dt id="arg-min-d">min_d<a class="anchor" aria-label="anchor" href="#arg-min-d"></a></dt>
 <dd><p>Labels will only be added if the points lie circle beyond a
 sircle of this radius</p></dd>
-
-
 <dt id="arg-group-sep">group_sep<a class="anchor" aria-label="anchor" href="#arg-group-sep"></a></dt>
 <dd><p>Text separator used to separate categories when specifying colour</p></dd>
-
-
 <dt id="arg-simplify-equal">simplify_equal<a class="anchor" aria-label="anchor" href="#arg-simplify-equal"></a></dt>
 <dd><p>logical(1) When combining columns from both elements
 for the colour categories, should shared values be annotated as 'Both ...'
 instead of having longer, more difficult to read annotations.</p></dd>
-
-
 <dt id="arg-name-sep">name_sep<a class="anchor" aria-label="anchor" href="#arg-name-sep"></a></dt>
 <dd><p>Character string to separate names of the GRangesList and
 the selected column. Will appear as axis-labels</p></dd>
-
-
 <dt id="arg-plot-theme">plot_theme<a class="anchor" aria-label="anchor" href="#arg-plot-theme"></a></dt>
 <dd><p>Sets the initial theme by using the default theme for the
 current R session via get_theme()</p></dd>
-
-
 <dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
 <dd><p>Passed to <code><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point()</a></code> for the main panel</p></dd>
-
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
 <p>A <code>ggside</code> or <code>ggplot2</code> object</p>
     </div>
     <div id="details">
@@ -250,7 +188,6 @@ string provided in the <code>label_sep</code> argument.</p>
 <p>A regression line and correlation co-efficient are added to the plot by
 default, but can be hidden easily if preferred</p>
     </div>
-
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme_get.html" class="external-link">theme_set</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_bw</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
@@ -298,22 +235,12 @@ default, but can be hidden easily if preferred</p>
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>
     </nav></div>
 </div>
-
-
       <footer><div class="copyright">
   <p></p><p>Developed by <a href="https://github.com/smped" class="external-link">Stevie Pederson</a>.</p>
 </div>
-
 <div class="pkgdown">
   <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.9000.</p>
 </div>
-
       </footer></div>
-
-  
-
-
-  
-
   </body></html>
 
