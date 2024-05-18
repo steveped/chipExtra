@@ -29,8 +29,6 @@
 #' @param seqinfo A seqinfo object to be applied to the new GRanges object.
 #' Ignored if the column is already a GRanges object
 #' @param ... Used to pass arguments to lower-level functions
-#' @param keep_metadata logical(1) If the original object is a GRanges object,
-#' retain all metadata from the original ranges in the replaced ranges
 #'
 #' @importFrom methods as
 #' @import GenomicRanges
@@ -59,11 +57,9 @@ setMethod(
 #' @export
 setMethod(
     "colToRanges", signature = signature(x = "GRanges"),
-    function(x, var, ..., keep_metadata = TRUE) {
+    function(x, var, ...) {
         df <- mcols(x)
-        gr <- colToRanges(df, var, ...)
-        if (keep_metadata) metadata(gr) <- metadata(x)
-        gr
+        colToRanges(df, var, ...)
     }
 )
 #' @import GenomicRanges

@@ -11,7 +11,7 @@ colToRanges(x, ...)
 
 \S4method{colToRanges}{DataFrame}(x, var, seqinfo = NULL, ...)
 
-\S4method{colToRanges}{GRanges}(x, var, ..., keep_metadata = TRUE)
+\S4method{colToRanges}{GRanges}(x, var, ...)
 
 \S4method{colToRanges}{data.frame}(x, var, seqinfo = NULL, ...)
 }
@@ -24,9 +24,6 @@ colToRanges(x, ...)
 
 \item{seqinfo}{A seqinfo object to be applied to the new GRanges object.
 Ignored if the column is already a GRanges object}
-
-\item{keep_metadata}{logical(1) If the original object is a GRanges object,
-retain all metadata from the original ranges in the replaced ranges}
 }
 \value{
 A GenomicRanges object
