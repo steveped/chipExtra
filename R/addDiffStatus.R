@@ -67,7 +67,8 @@ setMethod(
       is.na(sig) | is.na(fc) ~ missing[[1]],
       !sig ~ other[[1]],
       fc > abs(cutoff) ~ up[[1]],
-      fc < -abs(cutoff) ~ down[[1]]
+      fc < -abs(cutoff) ~ down[[1]],
+      TRUE ~ other[[1]]
     )
     ## Do we need to add an explicit NA value here?
     lv <- unique(c(other, down, up, missing))
