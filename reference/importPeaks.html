@@ -3,6 +3,8 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]--></head><body data-spy="scroll" data-target="#toc">
+
+
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -15,9 +17,10 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">extraChIPs</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.3</span>
       </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav"><li>
   <a href="../reference/index.html">Reference</a>
@@ -25,6 +28,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Vignettes
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -43,21 +47,27 @@
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/smped/extraChIPs" class="external-link">
     <span class="fa fa-github fa-lg"></span>
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
+
+
+
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Import peaks</h1>
-    <small class="dont-index">Source: <a href="https://github.com/smped/extraChIPs/blob/HEAD/R/importPeaks.R" class="external-link"><code>R/importPeaks.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/smped/extraChIPs/blob/gh-actions/R/importPeaks.R" class="external-link"><code>R/importPeaks.R</code></a></small>
     <div class="hidden name"><code>importPeaks.Rd</code></div>
     </div>
+
     <div class="ref-description">
     <p>Import peaks in narrowPeak, broadPeak or bed format</p>
     </div>
+
     <div id="ref-usage">
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">importPeaks</span><span class="op">(</span></span>
 <span>  <span class="va">x</span>,</span>
@@ -73,39 +83,63 @@
 <span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
+
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt id="arg-x">x<a class="anchor" aria-label="anchor" href="#arg-x"></a></dt>
+
+
+<dl><dt id="arg-x">x<a class="anchor" aria-label="anchor" href="#arg-x"></a></dt>
 <dd><p>One or more files to be imported. All files must be of the same
 type, i.e. narrow or broad</p></dd>
+
+
 <dt id="arg-type">type<a class="anchor" aria-label="anchor" href="#arg-type"></a></dt>
 <dd><p>The type of peaks to be imported</p></dd>
+
+
 <dt id="arg-blacklist">blacklist<a class="anchor" aria-label="anchor" href="#arg-blacklist"></a></dt>
 <dd><p>A set of ranges to be excluded</p></dd>
+
+
 <dt id="arg-seqinfo">seqinfo<a class="anchor" aria-label="anchor" href="#arg-seqinfo"></a></dt>
 <dd><p>A seqinfo object to be applied to the GRanges objects</p></dd>
+
+
 <dt id="arg-pruning-mode">pruning.mode<a class="anchor" aria-label="anchor" href="#arg-pruning-mode"></a></dt>
 <dd><p>How to handle conflicts if supplying a seqinfo object.
 Defaults to <code>pruning.mode = "coarse"</code>. Only "coarse" and "error" are
 implemented. See <a href="https://rdrr.io/pkg/GenomeInfoDb/man/seqinfo.html" class="external-link">seqinfo</a>.</p></dd>
+
+
 <dt id="arg-sort">sort<a class="anchor" aria-label="anchor" href="#arg-sort"></a></dt>
 <dd><p>logical. Should the ranges be sorted during import</p></dd>
+
+
 <dt id="arg-setnames">setNames<a class="anchor" aria-label="anchor" href="#arg-setnames"></a></dt>
 <dd><p>logical Set basename(x) as the name for each element of the
 GRangesList</p></dd>
+
+
 <dt id="arg-gluenames">glueNames<a class="anchor" aria-label="anchor" href="#arg-gluenames"></a></dt>
 <dd><p><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a> syntax for naming list elements</p></dd>
+
+
 <dt id="arg-centre">centre<a class="anchor" aria-label="anchor" href="#arg-centre"></a></dt>
 <dd><p>Add the estimated peak centre. Ignored unless type = "narrow"</p></dd>
+
+
 <dt id="arg-nameranges">nameRanges<a class="anchor" aria-label="anchor" href="#arg-nameranges"></a></dt>
 <dd><p>Place any values in the name column as range names within
 each file.</p></dd>
+
+
 <dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
 <dd><p>passed to <code>sort</code></p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-<p>A GRangesList</p>
+    <p>A GRangesList</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -113,6 +147,7 @@ each file.</p></dd>
 GenomicRanges objects.</p>
 <p>If importing bed files, only the default 3-6 columns will imported.</p>
     </div>
+
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">fl</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span></span></span>
@@ -188,12 +223,22 @@ GenomicRanges objects.</p>
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>
     </nav></div>
 </div>
+
+
       <footer><div class="copyright">
   <p></p><p>Developed by <a href="https://github.com/smped" class="external-link">Stevie Pederson</a>.</p>
 </div>
+
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.9000.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.9000.</p>
 </div>
+
       </footer></div>
+
+
+
+
+
+
   </body></html>
 

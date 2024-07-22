@@ -3,6 +3,8 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]--></head><body data-spy="scroll" data-target="#toc">
+
+
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -15,9 +17,10 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">extraChIPs</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.3</span>
       </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav"><li>
   <a href="../reference/index.html">Reference</a>
@@ -25,6 +28,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Vignettes
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -43,21 +47,27 @@
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/smped/extraChIPs" class="external-link">
     <span class="fa fa-github fa-lg"></span>
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
+
+
+
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Plot Overlaps Between List Elements</h1>
-    <small class="dont-index">Source: <a href="https://github.com/smped/extraChIPs/blob/HEAD/R/AllGenerics.R" class="external-link"><code>R/AllGenerics.R</code></a>, <a href="https://github.com/smped/extraChIPs/blob/HEAD/R/plotOverlaps.R" class="external-link"><code>R/plotOverlaps.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/smped/extraChIPs/blob/gh-actions/R/AllGenerics.R" class="external-link"><code>R/AllGenerics.R</code></a>, <a href="https://github.com/smped/extraChIPs/blob/gh-actions/R/plotOverlaps.R" class="external-link"><code>R/plotOverlaps.R</code></a></small>
     <div class="hidden name"><code>plotOverlaps-methods.Rd</code></div>
     </div>
+
     <div class="ref-description">
     <p>Plot Overlaps between list elements as an upset or Venn diagram</p>
     </div>
+
     <div id="ref-usage">
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">plotOverlaps</span><span class="op">(</span><span class="va">x</span>, <span class="va">...</span><span class="op">)</span></span>
 <span></span>
@@ -89,41 +99,67 @@
 <span>  exp_sets <span class="op">=</span> <span class="fl">0.25</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
+
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt id="arg-x">x<a class="anchor" aria-label="anchor" href="#arg-x"></a></dt>
+
+
+<dl><dt id="arg-x">x<a class="anchor" aria-label="anchor" href="#arg-x"></a></dt>
 <dd><p>GRangesList of S3 list able to be coerced to character vectors</p></dd>
+
+
 <dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
 <dd><p>Passed to <a href="https://rdrr.io/pkg/VennDiagram/man/draw.pairwise.venn.html" class="external-link">draw.pairwise.venn</a> (or
 <code>draw.single/triple.venn</code>) for Venn Diagrams, and to
 <a href="https://krassowski.github.io/complex-upset/reference/upset.html" class="external-link">upset</a> for UpSet plots</p></dd>
+
+
 <dt id="arg-type">type<a class="anchor" aria-label="anchor" href="#arg-type"></a></dt>
 <dd><p>The type of plot to be produced</p></dd>
+
+
 <dt id="arg-var">var<a class="anchor" aria-label="anchor" href="#arg-var"></a></dt>
 <dd><p>Column to summarised as a boxplot in an upper panel
 (UpSet plot only)</p></dd>
+
+
 <dt id="arg-f">f<a class="anchor" aria-label="anchor" href="#arg-f"></a></dt>
 <dd><p>Summarisation function. Must return a single value from any
 numeric vector</p></dd>
+
+
 <dt id="arg-set-col">set_col<a class="anchor" aria-label="anchor" href="#arg-set-col"></a></dt>
 <dd><p>Colours to be assigned to each set</p></dd>
+
+
 <dt id="arg--sort-sets">.sort_sets<a class="anchor" aria-label="anchor" href="#arg--sort-sets"></a></dt>
 <dd><p>passed to <code>sort_sets</code> in <a href="https://krassowski.github.io/complex-upset/reference/upset.html" class="external-link">upset</a></p></dd>
+
+
 <dt id="arg-hj-sets">hj_sets<a class="anchor" aria-label="anchor" href="#arg-hj-sets"></a></dt>
 <dd><p>Horizontal adjustment of set size labels</p></dd>
+
+
 <dt id="arg-sz-sets">sz_sets<a class="anchor" aria-label="anchor" href="#arg-sz-sets"></a></dt>
 <dd><p>Text size for set size labels. Passed internally to
 <code>geom_text(size = sz_sets)</code></p></dd>
+
+
 <dt id="arg-exp-sets">exp_sets<a class="anchor" aria-label="anchor" href="#arg-exp-sets"></a></dt>
 <dd><p>X-axis expansion for set size panel</p></dd>
+
+
 <dt id="arg-merge-within">merge_within<a class="anchor" aria-label="anchor" href="#arg-merge-within"></a></dt>
 <dd><p>Passed to <a href="makeConsensus.html">makeConsensus</a></p></dd>
+
+
 <dt id="arg-ignore-strand">ignore.strand<a class="anchor" aria-label="anchor" href="#arg-ignore-strand"></a></dt>
 <dd><p>Passed to <a href="https://rdrr.io/pkg/IRanges/man/inter-range-methods.html" class="external-link">reduce</a></p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-<p>Either a VennDiagram (i.e. grid) object, or a ComplexUpset plot</p>
+    <p>Either a VennDiagram (i.e. grid) object, or a ComplexUpset plot</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -138,6 +174,7 @@ using any numeric column within the existing <code>mcols()</code> element.
 Values will be summarised across all elements using the requested function
 and the boxplot will be included as an upper panel above the intersections</p>
     </div>
+
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co">## Examples using a list of character vectors</span></span></span>
@@ -172,12 +209,22 @@ and the boxplot will be included as an upper panel above the intersections</p>
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>
     </nav></div>
 </div>
+
+
       <footer><div class="copyright">
   <p></p><p>Developed by <a href="https://github.com/smped" class="external-link">Stevie Pederson</a>.</p>
 </div>
+
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.9000.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.9000.</p>
 </div>
+
       </footer></div>
+
+
+
+
+
+
   </body></html>
 

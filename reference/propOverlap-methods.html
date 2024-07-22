@@ -3,6 +3,8 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]--></head><body data-spy="scroll" data-target="#toc">
+
+
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -15,9 +17,10 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">extraChIPs</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.3</span>
       </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav"><li>
   <a href="../reference/index.html">Reference</a>
@@ -25,6 +28,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Vignettes
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -43,40 +47,54 @@
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/smped/extraChIPs" class="external-link">
     <span class="fa fa-github fa-lg"></span>
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
+
+
+
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Find the proportions of an overlapping range</h1>
-    <small class="dont-index">Source: <a href="https://github.com/smped/extraChIPs/blob/HEAD/R/AllGenerics.R" class="external-link"><code>R/AllGenerics.R</code></a>, <a href="https://github.com/smped/extraChIPs/blob/HEAD/R/propOverlaps.R" class="external-link"><code>R/propOverlaps.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/smped/extraChIPs/blob/gh-actions/R/AllGenerics.R" class="external-link"><code>R/AllGenerics.R</code></a>, <a href="https://github.com/smped/extraChIPs/blob/gh-actions/R/propOverlaps.R" class="external-link"><code>R/propOverlaps.R</code></a></small>
     <div class="hidden name"><code>propOverlap-methods.Rd</code></div>
     </div>
+
     <div class="ref-description">
     <p>Find the proportion of a query reange which overlaps the subject</p>
     </div>
+
     <div id="ref-usage">
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">propOverlap</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, <span class="va">...</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># S4 method for class 'GRanges,GRanges'</span></span>
 <span><span class="fu">propOverlap</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, ignore.strand <span class="op">=</span> <span class="cn">FALSE</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
+
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt id="arg-x-y">x, y<a class="anchor" aria-label="anchor" href="#arg-x-y"></a></dt>
+
+
+<dl><dt id="arg-x-y">x, y<a class="anchor" aria-label="anchor" href="#arg-x-y"></a></dt>
 <dd><p>A GenomicRanges object</p></dd>
+
+
 <dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
 <dd><p>Not used</p></dd>
+
+
 <dt id="arg-ignore-strand">ignore.strand<a class="anchor" aria-label="anchor" href="#arg-ignore-strand"></a></dt>
 <dd><p>If set to TRUE, then the strand of x and y is set to
 "*" prior to any computation.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-<p>Numeric vector the same length as x</p>
+    <p>Numeric vector the same length as x</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -84,6 +102,7 @@
 of the query range which overlaps one or more subject ranges is returned
 instead of a logical vector</p>
     </div>
+
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/GenomicRanges/man/GRanges-class.html" class="external-link">GRanges</a></span><span class="op">(</span><span class="st">"chr1:1-10"</span><span class="op">)</span></span></span>
@@ -100,12 +119,22 @@ instead of a logical vector</p>
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>
     </nav></div>
 </div>
+
+
       <footer><div class="copyright">
   <p></p><p>Developed by <a href="https://github.com/smped" class="external-link">Stevie Pederson</a>.</p>
 </div>
+
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.9000.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.9000.</p>
 </div>
+
       </footer></div>
+
+
+
+
+
+
   </body></html>
 

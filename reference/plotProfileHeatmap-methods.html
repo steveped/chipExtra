@@ -3,6 +3,8 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]--></head><body data-spy="scroll" data-target="#toc">
+
+
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -15,9 +17,10 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">extraChIPs</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.3</span>
       </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav"><li>
   <a href="../reference/index.html">Reference</a>
@@ -25,6 +28,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Vignettes
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -43,21 +47,27 @@
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/smped/extraChIPs" class="external-link">
     <span class="fa fa-github fa-lg"></span>
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
+
+
+
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Draw a coverage Profile Heatmap</h1>
-    <small class="dont-index">Source: <a href="https://github.com/smped/extraChIPs/blob/HEAD/R/plotProfileHeatmap.R" class="external-link"><code>R/plotProfileHeatmap.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/smped/extraChIPs/blob/gh-actions/R/plotProfileHeatmap.R" class="external-link"><code>R/plotProfileHeatmap.R</code></a></small>
     <div class="hidden name"><code>plotProfileHeatmap-methods.Rd</code></div>
     </div>
+
     <div class="ref-description">
     <p>Plot a coverage Profile Heatmap across multiple ranges</p>
     </div>
+
     <div id="ref-usage">
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">plotProfileHeatmap</span><span class="op">(</span><span class="va">object</span>, <span class="va">...</span><span class="op">)</span></span>
 <span></span>
@@ -105,37 +115,62 @@
 <span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
+
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt id="arg-object">object<a class="anchor" aria-label="anchor" href="#arg-object"></a></dt>
+
+
+<dl><dt id="arg-object">object<a class="anchor" aria-label="anchor" href="#arg-object"></a></dt>
 <dd><p>A GRanges or GRangesList object</p></dd>
+
+
 <dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
 <dd><p>Passed to <a href="https://ggplot2.tidyverse.org/reference/facet_grid.html" class="external-link">facet_grid</a> internally. Can be utilised
 for switching panel strips or passing a labeller function</p></dd>
+
+
 <dt id="arg-profilecol">profileCol<a class="anchor" aria-label="anchor" href="#arg-profilecol"></a></dt>
 <dd><p>Column name specifying where to find the profile DataFrames</p></dd>
+
+
 <dt id="arg-xvalue-fillvalue">xValue, fillValue<a class="anchor" aria-label="anchor" href="#arg-xvalue-fillvalue"></a></dt>
 <dd><p>Columns within the profile DataFrames for heatmaps</p></dd>
+
+
 <dt id="arg-facetx-facety">facetX, facetY<a class="anchor" aria-label="anchor" href="#arg-facetx-facety"></a></dt>
 <dd><p>Columns used for faceting across the x- or y-axis
 respectively</p></dd>
+
+
 <dt id="arg-colour">colour<a class="anchor" aria-label="anchor" href="#arg-colour"></a></dt>
 <dd><p>Column used for colouring lines in the summary panel. Defaults
 to any column used for facetY</p></dd>
+
+
 <dt id="arg-linetype">linetype<a class="anchor" aria-label="anchor" href="#arg-linetype"></a></dt>
 <dd><p>Column used for linetypes in the summary panel</p></dd>
+
+
 <dt id="arg-summariseby">summariseBy<a class="anchor" aria-label="anchor" href="#arg-summariseby"></a></dt>
 <dd><p>Function for creating the summary plot in the top panel.
 If set to 'none', no summary plot will be drawn. Otherwise the top panel will
 contain a line-plot representing this summary value for each x-axis bin</p></dd>
+
+
 <dt id="arg-xlab-ylab-filllab">xLab, yLab, fillLab<a class="anchor" aria-label="anchor" href="#arg-xlab-ylab-filllab"></a></dt>
 <dd><p>Labels for plotting aesthetics. Can be overwritten
 using labs() on any returned object</p></dd>
+
+
 <dt id="arg-labelfunx">labelFunX<a class="anchor" aria-label="anchor" href="#arg-labelfunx"></a></dt>
 <dd><p>Function for formatting x-axis labels</p></dd>
+
+
 <dt id="arg-relheight">relHeight<a class="anchor" aria-label="anchor" href="#arg-relheight"></a></dt>
 <dd><p>The relative height of the top summary panel.
 Represents the fraction of the plotting area taken up by the summary panel.</p></dd>
+
+
 <dt id="arg-sortfilter">sortFilter<a class="anchor" aria-label="anchor" href="#arg-sortfilter"></a></dt>
 <dd><p>If calling on a GRangesList, a method for subsetting the
 original object (e.g. 1:2). If calling on a GRanges object should be and
@@ -144,20 +179,27 @@ expression able to be parsed as a filtering expression using
 the heatmap such that ranges can be sorted by one or specific samples, or
 all. Ranges will always be sorted such that those with the strongest signal
 are at the top of the plot</p></dd>
+
+
 <dt id="arg-maxdist">maxDist<a class="anchor" aria-label="anchor" href="#arg-maxdist"></a></dt>
 <dd><p>Maximum distance from the centre to find the strongest signal
 when arranging the ranges</p></dd>
+
+
 <dt id="arg-summarylabelside">summaryLabelSide<a class="anchor" aria-label="anchor" href="#arg-summarylabelside"></a></dt>
 <dd><p>Side to place y-axis for the summary plot in the top
 panel</p></dd>
+
+
 <dt id="arg-respectlevels">respectLevels<a class="anchor" aria-label="anchor" href="#arg-respectlevels"></a></dt>
 <dd><p>logical(1) If FALSE, facets along the y-axis will be
 arranged in descending order of signal, otherwise any original factor levels
 will be retained</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-<p>A <code>ggplot2</code> object, able to be customised using standard <code>ggplot2</code> syntax</p>
+    <p>A <code>ggplot2</code> object, able to be customised using standard <code>ggplot2</code> syntax</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -182,6 +224,7 @@ column name to the facetX argument. The default approach will add the
 original element names as the column "name" which can be seen in the $data
 element of any resultant ggplot object produced by this function.</p>
     </div>
+
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
@@ -212,12 +255,22 @@ element of any resultant ggplot object produced by this function.</p>
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>
     </nav></div>
 </div>
+
+
       <footer><div class="copyright">
   <p></p><p>Developed by <a href="https://github.com/smped" class="external-link">Stevie Pederson</a>.</p>
 </div>
+
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.9000.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.9000.</p>
 </div>
+
       </footer></div>
+
+
+
+
+
+
   </body></html>
 

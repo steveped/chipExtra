@@ -4,6 +4,8 @@ GRangesList element"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/a
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]--></head><body data-spy="scroll" data-target="#toc">
+
+
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -16,9 +18,10 @@ GRangesList element"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/a
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">extraChIPs</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.3</span>
       </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav"><li>
   <a href="../reference/index.html">Reference</a>
@@ -26,6 +29,7 @@ GRangesList element"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/a
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Vignettes
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -44,22 +48,28 @@ GRangesList element"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/a
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/smped/extraChIPs" class="external-link">
     <span class="fa fa-github fa-lg"></span>
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
+
+
+
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Collapse a GRangesList adding multiple columns from each element</h1>
-    <small class="dont-index">Source: <a href="https://github.com/smped/extraChIPs/blob/HEAD/R/mapGrlCols.R" class="external-link"><code>R/mapGrlCols.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/smped/extraChIPs/blob/gh-actions/R/mapGrlCols.R" class="external-link"><code>R/mapGrlCols.R</code></a></small>
     <div class="hidden name"><code>mapGrlCols.Rd</code></div>
     </div>
+
     <div class="ref-description">
     <p>Make consensus peaks and add individual columns from each original
 GRangesList element</p>
     </div>
+
     <div id="ref-usage">
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">mapGrlCols</span><span class="op">(</span></span>
 <span>  <span class="va">x</span>,</span>
@@ -71,27 +81,43 @@ GRangesList element</p>
 <span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
+
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt id="arg-x">x<a class="anchor" aria-label="anchor" href="#arg-x"></a></dt>
+
+
+<dl><dt id="arg-x">x<a class="anchor" aria-label="anchor" href="#arg-x"></a></dt>
 <dd><p>GRangesList</p></dd>
+
+
 <dt id="arg-var">var<a class="anchor" aria-label="anchor" href="#arg-var"></a></dt>
 <dd><p>Column(s) to map onto the set of consensus peaks</p></dd>
+
+
 <dt id="arg-collapse">collapse<a class="anchor" aria-label="anchor" href="#arg-collapse"></a></dt>
 <dd><p>Columns specified here will be simplified into a single
 column. Should only be character or factor columns</p></dd>
+
+
 <dt id="arg-collapse-sep-">collapse_sep, <a class="anchor" aria-label="anchor" href="#arg-collapse-sep-"></a></dt>
 <dd><p>String to separate values when collapsing columns</p></dd>
+
+
 <dt id="arg-name-sep">name_sep<a class="anchor" aria-label="anchor" href="#arg-name-sep"></a></dt>
 <dd><p>String to separate values when adding column names</p></dd>
+
+
 <dt id="arg-include">include<a class="anchor" aria-label="anchor" href="#arg-include"></a></dt>
 <dd><p>logical(1) Include the original ranges as character columns</p></dd>
+
+
 <dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
 <dd><p>Passed to makeConsensus</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-<p>GRanges object with a set of consensus ranges across all list
+    <p>GRanges object with a set of consensus ranges across all list
 elements and values from each element mapped to these consensus ranges.</p>
 <p>If requested (<code>include = TRUE</code>) the original ranges are returned as
 character columns, as there will be multiple NA values in each.</p>
@@ -101,6 +127,7 @@ character columns, as there will be multiple NA values in each.</p>
     <p>Starting with a GRangesList, make a single GRanges object with select columns
 from each element added to the new object</p>
     </div>
+
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/GenomicRanges/man/GRanges-class.html" class="external-link">GRanges</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"chr1:"</span>, <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">61</span>, by <span class="op">=</span> <span class="fl">20</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
@@ -168,12 +195,22 @@ from each element added to the new object</p>
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>
     </nav></div>
 </div>
+
+
       <footer><div class="copyright">
   <p></p><p>Developed by <a href="https://github.com/smped" class="external-link">Stevie Pederson</a>.</p>
 </div>
+
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.9000.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.9000.</p>
 </div>
+
       </footer></div>
+
+
+
+
+
+
   </body></html>
 

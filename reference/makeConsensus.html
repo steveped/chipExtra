@@ -3,6 +3,8 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]--></head><body data-spy="scroll" data-target="#toc">
+
+
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -15,9 +17,10 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">extraChIPs</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.3</span>
       </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav"><li>
   <a href="../reference/index.html">Reference</a>
@@ -25,6 +28,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Vignettes
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -43,21 +47,27 @@
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/smped/extraChIPs" class="external-link">
     <span class="fa fa-github fa-lg"></span>
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
+
+
+
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Make a set of consensus peaks</h1>
-    <small class="dont-index">Source: <a href="https://github.com/smped/extraChIPs/blob/HEAD/R/makeConsensus.R" class="external-link"><code>R/makeConsensus.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/smped/extraChIPs/blob/gh-actions/R/makeConsensus.R" class="external-link"><code>R/makeConsensus.R</code></a></small>
     <div class="hidden name"><code>makeConsensus.Rd</code></div>
     </div>
+
     <div class="ref-description">
     <p>Make a set of consensus peaks based on the number of replicates</p>
     </div>
+
     <div id="ref-usage">
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">makeConsensus</span><span class="op">(</span></span>
 <span>  <span class="va">x</span>,</span>
@@ -71,32 +81,48 @@
 <span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
+
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt id="arg-x">x<a class="anchor" aria-label="anchor" href="#arg-x"></a></dt>
+
+
+<dl><dt id="arg-x">x<a class="anchor" aria-label="anchor" href="#arg-x"></a></dt>
 <dd><p>A GRangesList</p></dd>
+
+
 <dt id="arg-p">p<a class="anchor" aria-label="anchor" href="#arg-p"></a></dt>
 <dd><p>The minimum proportion of samples (i.e. elements of <code>x</code>) required
 for a peak to be retained in the output. By default all merged peaks will
 be returned</p></dd>
+
+
 <dt id="arg-var">var<a class="anchor" aria-label="anchor" href="#arg-var"></a></dt>
 <dd><p>Additional columns in the <code>mcols</code> element to retain</p></dd>
+
+
 <dt id="arg-method">method<a class="anchor" aria-label="anchor" href="#arg-method"></a></dt>
 <dd><p>Either return the union of all overlapping ranges, or the
 regions within the overlapping ranges which are covered by the specified
 proportion of replicates. When using p = 0, both methods will return identical
 results</p></dd>
+
+
 <dt id="arg-ignore-strand-simplify-">ignore.strand, simplify, ...<a class="anchor" aria-label="anchor" href="#arg-ignore-strand-simplify-"></a></dt>
 <dd><p>Passed to <a href="reduceMC.html">reduceMC</a> or
 <a href="setoptsMC-methods.html">intersectMC</a> internally</p></dd>
+
+
 <dt id="arg-min-width">min_width<a class="anchor" aria-label="anchor" href="#arg-min-width"></a></dt>
 <dd><p>Discard any regions below this width</p></dd>
+
+
 <dt id="arg-merge-within">merge_within<a class="anchor" aria-label="anchor" href="#arg-merge-within"></a></dt>
 <dd><p>Passed to <a href="https://rdrr.io/pkg/IRanges/man/inter-range-methods.html" class="external-link">reduce</a> as <code>min.gapwidth</code></p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-<p><code>GRanges</code> object with mcols containing a logical vector for every element of
+    <p><code>GRanges</code> object with mcols containing a logical vector for every element of
 x, along with the column <code>n</code> which adds all logical columns. These columns
 denote which replicates contain an overlapping peak for each range</p>
 <p>If any additional columns have been requested using <code>var</code>, these will be
@@ -121,6 +147,7 @@ site for the relevant ChIP targets</p>
     <h2>See also</h2>
     <div class="dont-index"><p><a href="reduceMC.html">reduceMC</a> <a href="setoptsMC-methods.html">intersectMC</a></p></div>
     </div>
+
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"peaks"</span><span class="op">)</span></span></span>
@@ -228,12 +255,22 @@ site for the relevant ChIP targets</p>
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>
     </nav></div>
 </div>
+
+
       <footer><div class="copyright">
   <p></p><p>Developed by <a href="https://github.com/smped" class="external-link">Stevie Pederson</a>.</p>
 </div>
+
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.9000.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.9000.</p>
 </div>
+
       </footer></div>
+
+
+
+
+
+
   </body></html>
 

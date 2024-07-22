@@ -3,6 +3,8 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]--></head><body data-spy="scroll" data-target="#toc">
+
+
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -15,9 +17,10 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">extraChIPs</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.3</span>
       </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav"><li>
   <a href="../reference/index.html">Reference</a>
@@ -25,6 +28,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Vignettes
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -43,21 +47,27 @@
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/smped/extraChIPs" class="external-link">
     <span class="fa fa-github fa-lg"></span>
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
+
+
+
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Draw Two-Level Donut Charts</h1>
-    <small class="dont-index">Source: <a href="https://github.com/smped/extraChIPs/blob/HEAD/R/AllGenerics.R" class="external-link"><code>R/AllGenerics.R</code></a>, <a href="https://github.com/smped/extraChIPs/blob/HEAD/R/plotSplitDonut.R" class="external-link"><code>R/plotSplitDonut.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/smped/extraChIPs/blob/gh-actions/R/AllGenerics.R" class="external-link"><code>R/AllGenerics.R</code></a>, <a href="https://github.com/smped/extraChIPs/blob/gh-actions/R/plotSplitDonut.R" class="external-link"><code>R/plotSplitDonut.R</code></a></small>
     <div class="hidden name"><code>plotSplitDonut-methods.Rd</code></div>
     </div>
+
     <div class="ref-description">
     <p>Create Donut charts based on one or two columns in a data frame</p>
     </div>
+
     <div id="ref-usage">
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">plotSplitDonut</span><span class="op">(</span><span class="va">object</span>, <span class="va">...</span><span class="op">)</span></span>
 <span></span>
@@ -123,102 +133,166 @@
 <span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
+
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt id="arg-object">object<a class="anchor" aria-label="anchor" href="#arg-object"></a></dt>
+
+
+<dl><dt id="arg-object">object<a class="anchor" aria-label="anchor" href="#arg-object"></a></dt>
 <dd><p>A <code>GRanges</code> or <code>data.frame</code>-like object</p></dd>
+
+
 <dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
 <dd><p>Not used</p></dd>
+
+
 <dt id="arg-scale-by">scale_by<a class="anchor" aria-label="anchor" href="#arg-scale-by"></a></dt>
 <dd><p>Column to scale values by. If provided, values in this column
 will be summed, instead of simply counting entries. Any label in the centre
 of the plot will also reflect this difference</p></dd>
+
+
 <dt id="arg-inner">inner<a class="anchor" aria-label="anchor" href="#arg-inner"></a></dt>
 <dd><p>Column name to create the inner ring</p></dd>
+
+
 <dt id="arg-outer">outer<a class="anchor" aria-label="anchor" href="#arg-outer"></a></dt>
 <dd><p>Column name to create the outer ring, subset by the inner ring</p></dd>
+
+
 <dt id="arg-scale-factor">scale_factor<a class="anchor" aria-label="anchor" href="#arg-scale-factor"></a></dt>
 <dd><p>When scaling by another column, such as width, totals
 will be divided by this value, with 1000 being the default to provide output
 in kb.</p></dd>
+
+
 <dt id="arg-r-centre">r_centre<a class="anchor" aria-label="anchor" href="#arg-r-centre"></a></dt>
 <dd><p>The radius of the hole in the centre. Setting to zero will
 create a Pie chart</p></dd>
+
+
 <dt id="arg-r-inner-r-outer">r_inner, r_outer<a class="anchor" aria-label="anchor" href="#arg-r-inner-r-outer"></a></dt>
 <dd><p>The radii of the inner/outer rings</p></dd>
+
+
 <dt id="arg-total-glue">total_glue<a class="anchor" aria-label="anchor" href="#arg-total-glue"></a></dt>
 <dd><p><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a>-syntax for formatting the total which
 appears in the centre of the plot. Internally, the value <code>N</code> will be
 calculated and as such, this value should appear within this argument.</p></dd>
+
+
 <dt id="arg-total-size">total_size<a class="anchor" aria-label="anchor" href="#arg-total-size"></a></dt>
 <dd><p>Label size total number of entries in the centre of the
 plot.</p></dd>
+
+
 <dt id="arg-total-colour">total_colour<a class="anchor" aria-label="anchor" href="#arg-total-colour"></a></dt>
 <dd><p>Label colour for the summary total in the centre</p></dd>
+
+
 <dt id="arg-inner-glue-outer-glue">inner_glue, outer_glue<a class="anchor" aria-label="anchor" href="#arg-inner-glue-outer-glue"></a></dt>
 <dd><p><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a>-syntax for formatting labels
 which appear on each inner/outer segment Internally, the values <code>n</code> and <code>p</code>
 will be calculated as totals and proportions of the total. As such, these
 values can appear within this argument, as well as the fields described in
 the details</p></dd>
+
+
 <dt id="arg-total-label-inner-label-outer-label">total_label, inner_label, outer_label<a class="anchor" aria-label="anchor" href="#arg-total-label-inner-label-outer-label"></a></dt>
 <dd><p>Can take values 'text', 'label'
 or 'none'. If setting one the first two values, the labelling function
 <code>geom_*</code> will be called, otherwise no label will be drawn</p></dd>
+
+
 <dt id="arg-label-alpha-inner-label-alpha-outer-label-alpha">label_alpha, inner_label_alpha, outer_label_alpha<a class="anchor" aria-label="anchor" href="#arg-label-alpha-inner-label-alpha-outer-label-alpha"></a></dt>
 <dd><p>transparency for
 labels</p></dd>
+
+
 <dt id="arg-label-size-inner-label-size-outer-label-size">label_size, inner_label_size, outer_label_size<a class="anchor" aria-label="anchor" href="#arg-label-size-inner-label-size-outer-label-size"></a></dt>
 <dd><p>Size of all text labels</p></dd>
+
+
 <dt id="arg-label-colour-inner-label-colour-outer-label-colour">label_colour, inner_label_colour, outer_label_colour<a class="anchor" aria-label="anchor" href="#arg-label-colour-inner-label-colour-outer-label-colour"></a></dt>
 <dd><p>Takes any colour
 specification, with the additional option of 'palette'. In this special case,
 the same palette as is used for each segment will be applied.</p></dd>
+
+
 <dt id="arg-min-p-inner-min-p-outer-min-p">min_p, inner_min_p, outer_min_p<a class="anchor" aria-label="anchor" href="#arg-min-p-inner-min-p-outer-min-p"></a></dt>
 <dd><p>only display labels for segments
 representing greater than this proportion of the total. If inner/outer values
 are specified, the values in <code>min_p</code> will be ignored for that layer</p></dd>
+
+
 <dt id="arg-max-p-inner-max-p-outer-max-p">max_p, inner_max_p, outer_max_p<a class="anchor" aria-label="anchor" href="#arg-max-p-inner-max-p-outer-max-p"></a></dt>
 <dd><p>only display labels for segments
 representing less than this proportion of the total. If inner/outer values
 are specified, the values in <code>max_p</code> will be ignored for that layer</p></dd>
+
+
 <dt id="arg-inner-pattern-outer-pattern">inner_pattern, outer_pattern<a class="anchor" aria-label="anchor" href="#arg-inner-pattern-outer-pattern"></a></dt>
 <dd><p>Regular expressions which are combined
 with max_p and min_p values for accurately choosing labels</p></dd>
+
+
 <dt id="arg-inner-rotate-outer-rotate">inner_rotate, outer_rotate<a class="anchor" aria-label="anchor" href="#arg-inner-rotate-outer-rotate"></a></dt>
 <dd><p>logical(1). Rotate labels for inner or outer
 rings. This will be ignored by when setting the geom as "label".
 See <a href="https://ggplot2.tidyverse.org/reference/geom_text.html" class="external-link">geom_text</a></p></dd>
+
+
 <dt id="arg-explode-inner-explode-outer">explode_inner, explode_outer<a class="anchor" aria-label="anchor" href="#arg-explode-inner-explode-outer"></a></dt>
 <dd><p>Regular expressions from either the inner
 or outer ring for which segments will be 'exploded'</p></dd>
+
+
 <dt id="arg-explode-query">explode_query<a class="anchor" aria-label="anchor" href="#arg-explode-query"></a></dt>
 <dd><p>Setting to AND and specifying values for both the inner
 and outer ring will require matches in both categories</p></dd>
+
+
 <dt id="arg-explode-x-explode-y">explode_x, explode_y<a class="anchor" aria-label="anchor" href="#arg-explode-x-explode-y"></a></dt>
 <dd><p>Numeric values for shifting exploded values</p></dd>
+
+
 <dt id="arg-explode-r">explode_r<a class="anchor" aria-label="anchor" href="#arg-explode-r"></a></dt>
 <dd><p>Radius expansion for exploded values</p></dd>
+
+
 <dt id="arg-nudge-r-inner-nudge-r-outer-nudge-r">nudge_r, inner_nudge_r, outer_nudge_r<a class="anchor" aria-label="anchor" href="#arg-nudge-r-inner-nudge-r-outer-nudge-r"></a></dt>
 <dd><p>Radius expansion for labels</p></dd>
+
+
 <dt id="arg-expand">expand<a class="anchor" aria-label="anchor" href="#arg-expand"></a></dt>
 <dd><p>Passed to <a href="https://ggplot2.tidyverse.org/reference/expansion.html" class="external-link">expansion</a> for both x and y axes.
 Can be helpful if labels are clipped by plot limits</p></dd>
+
+
 <dt id="arg-inner-palette">inner_palette<a class="anchor" aria-label="anchor" href="#arg-inner-palette"></a></dt>
 <dd><p>Colour palette for the inner ring</p></dd>
+
+
 <dt id="arg-outer-palette">outer_palette<a class="anchor" aria-label="anchor" href="#arg-outer-palette"></a></dt>
 <dd><p>Optional colour palette for the outer ring</p></dd>
+
+
 <dt id="arg-inner-legend-outer-legend">inner_legend, outer_legend<a class="anchor" aria-label="anchor" href="#arg-inner-legend-outer-legend"></a></dt>
 <dd><p>logical(1). Show legends for either layer</p></dd>
+
+
 <dt id="arg-outer-p-by">outer_p_by<a class="anchor" aria-label="anchor" href="#arg-outer-p-by"></a></dt>
 <dd><p>Scale the proportions for outer segments by the complete
 dataset, or within each inner segment</p></dd>
+
+
 <dt id="arg-layout">layout<a class="anchor" aria-label="anchor" href="#arg-layout"></a></dt>
 <dd><p>Passed to <a href="https://patchwork.data-imaginist.com/reference/plot_layout.html" class="external-link">plot_layout</a></p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-<p>A patchwork object consisting of both ggplot2 objects and legend grobs</p>
+    <p>A patchwork object consisting of both ggplot2 objects and legend grobs</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -250,6 +324,7 @@ Values from the inner segments can be added to the outer
 labels using this strategy enabling a wide variety of labelling approaches
 to be utilised.</p>
     </div>
+
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">200</span><span class="op">)</span></span></span>
@@ -283,12 +358,22 @@ to be utilised.</p>
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>
     </nav></div>
 </div>
+
+
       <footer><div class="copyright">
   <p></p><p>Developed by <a href="https://github.com/smped" class="external-link">Stevie Pederson</a>.</p>
 </div>
+
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.9000.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.9000.</p>
 </div>
+
       </footer></div>
+
+
+
+
+
+
   </body></html>
 

@@ -1,165 +1,57 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>/404.html</loc>
-  </url>
-  <url>
-    <loc>/articles/differential_signal_fixed.html</loc>
-  </url>
-  <url>
-    <loc>/articles/differential_signal_sliding.html</loc>
-  </url>
-  <url>
-    <loc>/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>/articles/range_based_functions.html</loc>
-  </url>
-  <url>
-    <loc>/authors.html</loc>
-  </url>
-  <url>
-    <loc>/index.html</loc>
-  </url>
-  <url>
-    <loc>/news/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/addDiffStatus-methods.html</loc>
-  </url>
-  <url>
-    <loc>/reference/as_tibble.html</loc>
-  </url>
-  <url>
-    <loc>/reference/bestOverlap-methods.html</loc>
-  </url>
-  <url>
-    <loc>/reference/chopMC.html</loc>
-  </url>
-  <url>
-    <loc>/reference/colToRanges-methods.html</loc>
-  </url>
-  <url>
-    <loc>/reference/collapseGenes.html</loc>
-  </url>
-  <url>
-    <loc>/reference/cytobands.html</loc>
-  </url>
-  <url>
-    <loc>/reference/defineRegions.html</loc>
-  </url>
-  <url>
-    <loc>/reference/defineSeqinfo.html</loc>
-  </url>
-  <url>
-    <loc>/reference/distinctMC.html</loc>
-  </url>
-  <url>
-    <loc>/reference/dot-makeFinalProfileHeatmap.html</loc>
-  </url>
-  <url>
-    <loc>/reference/dot-mapFeatures.html</loc>
-  </url>
-  <url>
-    <loc>/reference/dot-mapGi.html</loc>
-  </url>
-  <url>
-    <loc>/reference/dot-mapWithin.html</loc>
-  </url>
-  <url>
-    <loc>/reference/dualFilter.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ex_datasets.html</loc>
-  </url>
-  <url>
-    <loc>/reference/extraChIPs-package.html</loc>
-  </url>
-  <url>
-    <loc>/reference/fitAssayDiff-methods.html</loc>
-  </url>
-  <url>
-    <loc>/reference/fixed_width_datasets.html</loc>
-  </url>
-  <url>
-    <loc>/reference/getProfileData-methods.html</loc>
-  </url>
-  <url>
-    <loc>/reference/grlToSE-methods.html</loc>
-  </url>
-  <url>
-    <loc>/reference/importPeaks.html</loc>
-  </url>
-  <url>
-    <loc>/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/makeConsensus.html</loc>
-  </url>
-  <url>
-    <loc>/reference/mapByFeature.html</loc>
-  </url>
-  <url>
-    <loc>/reference/mapGrlCols.html</loc>
-  </url>
-  <url>
-    <loc>/reference/mergeByCol-methods.html</loc>
-  </url>
-  <url>
-    <loc>/reference/mergeByHMP-methods.html</loc>
-  </url>
-  <url>
-    <loc>/reference/mergeBySig-methods.html</loc>
-  </url>
-  <url>
-    <loc>/reference/partitionRanges-methods.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plotAssayDensities-methods.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plotAssayHeatmap-methods.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plotAssayPCA-methods.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plotAssayRle-methods.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plotGrlCol.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plotHFGC.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plotOverlaps-methods.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plotPairwise.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plotPie-methods.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plotProfileHeatmap-methods.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plotSplitDonut-methods.html</loc>
-  </url>
-  <url>
-    <loc>/reference/propOverlap-methods.html</loc>
-  </url>
-  <url>
-    <loc>/reference/reduceMC.html</loc>
-  </url>
-  <url>
-    <loc>/reference/setoptsMC-methods.html</loc>
-  </url>
-  <url>
-    <loc>/reference/stitchRanges.html</loc>
-  </url>
-  <url>
-    <loc>/reference/voomWeightsFromCPM.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>/404.html</loc></url>
+<url><loc>/articles/differential_signal_fixed.html</loc></url>
+<url><loc>/articles/differential_signal_sliding.html</loc></url>
+<url><loc>/articles/index.html</loc></url>
+<url><loc>/articles/range_based_functions.html</loc></url>
+<url><loc>/authors.html</loc></url>
+<url><loc>/index.html</loc></url>
+<url><loc>/news/index.html</loc></url>
+<url><loc>/reference/addDiffStatus-methods.html</loc></url>
+<url><loc>/reference/as_tibble.html</loc></url>
+<url><loc>/reference/bestOverlap-methods.html</loc></url>
+<url><loc>/reference/chopMC.html</loc></url>
+<url><loc>/reference/colToRanges-methods.html</loc></url>
+<url><loc>/reference/collapseGenes.html</loc></url>
+<url><loc>/reference/cytobands.html</loc></url>
+<url><loc>/reference/defineRegions.html</loc></url>
+<url><loc>/reference/defineSeqinfo.html</loc></url>
+<url><loc>/reference/distinctMC.html</loc></url>
+<url><loc>/reference/dot-makeFinalProfileHeatmap.html</loc></url>
+<url><loc>/reference/dot-mapFeatures.html</loc></url>
+<url><loc>/reference/dot-mapGi.html</loc></url>
+<url><loc>/reference/dot-mapWithin.html</loc></url>
+<url><loc>/reference/dualFilter.html</loc></url>
+<url><loc>/reference/ex_datasets.html</loc></url>
+<url><loc>/reference/extraChIPs-package.html</loc></url>
+<url><loc>/reference/fitAssayDiff-methods.html</loc></url>
+<url><loc>/reference/fixed_width_datasets.html</loc></url>
+<url><loc>/reference/getProfileData-methods.html</loc></url>
+<url><loc>/reference/grlToSE-methods.html</loc></url>
+<url><loc>/reference/importPeaks.html</loc></url>
+<url><loc>/reference/index.html</loc></url>
+<url><loc>/reference/makeConsensus.html</loc></url>
+<url><loc>/reference/mapByFeature.html</loc></url>
+<url><loc>/reference/mapGrlCols.html</loc></url>
+<url><loc>/reference/mergeByCol-methods.html</loc></url>
+<url><loc>/reference/mergeByHMP-methods.html</loc></url>
+<url><loc>/reference/mergeBySig-methods.html</loc></url>
+<url><loc>/reference/partitionRanges-methods.html</loc></url>
+<url><loc>/reference/plotAssayDensities-methods.html</loc></url>
+<url><loc>/reference/plotAssayHeatmap-methods.html</loc></url>
+<url><loc>/reference/plotAssayPCA-methods.html</loc></url>
+<url><loc>/reference/plotAssayRle-methods.html</loc></url>
+<url><loc>/reference/plotGrlCol.html</loc></url>
+<url><loc>/reference/plotHFGC.html</loc></url>
+<url><loc>/reference/plotOverlaps-methods.html</loc></url>
+<url><loc>/reference/plotPairwise.html</loc></url>
+<url><loc>/reference/plotPie-methods.html</loc></url>
+<url><loc>/reference/plotProfileHeatmap-methods.html</loc></url>
+<url><loc>/reference/plotSplitDonut-methods.html</loc></url>
+<url><loc>/reference/propOverlap-methods.html</loc></url>
+<url><loc>/reference/reduceMC.html</loc></url>
+<url><loc>/reference/setoptsMC-methods.html</loc></url>
+<url><loc>/reference/stitchRanges.html</loc></url>
+<url><loc>/reference/voomWeightsFromCPM.html</loc></url>
 </urlset>
+

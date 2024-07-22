@@ -3,6 +3,8 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]--></head><body data-spy="scroll" data-target="#toc">
+
+
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -15,9 +17,10 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">extraChIPs</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.3</span>
       </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav"><li>
   <a href="../reference/index.html">Reference</a>
@@ -25,6 +28,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Vignettes
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -43,21 +47,27 @@
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/smped/extraChIPs" class="external-link">
     <span class="fa fa-github fa-lg"></span>
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
+
+
+
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Draw Pie Graphs based on one or more columns</h1>
-    <small class="dont-index">Source: <a href="https://github.com/smped/extraChIPs/blob/HEAD/R/AllGenerics.R" class="external-link"><code>R/AllGenerics.R</code></a>, <a href="https://github.com/smped/extraChIPs/blob/HEAD/R/plotPie.R" class="external-link"><code>R/plotPie.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/smped/extraChIPs/blob/gh-actions/R/AllGenerics.R" class="external-link"><code>R/AllGenerics.R</code></a>, <a href="https://github.com/smped/extraChIPs/blob/gh-actions/R/plotPie.R" class="external-link"><code>R/plotPie.R</code></a></small>
     <div class="hidden name"><code>plotPie-methods.Rd</code></div>
     </div>
+
     <div class="ref-description">
     <p>Draw Pie Graphs based one or more data.frame columns</p>
     </div>
+
     <div id="ref-usage">
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">plotPie</span><span class="op">(</span><span class="va">object</span>, <span class="va">...</span><span class="op">)</span></span>
 <span></span>
@@ -95,70 +105,108 @@
 <span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
+
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt id="arg-object">object<a class="anchor" aria-label="anchor" href="#arg-object"></a></dt>
+
+
+<dl><dt id="arg-object">object<a class="anchor" aria-label="anchor" href="#arg-object"></a></dt>
 <dd><p>An object (<code>data.frame</code>)</p></dd>
+
+
 <dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
 <dd><p>Not used</p></dd>
+
+
 <dt id="arg-scale-by">scale_by<a class="anchor" aria-label="anchor" href="#arg-scale-by"></a></dt>
 <dd><p>Scale the counts by this column. In this case of a GRanges
 object this defaults to the count (scale_by = "n") but can also be specified
 as being width of each range (scale_by = "width"). If choosing width, width
 will be displayed in Kb</p></dd>
+
+
 <dt id="arg-fill">fill<a class="anchor" aria-label="anchor" href="#arg-fill"></a></dt>
 <dd><p>The category/column used to fill the slices of the pie charts</p></dd>
+
+
 <dt id="arg-x">x<a class="anchor" aria-label="anchor" href="#arg-x"></a></dt>
 <dd><p>The second (optional) category/column to place along the x-axis</p></dd>
+
+
 <dt id="arg-y">y<a class="anchor" aria-label="anchor" href="#arg-y"></a></dt>
 <dd><p>The final (optional) category/column to plce along the y-axis</p></dd>
+
+
 <dt id="arg-scale-factor">scale_factor<a class="anchor" aria-label="anchor" href="#arg-scale-factor"></a></dt>
 <dd><p>When scaling by another column, such as width, totals
 will be divided by this value, with 1000 being the default to provide output
 in kb.</p></dd>
+
+
 <dt id="arg-width">width<a class="anchor" aria-label="anchor" href="#arg-width"></a></dt>
 <dd><p>Scale the width of all pies</p></dd>
+
+
 <dt id="arg-total-geom">total_geom<a class="anchor" aria-label="anchor" href="#arg-total-geom"></a></dt>
 <dd><p>The geom_* to use for the totals at the centre of each pie.
 Setting this to 'none' will disable totals</p></dd>
+
+
 <dt id="arg-total-glue">total_glue<a class="anchor" aria-label="anchor" href="#arg-total-glue"></a></dt>
 <dd><p><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a> syntax to use for the totals in the
 centre of each pie. The column 'N' will produce the totals and any other
 values or formatting may be added here.</p></dd>
+
+
 <dt id="arg-total-colour-total-fill-total-alpha-total-size">total_colour, total_fill, total_alpha, total_size<a class="anchor" aria-label="anchor" href="#arg-total-colour-total-fill-total-alpha-total-size"></a></dt>
 <dd><p>Colour, fill, alpha and
 size for the main totals in the centre of each pie chart</p></dd>
+
+
 <dt id="arg-min-p">min_p<a class="anchor" aria-label="anchor" href="#arg-min-p"></a></dt>
 <dd><p>The minimum proportion of the total required for adding labels.
 Effectively removes labels from pie charts with few members. Alternatively
 when only one column is specified, categories below this will not be shown
 around the edge of the plot</p></dd>
+
+
 <dt id="arg-max-p">max_p<a class="anchor" aria-label="anchor" href="#arg-max-p"></a></dt>
 <dd><p>only display labels for segments representing less than this
 proportion of the total.</p></dd>
+
+
 <dt id="arg-cat-geom">cat_geom<a class="anchor" aria-label="anchor" href="#arg-cat-geom"></a></dt>
 <dd><p>The geom_* to use for category labels corresponding to each
 slice of the pie. Setting this to 'none' will disable category labels</p></dd>
+
+
 <dt id="arg-cat-glue">cat_glue<a class="anchor" aria-label="anchor" href="#arg-cat-glue"></a></dt>
 <dd><p><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a> syntax to use for the category labels
 corresponding to each slice of the pie charts. The columns 'n' and 'p' can
 be used to print totals and proportions for each slice.</p></dd>
+
+
 <dt id="arg-cat-colour-cat-fill-cat-size-cat-alpha">cat_colour, cat_fill, cat_size, cat_alpha<a class="anchor" aria-label="anchor" href="#arg-cat-colour-cat-fill-cat-size-cat-alpha"></a></dt>
 <dd><p>Colour, fill, size and alpha
 for category labels</p></dd>
+
+
 <dt id="arg-cat-adj">cat_adj<a class="anchor" aria-label="anchor" href="#arg-cat-adj"></a></dt>
 <dd><p>Adjust category labels</p></dd>
+
+
 <dt id="arg-hole-width">hole_width<a class="anchor" aria-label="anchor" href="#arg-hole-width"></a></dt>
 <dd><p>Add a hole in the middle to turn the plot into a donut.
 Values between zero and 1 work best. Only implemented for pie charts using
 one value (i.e. fill)</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-<p>A ggplot2 object able to be customised with colour scales and themes.</p>
+    <p>A ggplot2 object able to be customised with colour scales and themes.</p>
 <p>Also note that the $data element of the returned object will contain the
-data.frame used for plotting. The additional column <code>label_radians</code></p>
-<p>represents the mid-point of each pie slice and can be used for manually
+data.frame used for plotting. The additional column <code>label_radians</code>
+represents the mid-point of each pie slice and can be used for manually
 adding labels to each pie.
 Only applies when plotting across the <code>x</code> or <code>y</code> axes</p>
     </div>
@@ -178,6 +226,7 @@ the edge of the plot</p>
 in the centre using <a href="https://ggplot2.tidyverse.org/reference/geom_text.html" class="external-link">geom_label</a>.
 Parameters for these labels are customisable</p>
     </div>
+
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">200</span><span class="op">)</span></span></span>
@@ -228,12 +277,22 @@ Parameters for these labels are customisable</p>
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>
     </nav></div>
 </div>
+
+
       <footer><div class="copyright">
   <p></p><p>Developed by <a href="https://github.com/smped" class="external-link">Stevie Pederson</a>.</p>
 </div>
+
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.9000.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.9000.</p>
 </div>
+
       </footer></div>
+
+
+
+
+
+
   </body></html>
 
