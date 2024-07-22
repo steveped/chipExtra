@@ -1,5 +1,5 @@
 Package: extraChIPs
-Version: 1.9.2
+Version: 1.9.3
 Title: Additional functions for working with ChIP-Seq data
 Authors@R: person("Stevie", "Pederson", 
   email = "stephen.pederson.au@gmail.com", 
@@ -59,9 +59,9 @@ Imports:
   vctrs,
   VennDiagram
 Suggests: 
+  apeglm,
   BiocStyle,
   covr,
-  cqn,
   DESeq2,
   EnrichedHeatmap,
   Gviz,
@@ -79,5 +79,5 @@ biocViews: ChIPSeq, HiC, Sequencing, Coverage
 BiocType: Software
 VignetteBuilder: knitr
 Roxygen: list(markdown = TRUE)  
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
 Config/testthat/edition: 3

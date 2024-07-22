@@ -24,7 +24,7 @@ fitAssayDiff(x, ...)
   ...,
   null = c("interval", "worst.case"),
   robust = FALSE,
-  type = "apeglm"
+  type = c("apeglm", "ashr", "normal")
 )
 }
 \arguments{
@@ -112,13 +112,15 @@ called by column name.
 No normalisation is applied when using the limma-trend model, as this allows
 for previous normalisation strategies to be performed on the data.
 
-When applying the \link[DESeq2]{nbinomWaldTest}, without groups and using
-colSums for library sizes (instead of total alignments), the standard
-normalisation factors from \link[DESeq2]{estimateSizeFactorsForMatrix} will
-be used. In all other scenarios, normalisation factors as returned by
+When applying the \link[DESeq2]{nbinomWaldTest}, applying RLE normalisation
+without groups, and using colSums for library sizes (instead of total
+alignments), the standard normalisation factors from
+\link[DESeq2]{estimateSizeFactors} will be used.
+In all other scenarios, normalisation factors as returned by
 \link[edgeR]{normLibSizes} will be used.
 The fitType is set to 'local' when estimating dispersions, and this can be
 easily modified by passing fitType via the dot arguments.
+Results are additionally returned after applying \link[DESeq2]{lfcShrink}.
 
 Normalising to ChIP Input samples is not yet implemented.
 Similarly, the use of offsets when applying the Wald test is not yet
