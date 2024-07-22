@@ -19,13 +19,15 @@
 #' No normalisation is applied when using the limma-trend model, as this allows
 #' for previous normalisation strategies to be performed on the data.
 #'
-#' When applying the \link[DESeq2]{nbinomWaldTest}, without groups and using
-#' colSums for library sizes (instead of total alignments), the standard
-#' normalisation factors from \link[DESeq2]{estimateSizeFactorsForMatrix} will
-#' be used. In all other scenarios, normalisation factors as returned by
+#' When applying the \link[DESeq2]{nbinomWaldTest}, applying RLE normalisation
+#' without groups, and using colSums for library sizes (instead of total
+#' alignments), the standard normalisation factors from
+#' \link[DESeq2]{estimateSizeFactors} will be used.
+#' In all other scenarios, normalisation factors as returned by
 #' \link[edgeR]{normLibSizes} will be used.
 #' The fitType is set to 'local' when estimating dispersions, and this can be
 #' easily modified by passing fitType via the dot arguments.
+#' Results are additionally returned after applying \link[DESeq2]{lfcShrink}.
 #'
 #' Normalising to ChIP Input samples is not yet implemented.
 #' Similarly, the use of offsets when applying the Wald test is not yet
@@ -125,7 +127,8 @@ setMethod(
         norm = c("none", "TMM", "RLE", "TMMwsp", "upperquartile"),
         groups = NULL, fc = 1, lfc = log2(fc), asRanges = FALSE,
         offset = NULL, weighted = FALSE, ...,
-        null = c("interval", "worst.case"), robust = FALSE, type = "apeglm"
+        null = c("interval", "worst.case"), robust = FALSE,
+        type = c("apeglm", "ashr", "normal")
     ) {
         method <- match.arg(method)
         norm <- match.arg(norm)
@@ -186,20 +189,19 @@ setMethod(
         if (method == "wald") {
             if (!requireNamespace('DESeq2', quietly = TRUE))
                 stop("Please install 'DESeq2' to use this function.")
+            type <- match.arg(type)
             dds <- .se2Wald(
                 x, assay, design, lib.size, norm, groups, offset, weighted, ...
             )
             res <- DESeq2::results(dds)
             p_mu0 <- res$pvalue
             pval <- p_mu0
-            ## Apply lfcShrink as default
-            if (lfc != 0) {
-                res <- DESeq2::lfcShrink(
-                    dds, coef = colnames(design)[ncol(design)], res = res,
-                    type = type, lfcThreshold = abs(lfc), svalue = TRUE
-                )
-                pval <- res$svalue
-            }
+            ## Apply lfcShrink as the default
+            res <- DESeq2::lfcShrink(
+                dds, coef = coef, res = res, type = type,
+                lfcThreshold = abs(lfc), svalue = TRUE
+            )
+            if (abs(lfc) > 0) pval <- res$svalue
             ## Reformat for standard edgeR column layout
             res <- data.frame(
                 logFC = res$log2FoldChange, logCPM = log2(res$baseMean),
@@ -327,7 +329,7 @@ setMethod(
     nf <- rep_len(NA, ncol(mat)) # Should error out if something fails below
     if (is.null(lib.size) & norm == "RLE" & is.null(groups)) {
         message("Calculating default DESeq2 normalisation factors...")
-        nf <- DESeq2::estimateSizeFactorsForMatrix(mat)
+        dds <- DESeq2::estimateSizeFactors(dds)
     } else {
         if (is.null(groups)) {
             message("Calculating ", norm, " normalisation factors...")
@@ -346,8 +348,8 @@ setMethod(
                 )
             }
         }
+        DESeq2::sizeFactors(dds) <- nf
     }
-    DESeq2::sizeFactors(dds) <- nf
 
     ## 3. Estimate dispersions
     ft <- "local"

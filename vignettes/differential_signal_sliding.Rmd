@@ -65,7 +65,7 @@ if (!"BiocManager" %in% rownames(installed.packages()))
 pkg <- c(
   "tidyverse", "Rsamtools", "csaw", "BiocParallel", "rtracklayer", "edgeR", 
   "patchwork", "extraChIPs", "plyranges", "scales", "glue", "here", "quantro",
-  "cqn", "ggrepel", "BSgenome.Hsapiens.UCSC.hg19"
+  "ggrepel", "BSgenome.Hsapiens.UCSC.hg19"
 )
 BiocManager::install(pkg, update = FALSE)
 ```
@@ -87,7 +87,6 @@ library(glue)
 library(here)
 library(magrittr)
 library(quantro)
-library(cqn)
 library(ggrepel)
 theme_set(theme_bw())
 ```
