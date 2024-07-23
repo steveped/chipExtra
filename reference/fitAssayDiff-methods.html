@@ -209,7 +209,7 @@ grouping factor is expected to be in the colData element and is simply
 called by column name.
 No normalisation is applied when using the limma-trend model, as this allows
 for previous normalisation strategies to be performed on the data.</p>
-<p>When applying the <a href="https://rdrr.io/pkg/DESeq2/man/nbinomWaldTest.html" class="external-link">nbinomWaldTest</a>, applying RLE normalisation
+<p>If testing with <a href="https://rdrr.io/pkg/DESeq2/man/nbinomWaldTest.html" class="external-link">nbinomWaldTest</a>, applying RLE normalisation
 without groups, and using colSums for library sizes (instead of total
 alignments), the standard normalisation factors from
 estimateSizeFactors will be used.
@@ -217,7 +217,8 @@ In all other scenarios, normalisation factors as returned by
 <a href="https://rdrr.io/pkg/edgeR/man/calcNormFactors.html" class="external-link">normLibSizes</a> will be used.
 The fitType is set to 'local' when estimating dispersions, and this can be
 easily modified by passing fitType via the dot arguments.
-Results are additionally returned after applying <a href="https://rdrr.io/pkg/DESeq2/man/lfcShrink.html" class="external-link">lfcShrink</a>.</p>
+Results are additionally returned after applying <a href="https://rdrr.io/pkg/DESeq2/man/lfcShrink.html" class="external-link">lfcShrink</a>,
+including the svalue returned by this approach.</p>
 <p>Normalising to ChIP Input samples is not yet implemented.
 Similarly, the use of offsets when applying the Wald test is not yet
 implemented.</p>
