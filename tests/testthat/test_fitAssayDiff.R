@@ -48,7 +48,7 @@ test_that("Results appear structurally correct", {
 
     new_se <- fitAssayDiff(se, method = "wald", design = X)
     row_data <- rowData(new_se)
-    cols <- c("range", "logFC", "logCPM", "PValue", "FDR")
+    cols <- c("range", "logFC", "logCPM", "svalue", "PValue", "FDR")
     expect_equal(colnames(row_data), cols)
 
 })
