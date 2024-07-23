@@ -19,7 +19,7 @@
 #' No normalisation is applied when using the limma-trend model, as this allows
 #' for previous normalisation strategies to be performed on the data.
 #'
-#' When applying the \link[DESeq2]{nbinomWaldTest}, applying RLE normalisation
+#' If testing with \link[DESeq2]{nbinomWaldTest}, applying RLE normalisation
 #' without groups, and using colSums for library sizes (instead of total
 #' alignments), the standard normalisation factors from
 #' \link[DESeq2]{estimateSizeFactors} will be used.
@@ -27,7 +27,8 @@
 #' \link[edgeR]{normLibSizes} will be used.
 #' The fitType is set to 'local' when estimating dispersions, and this can be
 #' easily modified by passing fitType via the dot arguments.
-#' Results are additionally returned after applying \link[DESeq2]{lfcShrink}.
+#' Results are additionally returned after applying \link[DESeq2]{lfcShrink},
+#' including the svalue returned by this approach.
 #'
 #' Normalising to ChIP Input samples is not yet implemented.
 #' Similarly, the use of offsets when applying the Wald test is not yet
@@ -193,19 +194,21 @@ setMethod(
             dds <- .se2Wald(
                 x, assay, design, lib.size, norm, groups, offset, weighted, ...
             )
-            res <- DESeq2::results(dds)
-            p_mu0 <- res$pvalue
-            pval <- p_mu0
-            ## Apply lfcShrink as the default
-            res <- DESeq2::lfcShrink(
+            res <- DESeq2::results(dds, name = coef, lfcThreshold = 0)
+            if (abs(lfc) > 0) {
+                p_mu0 <- res$pvalue
+                res <- DESeq2::results(dds, name = coef, lfcThreshold = abs(lfc))
+            }
+            ## Always return shrunken estimates. Maybe make optional later
+            shrink <- DESeq2::lfcShrink(
                 dds, coef = coef, res = res, type = type,
                 lfcThreshold = abs(lfc), svalue = TRUE
             )
-            if (abs(lfc) > 0) pval <- res$svalue
-            ## Reformat for standard edgeR column layout
+            ## Collate into consistent output
             res <- data.frame(
-                logFC = res$log2FoldChange, logCPM = log2(res$baseMean),
-                PValue = pval
+                logFC = shrink$log2FoldChange, logCPM = log2(shrink$baseMean),
+                svalue = shrink$svalue, PValue = res$pvalue,
+                row.names = rownames(shrink)
             )
 
         }
