@@ -272,7 +272,10 @@ setMethod(
 
     col_df <- as_tibble(colData(x), rownames = "colnames")
     ls <- colSums(mat)
-    if (!is.null(lib.size)) ls <- col_df[[lib.size]]
+    if (!is.null(lib.size)) {
+        lib.size <- match.arg(lib.size, names(col_df))
+        ls <- as.numeric(col_df[[lib.size]])
+    }
     message("Creating DGE list...")
     dge <- DGEList(counts = mat, lib.size = ls, samples = col_df)
     if (!is.null(offset)) dge$offset <- edgeR::scaleOffset(ls, offset)
@@ -315,7 +318,10 @@ setMethod(
 
     col_df <- as_tibble(colData(x), rownames = "colnames")
     ls <- colSums(mat)
-    if (!is.null(lib.size)) ls <- col_df[[lib.size]]
+    if (!is.null(lib.size)) {
+        lib.size <- match.arg(lib.size, names(col_df))
+        ls <- as.numeric(col_df[[lib.size]])
+    }
 
     dotArgs <- list(...)
 
@@ -351,7 +357,9 @@ setMethod(
                 )
             }
         }
-        DESeq2::sizeFactors(dds) <- nf
+        ## DESeq2 needs these factors scaled by effective lib size
+        eff_libsize <- nf * ls
+        DESeq2::sizeFactors(dds) <- eff_libsize / mean(ls)
     }
 
     ## 3. Estimate dispersions

@@ -44,76 +44,76 @@ setGeneric("addDiffStatus", function(x, ...) standardGeneric("addDiffStatus"))
 #' @rdname addDiffStatus-methods
 #' @export
 setMethod(
-  "addDiffStatus",
-  signature = signature(x = "data.frame"),
-  function(
-    x, fc_col = "logFC", sig_col = c("FDR", "hmp_fdr", "p_fdr", "adj.P.Value"),
-    alpha = 0.05, cutoff = 0, up = "Increased", down = "Decreased",
-    other = "Unchanged", missing = "Undetected", new_col = "status",
-    drop = FALSE, ...
-  ) {
+    "addDiffStatus",
+    signature = signature(x = "data.frame"),
+    function(
+        x, fc_col = "logFC", sig_col = c("FDR", "hmp_fdr", "p_fdr", "adj.P.Value"),
+        alpha = 0.05, cutoff = 0, up = "Increased", down = "Decreased",
+        other = "Unchanged", missing = "Undetected", new_col = "status",
+        drop = FALSE, ...
+    ) {
 
-    # Start with a df
-    stopifnot(is(x, "data.frame"))
-    nm <- colnames(x)
-    fc_col <- match.arg(fc_col, nm)
-    sig_col <- intersect(sig_col, nm)[[1]]
-    stopifnot(length(sig_col) == 1)
-    fc <- x[[fc_col]]
-    stopifnot(is.numeric(fc))
-    stopifnot(is.numeric(x[[sig_col]]))
-    sig <- x[[sig_col]] < alpha
-    status <- case_when(
-        is.na(sig) | is.na(fc) ~ missing[[1]],
-        !sig ~ other[[1]],
-        fc > abs(cutoff) ~ up[[1]],
-        fc < -abs(cutoff) ~ down[[1]],
-        TRUE ~ other[[1]]
-    )
-    ## Do we need to add an explicit NA value here?
-    lv <- unique(c(other, down, up, missing))
-    if (drop) lv <- intersect(lv, status)
-    x[[new_col]] <- factor(status, levels = lv)
-    x
-  }
+        # Start with a df
+        stopifnot(is(x, "data.frame"))
+        nm <- colnames(x)
+        fc_col <- match.arg(fc_col, nm)
+        sig_col <- intersect(sig_col, nm)[[1]]
+        stopifnot(length(sig_col) == 1)
+        fc <- x[[fc_col]]
+        stopifnot(is.numeric(fc))
+        stopifnot(is.numeric(x[[sig_col]]))
+        sig <- x[[sig_col]] < alpha
+        status <- case_when(
+            is.na(sig) | is.na(fc) ~ missing[[1]],
+            !sig ~ other[[1]],
+            fc > abs(cutoff) ~ up[[1]],
+            fc < -abs(cutoff) ~ down[[1]],
+            TRUE ~ other[[1]]
+        )
+        ## Do we need to add an explicit NA value here?
+        lv <- unique(c(other, down, up, missing))
+        if (drop) lv <- intersect(lv, status)
+        x[[new_col]] <- factor(status, levels = lv)
+        x
+    }
 )
 #' @rdname addDiffStatus-methods
 #' @export
 setMethod(
-  "addDiffStatus", signature = signature(x = "DataFrame"),
-  function(x, new_col = "status", ...) {
-    df <- as.data.frame(x)
-    orig_names <- colnames(df)
-    df <- addDiffStatus(df, new_col = new_col, ...)
-    x[[new_col]] <- df[[new_col]]
-    x
-  }
+    "addDiffStatus", signature = signature(x = "DataFrame"),
+    function(x, new_col = "status", ...) {
+        df <- as.data.frame(x)
+        orig_names <- colnames(df)
+        df <- addDiffStatus(df, new_col = new_col, ...)
+        x[[new_col]] <- df[[new_col]]
+        x
+    }
 )
 #' @rdname addDiffStatus-methods
 #' @export
 setMethod(
-  "addDiffStatus", signature = signature(x = "GRanges"), function(x, ...) {
-    df <- mcols(x)
-    df <- addDiffStatus(df, ...)
-    mcols(x) <- df
-    x
-  }
+    "addDiffStatus", signature = signature(x = "GRanges"), function(x, ...) {
+        df <- mcols(x)
+        df <- addDiffStatus(df, ...)
+        mcols(x) <- df
+        x
+    }
 )
 #' @rdname addDiffStatus-methods
 #' @export
 setMethod(
-  "addDiffStatus", signature = signature(x = "GRangesList"), function(x, ...) {
-    endoapply(x, addDiffStatus, ...)
-  }
+    "addDiffStatus", signature = signature(x = "GRangesList"), function(x, ...) {
+        endoapply(x, addDiffStatus, ...)
+    }
 )
 #' @rdname addDiffStatus-methods
 #' @export
 setMethod(
-  "addDiffStatus", signature = signature(x = "SummarizedExperiment"),
-  function(x, ...) {
-    df <- rowData(x)
-    df <- addDiffStatus(df, ...)
-    rowData(x) <- df
-    x
-  }
+    "addDiffStatus", signature = signature(x = "SummarizedExperiment"),
+    function(x, ...) {
+        df <- rowData(x)
+        df <- addDiffStatus(df, ...)
+        rowData(x) <- df
+        x
+    }
 )
