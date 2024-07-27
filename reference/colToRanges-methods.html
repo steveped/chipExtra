@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">extraChIPs</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.9.4</span>
       </span>
     </div>
 
@@ -75,7 +75,7 @@
 <span><span class="fu">colToRanges</span><span class="op">(</span><span class="va">x</span>, <span class="va">var</span>, seqinfo <span class="op">=</span> <span class="cn">NULL</span>, <span class="va">...</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># S4 method for class 'GRanges'</span></span>
-<span><span class="fu">colToRanges</span><span class="op">(</span><span class="va">x</span>, <span class="va">var</span>, <span class="va">...</span><span class="op">)</span></span>
+<span><span class="fu">colToRanges</span><span class="op">(</span><span class="va">x</span>, <span class="va">var</span>, <span class="va">...</span>, keep_metadata <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># S4 method for class 'data.frame'</span></span>
 <span><span class="fu">colToRanges</span><span class="op">(</span><span class="va">x</span>, <span class="va">var</span>, seqinfo <span class="op">=</span> <span class="cn">NULL</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
@@ -100,6 +100,11 @@
 <dt id="arg-seqinfo">seqinfo<a class="anchor" aria-label="anchor" href="#arg-seqinfo"></a></dt>
 <dd><p>A seqinfo object to be applied to the new GRanges object.
 Ignored if the column is already a GRanges object</p></dd>
+
+
+<dt id="arg-keep-metadata">keep_metadata<a class="anchor" aria-label="anchor" href="#arg-keep-metadata"></a></dt>
+<dd><p>logical(1) If the original object is a GRanges object,
+retain all metadata from the original ranges in the replaced ranges</p></dd>
 
 </dl></div>
     <div id="value">
