@@ -26,7 +26,7 @@ reference:
 - title: Functions For Differential Signal Analysis
   contents:
     - dualFilter
-    - importPeaks
+    - ends_with("Peaks")
     - fitAssayDiff
     - getProfileData
     - grlToSE

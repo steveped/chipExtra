@@ -105,3 +105,7 @@
 # Changes in 1.7.7
 
 - Added `merge_within` to `makeConsensus()` for better handling when `method = "coverage"`
+
+# Changes in 1.9.6
+
+- Added the function `centrePeaks()` to recentre peaks using any files with coverage
