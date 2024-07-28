@@ -3,6 +3,10 @@
 \name{centrePeaks}
 \alias{centrePeaks}
 \alias{centrePeaks,GRanges,BamFileList-method}
+\alias{centrePeaks,GRanges,BamFile-method}
+\alias{centrePeaks,GRanges,BigWigFileList-method}
+\alias{centrePeaks,GRanges,BigWigFile-method}
+\alias{centrePeaks,GRanges,character-method}
 \title{Re-estimate peak centres from coverage}
 \usage{
 centrePeaks(x, y, ...)
@@ -10,17 +14,31 @@ centrePeaks(x, y, ...)
 \S4method{centrePeaks}{GRanges,BamFileList}(
   x,
   y,
-  f = c("mean", "median", "weighted.mean"),
+  f = c("weighted.cov", "mean", "median"),
   BPPARAM = bpparam(),
   ...
 )
+
+\S4method{centrePeaks}{GRanges,BamFile}(x, y, ...)
+
+\S4method{centrePeaks}{GRanges,BigWigFileList}(
+  x,
+  y,
+  f = c("weighted.cov", "mean", "median"),
+  BPPARAM = bpparam(),
+  ...
+)
+
+\S4method{centrePeaks}{GRanges,BigWigFile}(x, y, ...)
+
+\S4method{centrePeaks}{GRanges,character}(x, y, ...)
 }
 \arguments{
 \item{x}{A set of GRanges representing peaks}
 
-\item{y}{A BamFileList}
+\item{y}{A suitable set of files with methods defined}
 
-\item{...}{Not used}
+\item{...}{Used to pass arguments between methods}
 
 \item{f}{The function to use when estimating a combined peak centre}
 
@@ -34,9 +52,24 @@ Use coverage to estimate peak centres
 }
 \details{
 Use coverage to estimate the centre of a set of peaks or GenomicRanges.
-The point of maximum coverage for each sample will be found and these
-positions will be averaged to return a position representing an estimated
-peak centre.
-If using weighted.mean, positions are weighted by the maximum coverage
-within each sample.
+
+If using the mean or median, the point of maximum coverage for each sample
+will be found within each peak and these positions will be averaged to return
+a position representing an estimated peak centre.
+
+If using weighted.cov, positions are weighted by the combined coverage across
+all samples to return the weighted mean position. In this case coverage will
+be scaled by total alignments within each bam file before summing across files
+}
+\examples{
+## Define some peaks
+f <- system.file("extdata/peaks.bed.gz", package = "extraChIPs")
+peaks <- importPeaks(f, type = "bed")[[1]]
+peaks
+
+## Use a bam file to re-centre the regions using highest coverage
+bf <- system.file("extdata/bam/ex1.bam", package = "extraChIPs")
+centres <- centrePeaks(peaks, bf, BPPARAM = SerialParam())
+centres
+
 }
